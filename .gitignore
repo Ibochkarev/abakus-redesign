@@ -13,3 +13,4 @@ node_modules
 yarn.lock
 package-lock.json
 docs
+yarn-error.log
