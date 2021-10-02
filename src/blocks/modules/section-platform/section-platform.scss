@@ -1,12 +1,34 @@
 .section-platform {
     padding: rem(120) 0 rem(90);
 
+    @media (max-width: 991px) {
+        padding: rem(65) 0 rem(50);
+    }
+
+    @media (max-width: 574px) {
+        padding: rem(45) 0 rem(60);
+    }
+
     &__full-video {
         width: 100%;
         height: rem(582);
         overflow: hidden;
         margin-bottom: rem(95);
         border-radius: rem(18);
+
+        @media (max-width: 991px) {
+            height: rem(360);
+            margin-bottom: rem(70);
+        }
+
+        @media (max-width: 768px) {
+            height: rem(220);
+            margin-bottom: rem(50);
+        }
+
+        @media (max-width: 574px) {
+            height: rem(175);
+        }
 
         .vjs-poster {
             background-size: cover;
@@ -17,17 +39,25 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin-bottom: rem(70);
+        margin-bottom: rem(120);
+
+        @media (max-width: 991px) {
+            margin-bottom: rem(70);
+        }
+
+        @media (max-width: 574px) {
+            margin-bottom: rem(40);
+        }
 
         &-item {
             @include size-lg(7);
             @include size-md(7);
-            @include size-xs(12);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
-            &:first-child {
-                @include size-lg(5);
-                @include size-md(5);
-                @include size-xs(12);
+            @media (max-width: 768px) {
+                width: 100%;
             }
 
             &__title {
@@ -36,21 +66,45 @@
                 font-size: rem(25);
                 font-weight: 600;
 
+                @media (max-width: 991px) {
+                    margin-bottom: rem(20);
+                    font-size: rem(20);
+                    line-height: rem(24);
+                }
+
                 span {
                     color: #171663;
                 }
             }
 
             &__image {
+                height: 100%;
+
                 img {
+                    width: -moz-available;
+                    height: 100%;
                     border: rem(6) solid;
                     border-radius: rem(13);
                     border-color: #c3e6f5;
                 }
+
                 &._orange {
                     img {
                         border-color: #faeb99;
                     }
+                }
+            }
+
+            &:first-child {
+                @include size-lg(5);
+                @include size-md(5);
+
+                @media (max-width: 991px) {
+                    margin-bottom: rem(20);
+                }
+
+                @media (max-width: 768px) {
+                    width: 100%;
                 }
             }
         }
