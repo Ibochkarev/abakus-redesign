@@ -1,0 +1,110 @@
+.section-tariffs {
+    overflow: hidden;
+    padding: rem(75) 0 rem(100);
+    background: #c3e6f5;
+
+    &__wrapper {
+        margin-top: rem(80);
+    }
+
+    &__item {
+        position: relative;
+        width: rem(280);
+        font-family: "Neometric Alt", sans-serif;
+        font-weight: 600;
+        text-align: center;
+
+        &._hit {
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 149px;
+                height: 102px;
+                transform: translateX(-50%);
+                background-image: url("../img/global/hit.svg");
+            }
+            .section-tariffs__item-headline {
+                color: #000000;
+                background: #faeb99;
+            }
+        }
+
+        &-hit {
+            height: 102px;
+        }
+
+        &-wrap {
+            overflow: hidden;
+            background: #ffffff;
+            border-radius: rem(12);
+        }
+
+        &-headline {
+            padding: rem(20) 0;
+            font-size: rem(20);
+            line-height: 24px;
+            text-transform: uppercase;
+            color: #ffffff;
+            background: #29a4dd;
+        }
+
+        &-body {
+            padding: 0 rem(24) rem(32);
+        }
+
+        &-price {
+            padding: rem(50) 0;
+            font-size: rem(40);
+            color: #000000;
+            border-bottom: rem(1) solid #29a4dd;
+        }
+
+        &-info {
+            padding: rem(45) 0;
+
+            &__line {
+                font-size: rem(16);
+                color: #000000;
+
+                &:not(:last-child) {
+                    margin-bottom: rem(11);
+                }
+            }
+        }
+
+        &-button {
+            cursor: pointer;
+            width: 100%;
+            height: rem(69);
+            margin-bottom: rem(22);
+            font-size: 18px;
+            line-height: rem(69);
+            color: #ffffff;
+            background: #171663;
+            border: 0;
+            border-radius: rem(100);
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &-adds {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: rem(14);
+            color: #171663;
+
+            span {
+                display: inline-block;
+                margin-right: rem(5);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>gulp-pug-starter</title>
+    <title>Online Abakus</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -23,6 +23,9 @@
     <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
@@ -51,6 +54,141 @@
         </div>
       </div>
     </header>
+    <section class="section-tariffs">
+      <div class="container">
+        <h2 class="section__title">Выберите ваш план на месяц<span class="section__title-border b_top"></span><span class="section__title-border b_top-right"></span><span class="section__title-border b_bottom"></span><span class="section__title-border b_bottom-right"></span></h2>
+        <div class="section-tariffs__wrapper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide section-tariffs__item">
+              <div class="section-tariffs__item-hit"></div>
+              <div class="section-tariffs__item-wrap">
+                <div class="section-tariffs__item-headline">БАЗОВЫЙ</div>
+                <div class="section-tariffs__item-body">
+                  <div class="section-tariffs__item-price">4500 ₽</div>
+                  <div class="section-tariffs__item-info">
+                    <div class="section-tariffs__item-info__line">4 занятия по 45 минут</div>
+                    <div class="section-tariffs__item-info__line">1 ученик</div>
+                  </div>
+                  <button class="section-tariffs__item-button" type="button">Выбрать</button>
+                  <div class="section-tariffs__item-adds"><span class="ic-people"></span>Индивидуальный тариф</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide section-tariffs__item _hit">
+              <div class="section-tariffs__item-hit"></div>
+              <div class="section-tariffs__item-wrap">
+                <div class="section-tariffs__item-headline">Популярный</div>
+                <div class="section-tariffs__item-body">
+                  <div class="section-tariffs__item-price">5850 ₽</div>
+                  <div class="section-tariffs__item-info">
+                    <div class="section-tariffs__item-info__line">4 занятия по 60 минут</div>
+                    <div class="section-tariffs__item-info__line">1 ученик</div>
+                  </div>
+                  <button class="section-tariffs__item-button" type="button">Выбрать</button>
+                  <div class="section-tariffs__item-adds"><span class="ic-people"></span>Индивидуальный тариф</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide section-tariffs__item">
+              <div class="section-tariffs__item-hit"></div>
+              <div class="section-tariffs__item-wrap">
+                <div class="section-tariffs__item-headline">ИНТЕНСИВ</div>
+                <div class="section-tariffs__item-body">
+                  <div class="section-tariffs__item-price">8800 ₽</div>
+                  <div class="section-tariffs__item-info">
+                    <div class="section-tariffs__item-info__line">8занятия по 45 минут</div>
+                    <div class="section-tariffs__item-info__line">1 ученик</div>
+                  </div>
+                  <button class="section-tariffs__item-button" type="button">Выбрать</button>
+                  <div class="section-tariffs__item-adds"><span class="ic-people"></span>Индивидуальный тариф</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide section-tariffs__item">
+              <div class="section-tariffs__item-hit"></div>
+              <div class="section-tariffs__item-wrap">
+                <div class="section-tariffs__item-headline">ПРИВЕДИ ДРУГА</div>
+                <div class="section-tariffs__item-body">
+                  <div class="section-tariffs__item-price">3900 ₽</div>
+                  <div class="section-tariffs__item-info">
+                    <div class="section-tariffs__item-info__line">8 занятия по 30 минут</div>
+                    <div class="section-tariffs__item-info__line">Цена за каждого ученика</div>
+                  </div>
+                  <button class="section-tariffs__item-button" type="button">Выбрать</button>
+                  <div class="section-tariffs__item-adds"><span class="ic-people"></span><span class="ic-people"></span>Занятия в паре</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-smi">
+      <div class="container">
+        <h2 class="section__title">СМИ о нас<span class="section__title-border b_top"></span><span class="section__title-border b_top-right"></span><span class="section__title-border b_bottom"></span><span class="section__title-border b_bottom-right"></span></h2>
+        <div class="section-smi__wrapper">
+          <div class="section-smi__item">
+            <div class="section-smi__item-wrapper">
+              <div class="section-smi__item-logo"><img src="./img/smi-logo/vedomosti.png" alt=""></div>
+              <div class="section-smi__item-text">Учить детей с использованием древнекитайских счетов оказалось весьма прибыльным дело</div>
+            </div>
+          </div>
+          <div class="section-smi__item">
+            <div class="section-smi__item-wrapper">
+              <div class="section-smi__item-logo"><img src="./img/smi-logo/one-chanel.png" alt=""></div>
+              <div class="section-smi__item-text">Мой ребенок — эрудит. Доброе утро. Фрагмент выпуска от 05.02.2020</div>
+            </div>
+          </div>
+          <div class="section-smi__item">
+            <div class="section-smi__item-wrapper">
+              <div class="section-smi__item-logo"><img src="./img/smi-logo/russia.png" alt=""></div>
+              <div class="section-smi__item-text">«Удивительные люди». Ёсуман Исмонзода. Молниеносный счет в уме</div>
+            </div>
+          </div>
+          <div class="section-smi__item">
+            <div class="section-smi__item-wrapper">
+              <div class="section-smi__item-logo"><img src="./img/smi-logo/russia.png" alt=""></div>
+              <div class="section-smi__item-text">«Удивительные люди». Ёсуман Исмонзода. Молниеносный счет в уме</div>
+            </div>
+          </div>
+          <div class="section-smi__item">
+            <div class="section-smi__item-wrapper">
+              <div class="section-smi__item-logo"><img src="./img/smi-logo/vedomosti.png" alt=""></div>
+              <div class="section-smi__item-text">Учить детей с использованием древнекитайских счетов оказалось весьма прибыльным дело</div>
+            </div>
+          </div>
+          <div class="section-smi__item">
+            <div class="section-smi__item-wrapper">
+              <div class="section-smi__item-logo"><img src="./img/smi-logo/vedomosti.png" alt=""></div>
+              <div class="section-smi__item-text">Учить детей с использованием древнекитайских счетов оказалось весьма прибыльным дело</div>
+            </div>
+          </div>
+          <div class="section-smi__item">
+            <div class="section-smi__item-wrapper">
+              <div class="section-smi__item-logo"><img src="./img/smi-logo/one-chanel.png" alt=""></div>
+              <div class="section-smi__item-text">Мой ребенок — эрудит. Доброе утро. Фрагмент выпуска от 05.02.2020</div>
+            </div>
+          </div>
+          <div class="section-smi__item">
+            <div class="section-smi__item-wrapper">
+              <div class="section-smi__item-logo"><img src="./img/smi-logo/one-chanel.png" alt=""></div>
+              <div class="section-smi__item-text">Мой ребенок — эрудит. Доброе утро. Фрагмент выпуска от 05.02.2020</div>
+            </div>
+          </div>
+          <div class="section-smi__item _active">
+            <div class="section-smi__item-wrapper">
+              <div class="section-smi__item-info">
+                <div class="section-smi__item-logo"><img src="./img/smi-logo/russia.png" alt=""></div>
+                <div class="section-smi__item-text">«Удивительные люди». Ёсуман Исмонзода. Молниеносный счет в уме</div>
+              </div>
+              <div class="section-smi__item-more" href="#">
+                <div class="section-smi__item-wrapper">Читать статью<span class="ic-arrow"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer class="footer">
       <div class="container">
         <div class="footer__top">

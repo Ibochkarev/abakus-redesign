@@ -2,10 +2,12 @@ extends layouts/default
 include helpers/mixins
 
 block variables
-	- const title = "gulp-pug-starter"
+	- const title = "Online Abakus"
 
 block content
-
+	block section-smi
+		include ../blocks/modules/section-tariffs/section-tariffs
+		include ../blocks/modules/section-smi/section-smi
 block scripts
 	script(src="js/main.js")
 	script(src="js/vendor.js")
