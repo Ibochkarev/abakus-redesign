@@ -5,6 +5,14 @@
 
     &__wrapper {
         margin-top: rem(80);
+
+        @media (max-width: 991px) {
+            margin-top: rem(40);
+        }
+
+        @media (max-width: 574px) {
+            margin-top: rem(70);
+        }
     }
 
     &__item {
@@ -15,6 +23,14 @@
         text-align: center;
 
         &._hit {
+
+            @media (max-width: 574px) {
+                display: none;
+            }
+            .section-tariffs__item-headline {
+                color: #000000;
+                background: #faeb99;
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -25,14 +41,14 @@
                 transform: translateX(-50%);
                 background-image: url("../img/global/hit.svg");
             }
-            .section-tariffs__item-headline {
-                color: #000000;
-                background: #faeb99;
-            }
         }
 
         &-hit {
             height: 102px;
+
+            @media (max-width: 574px) {
+                display: none;
+            }
         }
 
         &-wrap {

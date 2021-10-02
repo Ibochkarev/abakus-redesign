@@ -1,0 +1,25 @@
+section.section-platform
+  .container
+    h2.section__title Занятия проходят с использованием интерактивной платформы Абакус
+      span.section__title-border.b_top
+      span.section__title-border.b_top-right
+      span.section__title-border.b_bottom
+      span.section__title-border.b_bottom-right
+
+    .section-platform__wrapper
+      video#video-platform.video-js.section-platform__full-video(controls preload="auto" autoplay="true" poster="./img/platform/cover.jpg" muted="true" data-setup="{}")
+        source(src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4")
+        source(src="//vjs.zencdn.net/v/oceans.webm" type="video/webm")
+        source(src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg")
+        p.vjs-no-js
+          | To view this video please enable JavaScript, and consider upgrading to a web browser that
+      .section-platform__info
+        .section-platform__info-item
+          .section-platform__info-item__title Преподаватель отслеживает
+            span  динамику обучения ученика.
+          .section-platform__info-item__image
+            img.img-fluid(src="./img/platform/cover-2.jpg", alt="")
+        .section-platform__info-item
+          .section-platform__info-item__image._orange
+            img.img-fluid(src="./img/platform/cover-3.jpg", alt="")
+      .section-platform__info__bo

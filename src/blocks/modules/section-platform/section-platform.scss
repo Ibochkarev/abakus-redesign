@@ -1,0 +1,58 @@
+.section-platform {
+    padding: rem(120) 0 rem(90);
+
+    &__full-video {
+        width: 100%;
+        height: rem(582);
+        overflow: hidden;
+        margin-bottom: rem(95);
+        border-radius: rem(18);
+
+        .vjs-poster {
+            background-size: cover;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: rem(70);
+
+        &-item {
+            @include size-lg(7);
+            @include size-md(7);
+            @include size-xs(12);
+
+            &:first-child {
+                @include size-lg(5);
+                @include size-md(5);
+                @include size-xs(12);
+            }
+
+            &__title {
+                margin-bottom: rem(35);
+                font-family: "Neometric Alt", sans-serif;
+                font-size: rem(25);
+                font-weight: 600;
+
+                span {
+                    color: #171663;
+                }
+            }
+
+            &__image {
+                img {
+                    border: rem(6) solid;
+                    border-radius: rem(13);
+                    border-color: #c3e6f5;
+                }
+                &._orange {
+                    img {
+                        border-color: #faeb99;
+                    }
+                }
+            }
+        }
+    }
+}

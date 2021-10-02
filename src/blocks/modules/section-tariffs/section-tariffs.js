@@ -10,6 +10,9 @@ const tarifs = new Swiper(".section-tariffs__wrapper", {
         360: {
             spaceBetween: 36,
         },
+        991: {
+            spaceBetween: 20,
+        },
     },
 });
 
