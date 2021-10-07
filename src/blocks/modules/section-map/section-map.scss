@@ -1,0 +1,115 @@
+.section-map {
+  padding: rem(120) 0 rem(60);
+
+  @media (max-width: 767px) {
+    padding: rem(70) 0 rem(30);
+  }
+
+  .section__title {
+    margin-bottom: rem(90);
+
+    @media (max-width: 767px) {
+      margin-bottom: rem(60);
+    }
+  }
+
+  &__wrapper {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  }
+
+  &__col {
+    @include size-lg(6);
+    @include size-md(6);
+    @include size-sm(12);
+    @include size-xs(12);
+  }
+
+  &__image {
+
+    @media (max-width: 767px) {
+      margin-bottom: rem(20);
+    }
+    img{
+      display: block;
+      margin: auto;
+    }
+  }
+
+  &__info {
+    &-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(12);
+      font-family: "Neometric Alt", sans-serif;
+      font-weight: 600;
+
+      @media (max-width: 991px) {
+        margin-bottom: rem(10);
+      }
+
+      @media (max-width: 767px) {
+        margin-bottom: rem(7);
+      }
+
+      &__num {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: rem(160);
+        margin-right: rem(12);
+
+        @media (max-width: 991px) {
+          width: rem(80);
+          margin-right: rem(15);
+        }
+
+        @media (max-width: 767px) {
+          width: rem(65);
+          margin-right: rem(10);
+        }
+
+        span {
+          display: block;
+          height: rem(68);
+          padding-right: rem(18);
+          padding-left: rem(18);
+          font-size: rem(28);
+          line-height: rem(68);
+          text-align: center;
+          color: #000;
+          background: #DFEFAD;
+          border-radius: rem(79);
+
+          @media (max-width: 991px) {
+            height: rem(40);
+            padding-right: rem(11);
+            padding-left: rem(11);
+            font-size: rem(16);
+            line-height: rem(40);
+          }
+
+          @media (max-width: 767px) {
+            height: rem(44);
+            line-height: rem(44);
+            width: 100%;
+          }
+        }
+      }
+
+      &__text {
+        font-size: rem(22);
+
+        @media (max-width: 991px) {
+          font-size: rem(18);
+        }
+
+        @media (max-width: 767px) {
+          font-size: rem(16);
+        }
+      }
+    }
+  }
+}

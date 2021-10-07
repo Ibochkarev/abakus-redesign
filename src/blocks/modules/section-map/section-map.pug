@@ -1,0 +1,33 @@
+section.section.section-map
+  .container
+    h2.section__title Международная сеть Абакус Центр
+      span.section__title-border.b_top
+      span.section__title-border.b_top-right
+      span.section__title-border.b_bottom
+      span.section__title-border.b_bottom-right
+    .section-map__wrapper
+      .section-map__col
+        .section-map__image
+          img.img-fluid(src="./img/map/map.svg", alt="")
+      .section-map__col
+        .section-map__info
+          +map-item({
+            num: "37",
+            text: "Стран, включая онлайн"
+          })
+          +map-item({
+            num: "457",
+            text: "Опытных педагогов"
+          })
+          +map-item({
+            num: "76",
+            text: "Призеров олимпиад РАМА"
+          })
+          +map-item({
+            num: "22 518",
+            text: "Учеников с 2015 года"
+          })
+          +map-item({
+            num: "204",
+            text: "Центра в 22 странах мира"
+          })
