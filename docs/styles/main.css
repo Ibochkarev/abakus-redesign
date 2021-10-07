@@ -1076,6 +1076,78 @@ a:hover {
   padding: 0 1.25rem;
 }
 
+.lesson-consist__1 {
+  padding: 4.375rem 0 11.25rem;
+  background: #DFEFAD;
+}
+
+.lesson-consist__2 {
+  padding: 9.375rem 0 3.75rem;
+  background: #C3E6F5;
+}
+
+.lesson-consist__2 .lesson-consist__title-icon {
+  top: -6.5625rem;
+  left: -2.5rem;
+}
+
+.lesson-consist__3 {
+  padding: 9.375rem 0 8rem;
+  background: #FAEB99;
+}
+
+.lesson-consist__3 .lesson-consist__title-icon {
+  top: -6.25rem;
+  left: -2.5rem;
+}
+
+.lesson-consist__headtitle {
+  margin-bottom: 3.75rem;
+  font-family: 'Neometric Alt';
+  font-size: 2.8125rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.lesson-consist__wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.lesson-consist__title {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.lesson-consist__title-icon {
+  z-index: 1;
+  position: absolute;
+  top: -80px;
+  left: 0;
+}
+
+.lesson-consist__title-icon img {
+  max-height: 140px;
+}
+
+.lesson-consist__title-text {
+  width: max-content;
+  padding: 0.9375rem 1.75rem;
+  font-family: 'Neometric Alt';
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 2.125rem;
+  background: #FFFFFF;
+  transform: rotate(-5.61deg);
+}
+
+.lesson-consist__text {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  max-width: 29.6875rem;
+}
+
 @media screen and (min-width: 20rem) {
   .footer__col {
     width: calc(100% - 1.875rem);
@@ -1096,6 +1168,10 @@ a:hover {
   .section-map__col {
     width: calc(100% - 1.875rem);
   }
+
+  .lesson-consist__col {
+    width: calc(100% - 1.875rem);
+  }
 }
 
 @media screen and (min-width: 36rem) {
@@ -1104,6 +1180,10 @@ a:hover {
   }
 
   .section-map__col {
+    width: calc(100% - 1.875rem);
+  }
+
+  .lesson-consist__col {
     width: calc(100% - 1.875rem);
   }
 }
@@ -1140,6 +1220,10 @@ a:hover {
   .section-map__col {
     width: calc(50% - 1.875rem);
   }
+
+  .lesson-consist__col {
+    width: calc(50% - 1.875rem);
+  }
 }
 
 @media screen and (min-width: 62rem) {
@@ -1172,6 +1256,10 @@ a:hover {
   }
 
   .section-map__col {
+    width: calc(50% - 1.875rem);
+  }
+
+  .lesson-consist__col {
     width: calc(50% - 1.875rem);
   }
 }
@@ -1308,6 +1396,14 @@ a:hover {
     height: 2.75rem;
     margin-right: 1.875rem;
   }
+
+  .lesson-consist__headtitle {
+    font-size: 1.875rem;
+  }
+
+  .lesson-consist__text {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1350,6 +1446,16 @@ a:hover {
 
   .section-map__info-item__text {
     font-size: 1rem;
+  }
+
+  .lesson-consist__headtitle {
+    margin-bottom: 1.875rem;
+    font-size: 1.5625rem;
+    text-align: left;
+  }
+
+  .lesson-consist__text {
+    font-size: 1.125rem;
   }
 }
 

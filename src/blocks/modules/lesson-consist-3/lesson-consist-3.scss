@@ -1,0 +1,98 @@
+.lesson-consist {
+  &__1 {
+    padding: rem(70) 0 rem(180);
+    background: #DFEFAD;
+  }
+
+  &__2 {
+    padding: rem(150) 0 rem(60);
+    background: #C3E6F5;
+
+    .lesson-consist__title-icon {
+      top: rem(-105);
+      left: rem(-40);
+    }
+  }
+
+  &__3 {
+    padding: rem(150) 0 rem(128);
+    background: #FAEB99;
+
+    .lesson-consist__title-icon {
+      top: rem(-100);
+      left: rem(-40);
+    }
+  }
+
+  &__headtitle {
+    margin-bottom: rem(60);
+    font-family: 'Neometric Alt';
+    font-size: rem(45);
+    font-weight: 600;
+    text-align: center;
+
+    @media (max-width: 991px) {
+      font-size: rem(30);
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: rem(30);
+      font-size: rem(25);
+      text-align: left;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    @include size-lg(6);
+    @include size-md(6);
+    @include size-sm(12);
+    @include size-xs(12);
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: rem(48);
+
+    &-icon {
+      z-index: 1;
+      position: absolute;
+      top: -80px;
+      left: 0;
+
+      img {
+        max-height: 140px;
+      }
+    }
+
+    &-text {
+      width: max-content;
+      padding: rem(15) rem(28);
+      font-family: 'Neometric Alt';
+      font-size: rem(28);
+      font-weight: 600;
+      line-height: rem(34);
+      background: #FFFFFF;
+      transform: rotate(-5.61deg);
+    }
+  }
+
+  &__text {
+    font-size: rem(18);
+    line-height: 1.4;
+    max-width: rem(475);
+
+    @media (max-width: 991px) {
+      font-size: rem(16);
+    }
+
+    @media (max-width: 767px) {
+      font-size: rem(18);
+    }
+  }
+}
