@@ -204,14 +204,35 @@ var tarifs = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__
     }
   }
 });
-modules.define("section-tariffs", ["i-bem-dom"], function (provide, bemDom) {
-  provide(bemDom.declBlock(this.name, {
-    onSetMod: {
-      js: {
-        inited: function inited() {}
-      }
-    }
-  }));
+
+/***/ }),
+
+/***/ "./src/blocks/modules/ticker-1/ticker-1.js":
+/*!*************************************************!*\
+  !*** ./src/blocks/modules/ticker-1/ticker-1.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/swiper-bundle */ "./node_modules/swiper/swiper-bundle.js");
+/* harmony import */ var swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__);
+
+document.querySelectorAll(".ticker .swiper-container").forEach(function (el) {
+  var swiper = new swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default.a(el, {
+    spaceBetween: 20,
+    centeredSlides: true,
+    speed: 7000,
+    autoplay: {
+      delay: 0
+    },
+    loop: true,
+    loopedSlides: 4,
+    slidesPerView: "auto",
+    allowTouchMove: false,
+    disableOnInteraction: false
+  });
 });
 
 /***/ }),
@@ -241,6 +262,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
 /* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_footer_footer__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _modules_section_tariffs_section_tariffs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/section-tariffs/section-tariffs */ "./src/blocks/modules/section-tariffs/section-tariffs.js");
+/* harmony import */ var _modules_ticker_1_ticker_1__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/ticker-1/ticker-1 */ "./src/blocks/modules/ticker-1/ticker-1.js");
+
 
 
 

@@ -16,16 +16,3 @@ const tarifs = new Swiper(".section-tariffs__wrapper", {
     },
 });
 
-modules.define("section-tariffs", ["i-bem-dom"], function (provide, bemDom) {
-
-    provide(bemDom.declBlock(this.name, {
-        onSetMod: {
-            js: {
-                inited: function() {
-
-                }
-            }
-        }
-    }));
-
-});
