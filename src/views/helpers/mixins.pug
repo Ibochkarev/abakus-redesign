@@ -3,3 +3,11 @@ mixin map-item(data)
     .section-map__info-item__num
       span=data.num
     .section-map__info-item__text=data.text
+
+mixin firstblock-item(data)
+  .firstblock__bottom-item
+    .firstblock__bottom-item__image
+      img(src=data.image, alt="")
+    .firstblock__bottom-item__info
+      .firstblock__bottom-item__title=data.title
+      .firstblock__bottom-item__text=data.text

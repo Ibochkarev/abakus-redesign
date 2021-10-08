@@ -1229,6 +1229,44 @@ a:hover {
   border-radius: 1.0625rem;
 }
 
+.firstblock {
+  padding: 3.4375rem 0 4.375rem;
+}
+
+.firstblock__bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.firstblock__bottom-item__image {
+  height: 7.5rem;
+  margin-bottom: 1rem;
+}
+
+.firstblock__bottom-item__image img {
+  width: auto;
+  height: 100%;
+}
+
+.firstblock__bottom-item__info {
+  max-width: 310px;
+}
+
+.firstblock__bottom-item__title {
+  margin-bottom: 0.875rem;
+  font-family: "Neometric Alt", sans-serif;
+  font-size: 1.5625rem;
+  font-weight: 600;
+  color: #171664;
+}
+
+.firstblock__bottom-item__text {
+  font-size: 1rem;
+  line-height: 1.1875rem;
+}
+
 @media screen and (min-width: 20rem) {
   .footer__col {
     width: calc(100% - 1.875rem);
@@ -1253,6 +1291,10 @@ a:hover {
   .lesson-consist__col {
     width: calc(100% - 1.875rem);
   }
+
+  .firstblock__bottom-item {
+    width: calc(100% - 1.875rem);
+  }
 }
 
 @media screen and (min-width: 36rem) {
@@ -1265,6 +1307,10 @@ a:hover {
   }
 
   .lesson-consist__col {
+    width: calc(100% - 1.875rem);
+  }
+
+  .firstblock__bottom-item {
     width: calc(100% - 1.875rem);
   }
 }
@@ -1305,6 +1351,10 @@ a:hover {
   .lesson-consist__col {
     width: calc(50% - 1.875rem);
   }
+
+  .firstblock__bottom-item {
+    width: calc(33.33333% - 1.875rem);
+  }
 }
 
 @media screen and (min-width: 62rem) {
@@ -1342,6 +1392,10 @@ a:hover {
 
   .lesson-consist__col {
     width: calc(50% - 1.875rem);
+  }
+
+  .firstblock__bottom-item {
+    width: calc(33.33333% - 1.875rem);
   }
 }
 
@@ -1544,6 +1598,20 @@ a:hover {
   .lesson-consist__carousel-item {
     max-width: 17.625rem;
   }
+
+  .firstblock__bottom-item__image {
+    height: 6.875rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .firstblock__bottom-item__title {
+    font-size: 1.125rem;
+  }
+
+  .firstblock__bottom-item__text {
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1635,6 +1703,23 @@ a:hover {
 
   .lesson-consist__infoblock-text {
     font-size: 1rem;
+  }
+
+  .firstblock__bottom-item:not(:last-child) {
+    margin-bottom: 1.875rem;
+  }
+
+  .firstblock__bottom-item__image {
+    height: 6.25rem;
+  }
+
+  .firstblock__bottom-item__title {
+    font-size: 1.375rem;
+  }
+
+  .firstblock__bottom-item__text {
+    font-size: 1rem;
+    line-height: 1.1875rem;
   }
 }
 
