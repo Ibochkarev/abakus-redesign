@@ -5,6 +5,48 @@
     padding: rem(30) 0 rem(60);
   }
 
+  &__title {
+    position: relative;
+    margin-bottom: rem(25);
+    font-family: "Neometric Alt", sans-serif;
+    font-size: rem(90);
+    font-weight: 600;
+    line-height: 1.2;
+
+    @media (max-width: 991px) {
+      font-size: rem(60);
+    }
+
+    @media (max-width: 797px) {
+      font-size: rem(34);
+      line-height: 1.4;
+    }
+
+    span {
+      padding: rem(5);
+      text-transform: uppercase;
+      color: #27A3DD;
+      border: rem(4) dashed #27A3DD;
+    }
+  }
+
+  ._star{
+    position: absolute;
+    top: -20%;
+    right: -3%;
+    display: block;
+    width: 290px;
+    height: 290px;
+    content: " ";
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../img/mainblock/star.png');
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  }
+
   &__buttons {
     display: flex;
     align-items: center;
@@ -30,8 +72,8 @@
     white-space: nowrap;
 
     @media (max-width: 574px) {
-      width: 100%;
       justify-content: center;
+      width: 100%;
     }
 
     img {

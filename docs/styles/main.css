@@ -1233,6 +1233,35 @@ a:hover {
   padding: 3.4375rem 0 4.375rem;
 }
 
+.firstblock__title {
+  position: relative;
+  margin-bottom: 1.5625rem;
+  font-family: "Neometric Alt", sans-serif;
+  font-size: 5.625rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.firstblock__title span {
+  padding: 0.3125rem;
+  text-transform: uppercase;
+  color: #27A3DD;
+  border: 0.25rem dashed #27A3DD;
+}
+
+.firstblock ._star {
+  position: absolute;
+  top: -20%;
+  right: -3%;
+  display: block;
+  width: 290px;
+  height: 290px;
+  content: " ";
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/mainblock/star.png");
+}
+
 .firstblock__buttons {
   display: flex;
   align-items: center;
@@ -1502,6 +1531,10 @@ a:hover {
     width: 6.25rem;
     height: 6.25rem;
   }
+
+  .firstblock ._star {
+    display: none;
+  }
 }
 
 @media (max-width: 991px) {
@@ -1677,6 +1710,10 @@ a:hover {
     max-width: 17.625rem;
   }
 
+  .firstblock__title {
+    font-size: 3.75rem;
+  }
+
   .firstblock__full-video {
     height: 16.25rem;
     margin-bottom: 2.1875rem;
@@ -1694,6 +1731,13 @@ a:hover {
   .firstblock__bottom-item__text {
     font-size: 0.875rem;
     line-height: 1.0625rem;
+  }
+}
+
+@media (max-width: 797px) {
+  .firstblock__title {
+    font-size: 2.125rem;
+    line-height: 1.4;
   }
 }
 
@@ -1872,8 +1916,8 @@ a:hover {
   }
 
   .firstblock__button {
-    width: 100%;
     justify-content: center;
+    width: 100%;
   }
 
   .firstblock .arrow-left {
