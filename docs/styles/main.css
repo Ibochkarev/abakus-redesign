@@ -1233,6 +1233,72 @@ a:hover {
   padding: 3.4375rem 0 4.375rem;
 }
 
+.firstblock__buttons {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.375rem;
+}
+
+.firstblock__button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 4.875rem;
+  margin-right: 0.625rem;
+  padding-right: 1.375rem;
+  padding-left: 1.375rem;
+  font-family: "Neometric Alt", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #fff;
+  background: #171664;
+  border: 0;
+  border-radius: 6.25rem;
+  transition: all 0.5s ease-in-out;
+  white-space: nowrap;
+}
+
+.firstblock__button img {
+  display: block;
+  width: auto;
+  height: 3.625rem;
+  margin-right: 0.3125rem;
+}
+
+.firstblock__button:hover {
+  opacity: 0.8;
+}
+
+.firstblock .arrow-left {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0.625rem;
+}
+
+.firstblock .arrow-left::after {
+  display: block;
+  width: 0.625rem;
+  height: 0.625rem;
+  margin: 0;
+  padding: 0;
+  transform: rotate(-135deg);
+  content: "";
+  border-top: 0.1875rem solid #171663;
+  border-right: 0.1875rem solid #171663;
+}
+
+.firstblock .arrow-left::before {
+  position: absolute;
+  top: 0.3125rem;
+  left: 0;
+  width: 100%;
+  height: 0.1875rem;
+  margin-left: -0.0625rem;
+  background: #171663;
+  content: " ";
+}
+
 .firstblock__full-video {
   overflow: hidden;
   width: 100%;
@@ -1803,6 +1869,15 @@ a:hover {
 
   .section-platform__info {
     margin-bottom: 2.5rem;
+  }
+
+  .firstblock__button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .firstblock .arrow-left {
+    display: none;
   }
 
   .firstblock__full-video {

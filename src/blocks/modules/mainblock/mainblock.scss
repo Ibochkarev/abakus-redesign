@@ -5,6 +5,81 @@
     padding: rem(30) 0 rem(60);
   }
 
+  &__buttons {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(22);
+  }
+
+  &__button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: rem(78);
+    margin-right: rem(10);
+    padding-right: rem(22);
+    padding-left: rem(22);
+    font-family: "Neometric Alt", sans-serif;
+    font-size: rem(18);
+    font-weight: 600;
+    color: #fff;
+    background: #171664;
+    border: 0;
+    border-radius: rem(100);
+    transition: all 0.5s ease-in-out;
+    white-space: nowrap;
+
+    @media (max-width: 574px) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    img {
+      display: block;
+      width: auto;
+      height: rem(58);
+      margin-right: rem(5);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .arrow-left {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: rem(10);
+
+    @media (max-width: 574px) {
+      display: none;
+    }
+
+    &::after {
+      display: block;
+      width: rem(10);
+      height: rem(10);
+      margin: 0;
+      padding: 0;
+      transform: rotate(-135deg);
+      content: "";
+      border-top: rem(3) solid #171663;
+      border-right: rem(3) solid #171663;
+    }
+
+    &::before {
+      position: absolute;
+      top: rem(5);
+      left: 0;
+      width: 100%;
+      height: rem(3);
+      margin-left: rem(-1);
+      background: #171663;
+      content: " ";
+    }
+  }
+
   &__full-video {
     overflow: hidden;
     width: 100%;
@@ -28,7 +103,7 @@
     }
 
     .vjs-poster {
-        background-size: cover;
+      background-size: cover;
     }
   }
 
@@ -45,7 +120,7 @@
       @include size-xs(12);
 
       @media (max-width: 767px) {
-        &:not(:last-child){
+        &:not(:last-child) {
           margin-bottom: rem(30);
         }
       }
