@@ -177,6 +177,38 @@
 
 /***/ }),
 
+/***/ "./src/blocks/modules/lesson-consist-3/lesson-consist-3.js":
+/*!*****************************************************************!*\
+  !*** ./src/blocks/modules/lesson-consist-3/lesson-consist-3.js ***!
+  \*****************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/swiper-bundle */ "./node_modules/swiper/swiper-bundle.js");
+/* harmony import */ var swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__);
+
+var lessonConsist = new swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default.a(".lesson-consist__carousel", {
+  grabCursor: true,
+  slidesPerView: "auto",
+  centeredSlides: true,
+  spaceBetween: 20,
+  loop: true,
+  breakpoints: {
+    360: {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      centeredSlides: true
+    },
+    991: {
+      spaceBetween: 50
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./src/blocks/modules/section-tariffs/section-tariffs.js":
 /*!***************************************************************!*\
   !*** ./src/blocks/modules/section-tariffs/section-tariffs.js ***!
@@ -263,6 +295,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_footer_footer__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _modules_section_tariffs_section_tariffs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/section-tariffs/section-tariffs */ "./src/blocks/modules/section-tariffs/section-tariffs.js");
 /* harmony import */ var _modules_ticker_1_ticker_1__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/ticker-1/ticker-1 */ "./src/blocks/modules/ticker-1/ticker-1.js");
+/* harmony import */ var _modules_lesson_consist_3_lesson_consist_3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! %modules%/lesson-consist-3/lesson-consist-3 */ "./src/blocks/modules/lesson-consist-3/lesson-consist-3.js");
+
 
 
 

@@ -1,13 +1,19 @@
-modules.define('lesson-consist-3', ['i-bem-dom'], function(provide, bemDom) {
+import Swiper from "swiper/swiper-bundle";
 
-provide(bemDom.declBlock(this.name, {
-    onSetMod: {
-        js: {
-            inited: function() {
-                
-            }
-        }
-    }
-}));
-
+const lessonConsist = new Swiper(".lesson-consist__carousel", {
+    grabCursor: true,
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 20,
+    loop: true,
+    breakpoints: {
+        360: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            centeredSlides: true,
+        },
+        991: {
+            spaceBetween: 50,
+        },
+    },
 });

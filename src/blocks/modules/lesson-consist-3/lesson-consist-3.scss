@@ -1,4 +1,6 @@
 .lesson-consist {
+  overflow: hidden;
+
   &__1 {
     padding: rem(70) 0 rem(180);
     background: #DFEFAD;
@@ -18,9 +20,31 @@
     padding: rem(150) 0 rem(128);
     background: #FAEB99;
 
-    .lesson-consist__title-icon {
-      top: rem(-100);
-      left: rem(-40);
+    @media (max-width: 991px) {
+      padding: rem(120) 0 rem(80);
+    }
+
+    @media (max-width: 767px) {
+      padding: rem(120) 0 rem(60);
+    }
+
+    .lesson-consist{
+      &__wrapper {
+        margin-bottom: rem(40);
+
+        @media (max-width: 991px) {
+          margin-bottom: rem(90);
+        }
+
+        @media (max-width: 767px) {
+          margin-bottom: rem(30);
+        }
+      }
+
+      &__title-icon {
+        top: rem(-100);
+        left: rem(-40);
+      }
     }
   }
 
@@ -32,11 +56,12 @@
     text-align: center;
 
     @media (max-width: 991px) {
+      margin-bottom: rem(90);
       font-size: rem(30);
     }
 
     @media (max-width: 767px) {
-      margin-bottom: rem(30);
+      margin-bottom: rem(90);
       font-size: rem(25);
       text-align: left;
     }
@@ -62,16 +87,25 @@
     &-icon {
       z-index: 1;
       position: absolute;
-      top: -80px;
+      top: rem(-80);
       left: 0;
 
+      @media (max-width: 991px) {
+        top: rem(-65) !important;
+        left: 0 !important;
+      }
+
       img {
-        max-height: 140px;
+        max-height: rem(140);
+
+        @media (max-width: 991px) {
+          max-height: rem(90);
+        }
       }
     }
 
     &-text {
-      width: max-content;
+      width: fit-content;
       padding: rem(15) rem(28);
       font-family: 'Neometric Alt';
       font-size: rem(28);
@@ -79,13 +113,23 @@
       line-height: rem(34);
       background: #FFFFFF;
       transform: rotate(-5.61deg);
+
+      @media (max-width: 991px) {
+        font-size: rem(18);
+        line-height: rem(22);
+      }
+
+      @media (max-width: 767px) {
+        font-size: rem(20);
+        line-height: rem(24);
+      }
     }
   }
 
   &__text {
+    max-width: rem(475);
     font-size: rem(18);
     line-height: 1.4;
-    max-width: rem(475);
 
     @media (max-width: 991px) {
       font-size: rem(16);
@@ -93,6 +137,53 @@
 
     @media (max-width: 767px) {
       font-size: rem(18);
+    }
+  }
+
+  &__infoblock {
+    position: relative;
+    padding: rem(45) rem(20);
+    background: #FFFFFF;
+
+    @media (max-width: 767px) {
+      margin-top: rem(70);
+    }
+
+    &::before {
+      position: absolute;
+      top: rem(-40);
+      right: rem(20);
+      width: rem(77);
+      height: rem(74);
+      content: " ";
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg width='108' height='108' viewBox='0 0 108 108' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M47.9221 95.6102C52.6439 95.6104 57.0829 93.7716 60.4217 90.4329C63.7604 87.0941 65.5992 82.6551 65.5992 77.9332L65.5994 38.5253C65.5994 32.6772 60.8415 27.9193 54.9928 27.9191C49.1444 27.9193 44.3866 32.6775 44.3867 38.5259L44.3867 64.4752C44.3867 66.4278 45.9695 68.0106 47.9221 68.0106C49.8746 68.0108 51.4575 66.4278 51.4575 64.4752L51.4575 38.5258C51.4572 36.5762 53.0435 34.9903 54.993 34.9901C56.9426 34.9901 58.5287 36.5762 58.5287 38.5255L58.5282 77.933C58.528 80.7661 57.4249 83.4295 55.4216 85.4328C53.4183 87.4361 50.7549 88.5392 47.922 88.5392C42.0736 88.5391 37.3156 83.7814 37.3152 77.9332L37.3157 34.9904C37.3161 25.243 45.2462 17.3132 54.993 17.3132C59.7147 17.3131 64.1539 19.1517 67.4926 22.4904C70.8314 25.8292 72.6702 30.2686 72.6702 34.9904L72.6705 77.933C72.6705 79.8856 74.2533 81.4684 76.2059 81.4684C78.1582 81.4684 79.7413 79.8856 79.7413 77.933L79.741 34.9904C79.7412 28.3798 77.1669 22.1649 72.4925 17.4906C67.8181 12.8162 61.6033 10.2419 54.9928 10.2422C48.169 10.2422 41.983 13.0167 37.5017 17.4989C33.0214 21.9799 30.2449 28.168 30.2448 34.9903L30.2446 77.9333C30.2449 87.6804 38.1749 95.6101 47.9221 95.6102Z' fill='%23E2CF67'/%3E%3C/svg%3E");
+    }
+
+    &-text {
+      font-size: rem(14);
+      line-height: 1.4;
+      // Todo - добавить 700 жирность
+
+      @media (max-width: 767px) {
+        font-size: rem(16);
+      }
+    }
+  }
+
+  &__carousel{
+    &-item {
+      max-width: rem(432);
+
+      @media (max-width: 991px) {
+        max-width: rem(282);
+      }
+
+      img {
+        border: rem(7) solid #E2CF67;
+        border-radius: rem(17);
+      }
     }
   }
 }

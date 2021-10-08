@@ -1076,6 +1076,10 @@ a:hover {
   padding: 0 1.25rem;
 }
 
+.lesson-consist {
+  overflow: hidden;
+}
+
 .lesson-consist__1 {
   padding: 4.375rem 0 11.25rem;
   background: #DFEFAD;
@@ -1094,6 +1098,10 @@ a:hover {
 .lesson-consist__3 {
   padding: 9.375rem 0 8rem;
   background: #FAEB99;
+}
+
+.lesson-consist__3 .lesson-consist__wrapper {
+  margin-bottom: 2.5rem;
 }
 
 .lesson-consist__3 .lesson-consist__title-icon {
@@ -1123,16 +1131,16 @@ a:hover {
 .lesson-consist__title-icon {
   z-index: 1;
   position: absolute;
-  top: -80px;
+  top: -5rem;
   left: 0;
 }
 
 .lesson-consist__title-icon img {
-  max-height: 140px;
+  max-height: 8.75rem;
 }
 
 .lesson-consist__title-text {
-  width: max-content;
+  width: fit-content;
   padding: 0.9375rem 1.75rem;
   font-family: 'Neometric Alt';
   font-size: 1.75rem;
@@ -1143,9 +1151,41 @@ a:hover {
 }
 
 .lesson-consist__text {
+  max-width: 29.6875rem;
   font-size: 1.125rem;
   line-height: 1.4;
-  max-width: 29.6875rem;
+}
+
+.lesson-consist__infoblock {
+  position: relative;
+  padding: 2.8125rem 1.25rem;
+  background: #FFFFFF;
+}
+
+.lesson-consist__infoblock::before {
+  position: absolute;
+  top: -2.5rem;
+  right: 1.25rem;
+  width: 4.8125rem;
+  height: 4.625rem;
+  content: " ";
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg width='108' height='108' viewBox='0 0 108 108' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M47.9221 95.6102C52.6439 95.6104 57.0829 93.7716 60.4217 90.4329C63.7604 87.0941 65.5992 82.6551 65.5992 77.9332L65.5994 38.5253C65.5994 32.6772 60.8415 27.9193 54.9928 27.9191C49.1444 27.9193 44.3866 32.6775 44.3867 38.5259L44.3867 64.4752C44.3867 66.4278 45.9695 68.0106 47.9221 68.0106C49.8746 68.0108 51.4575 66.4278 51.4575 64.4752L51.4575 38.5258C51.4572 36.5762 53.0435 34.9903 54.993 34.9901C56.9426 34.9901 58.5287 36.5762 58.5287 38.5255L58.5282 77.933C58.528 80.7661 57.4249 83.4295 55.4216 85.4328C53.4183 87.4361 50.7549 88.5392 47.922 88.5392C42.0736 88.5391 37.3156 83.7814 37.3152 77.9332L37.3157 34.9904C37.3161 25.243 45.2462 17.3132 54.993 17.3132C59.7147 17.3131 64.1539 19.1517 67.4926 22.4904C70.8314 25.8292 72.6702 30.2686 72.6702 34.9904L72.6705 77.933C72.6705 79.8856 74.2533 81.4684 76.2059 81.4684C78.1582 81.4684 79.7413 79.8856 79.7413 77.933L79.741 34.9904C79.7412 28.3798 77.1669 22.1649 72.4925 17.4906C67.8181 12.8162 61.6033 10.2419 54.9928 10.2422C48.169 10.2422 41.983 13.0167 37.5017 17.4989C33.0214 21.9799 30.2449 28.168 30.2448 34.9903L30.2446 77.9333C30.2449 87.6804 38.1749 95.6101 47.9221 95.6102Z' fill='%23E2CF67'/%3E%3C/svg%3E");
+}
+
+.lesson-consist__infoblock-text {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.lesson-consist__carousel-item {
+  max-width: 27rem;
+}
+
+.lesson-consist__carousel-item img {
+  border: 0.4375rem solid #E2CF67;
+  border-radius: 1.0625rem;
 }
 
 @media screen and (min-width: 20rem) {
@@ -1397,12 +1437,39 @@ a:hover {
     margin-right: 1.875rem;
   }
 
+  .lesson-consist__3 {
+    padding: 7.5rem 0 5rem;
+  }
+
+  .lesson-consist__3 .lesson-consist__wrapper {
+    margin-bottom: 5.625rem;
+  }
+
   .lesson-consist__headtitle {
+    margin-bottom: 5.625rem;
     font-size: 1.875rem;
+  }
+
+  .lesson-consist__title-icon {
+    top: -4.0625rem !important;
+    left: 0 !important;
+  }
+
+  .lesson-consist__title-icon img {
+    max-height: 5.625rem;
+  }
+
+  .lesson-consist__title-text {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
   }
 
   .lesson-consist__text {
     font-size: 1rem;
+  }
+
+  .lesson-consist__carousel-item {
+    max-width: 17.625rem;
   }
 }
 
@@ -1448,14 +1515,35 @@ a:hover {
     font-size: 1rem;
   }
 
-  .lesson-consist__headtitle {
+  .lesson-consist__3 {
+    padding: 7.5rem 0 3.75rem;
+  }
+
+  .lesson-consist__3 .lesson-consist__wrapper {
     margin-bottom: 1.875rem;
+  }
+
+  .lesson-consist__headtitle {
+    margin-bottom: 5.625rem;
     font-size: 1.5625rem;
     text-align: left;
   }
 
+  .lesson-consist__title-text {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
   .lesson-consist__text {
     font-size: 1.125rem;
+  }
+
+  .lesson-consist__infoblock {
+    margin-top: 4.375rem;
+  }
+
+  .lesson-consist__infoblock-text {
+    font-size: 1rem;
   }
 }
 
