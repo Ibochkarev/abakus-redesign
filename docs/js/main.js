@@ -209,6 +209,52 @@ var lessonConsist = new swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___defaul
 
 /***/ }),
 
+/***/ "./src/blocks/modules/modals/modals.js":
+/*!*********************************************!*\
+  !*** ./src/blocks/modules/modals/modals.js ***!
+  \*********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var micromodal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! micromodal */ "./node_modules/micromodal/dist/micromodal.es.js");
+// https://micromodal.vercel.app/
+
+document.addEventListener("DOMContentLoaded", function () {
+  micromodal__WEBPACK_IMPORTED_MODULE_0__["default"].init({
+    awaitCloseAnimation: true,
+    // set to false, to remove close animation
+    onShow: function onShow(modal) {
+      console.log("micromodal open");
+    },
+    onClose: function onClose(modal) {
+      console.log("micromodal close");
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./src/blocks/modules/reviews/reviews.js":
+/*!***********************************************!*\
+  !*** ./src/blocks/modules/reviews/reviews.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+modules.define('reviews', ['i-bem-dom'], function (provide, bemDom) {
+  provide(bemDom.declBlock(this.name, {
+    onSetMod: {
+      js: {
+        inited: function inited() {}
+      }
+    }
+  }));
+});
+
+/***/ }),
+
 /***/ "./src/blocks/modules/section-tariffs/section-tariffs.js":
 /*!***************************************************************!*\
   !*** ./src/blocks/modules/section-tariffs/section-tariffs.js ***!
@@ -235,6 +281,25 @@ var tarifs = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__
       spaceBetween: 20
     }
   }
+});
+
+/***/ }),
+
+/***/ "./src/blocks/modules/teachers/teachers.js":
+/*!*************************************************!*\
+  !*** ./src/blocks/modules/teachers/teachers.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+modules.define('teachers', ['i-bem-dom'], function (provide, bemDom) {
+  provide(bemDom.declBlock(this.name, {
+    onSetMod: {
+      js: {
+        inited: function inited() {}
+      }
+    }
+  }));
 });
 
 /***/ }),
@@ -296,6 +361,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_section_tariffs_section_tariffs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/section-tariffs/section-tariffs */ "./src/blocks/modules/section-tariffs/section-tariffs.js");
 /* harmony import */ var _modules_ticker_1_ticker_1__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/ticker-1/ticker-1 */ "./src/blocks/modules/ticker-1/ticker-1.js");
 /* harmony import */ var _modules_lesson_consist_3_lesson_consist_3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! %modules%/lesson-consist-3/lesson-consist-3 */ "./src/blocks/modules/lesson-consist-3/lesson-consist-3.js");
+/* harmony import */ var _modules_modals_modals__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/modals/modals */ "./src/blocks/modules/modals/modals.js");
+/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/reviews/reviews */ "./src/blocks/modules/reviews/reviews.js");
+/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/teachers/teachers */ "./src/blocks/modules/teachers/teachers.js");
+/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
 
 
 
