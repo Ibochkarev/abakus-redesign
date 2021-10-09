@@ -1931,6 +1931,11 @@ a:hover {
     font-size: 0.875rem;
     line-height: 1.0625rem;
   }
+
+  .modal__close {
+    top: 1.375rem;
+    right: 1.5625rem;
+  }
 }
 
 @media (max-width: 797px) {
