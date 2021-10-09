@@ -424,15 +424,26 @@
       <div class="modal__overlay" tabindex="-1" data-micromodal-close>
         <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-form-title">
           <header class="modal__header">
-            <h2 class="modal__title" id="modal-form-title">Micromodal</h2>
-            <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+            <h2 class="modal__title" id="modal-form-title">Оставить заявку</h2>
           </header>
-          <main class="modal__content" id="modal-form-content">
-            <p>Try hitting the<code>tab</code>key and notice how the focus stays within the modal itself. Also,<code>esc</code>to close modal.</p>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+          <main class="modal__content">
+            <label class="modal__form-label" for="name">
+              <input class="modal__form-input" id="name" type="text" name="name" placeholder="Имя">
+            </label>
+            <label class="modal__form-label" for="name">
+              <input class="modal__form-input" id="email" type="email" name="email" placeholder="Электронная почта">
+            </label>
+            <label class="modal__form-label" for="phone">
+              <input class="modal__form-input" id="name" type="tel" name="phone" placeholder="Телефон">
+            </label>
           </main>
           <footer class="modal__footer">
-            <button class="modal__btn modal__btn-primary">Continue</button>
-            <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+            <button class="modal__btn" type="submit">Отправить</button>
+            <div class="modal__legal">
+              Нажимая кнопку, вы соглашаетесь
+              <a href="#">на обработку персональных данных</a>
+            </div>
           </footer>
         </div>
       </div>
