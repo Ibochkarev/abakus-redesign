@@ -6,3 +6,4 @@ import "%modules%/lesson-consist-3/lesson-consist-3";
 import "%modules%/modals/modals";
 import "%modules%/reviews/reviews";
 import "%modules%/teachers/teachers";
+import "%modules%/section-smi/section-smi";

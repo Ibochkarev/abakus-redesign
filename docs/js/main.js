@@ -262,6 +262,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/section-smi/section-smi.js":
+/*!*******************************************************!*\
+  !*** ./src/blocks/modules/section-smi/section-smi.js ***!
+  \*******************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/swiper/swiper-bundle */ "./node_modules/swiper/swiper-bundle.js");
+/* harmony import */ var _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__);
+
+document.addEventListener("DOMContentLoaded", function () {
+  var breakpoint = window.matchMedia("(min-width: 768px)");
+  var mySwiper;
+
+  var breakpointChecker = function breakpointChecker() {
+    // if larger viewport and multi-row layout needed
+    if (breakpoint.matches === true) {
+      // clean up old instances and inline styles when available
+      if (mySwiper !== undefined) mySwiper.destroy(true, true); // or/and do nothing
+
+      return; // else if a small viewport and single column layout needed
+    } else if (breakpoint.matches === false) {
+      // fire small viewport version of swiper
+      return enableSwiper();
+    }
+  };
+
+  var enableSwiper = function enableSwiper() {
+    mySwiper = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default.a(".section-smi .swiper-wrapper", {
+      loop: true,
+      slidesPerView: "auto",
+      centeredSlides: true,
+      a11y: true,
+      keyboardControl: true,
+      grabCursor: true,
+      // pagination
+      pagination: ".swiper-pagination",
+      paginationClickable: true
+    });
+  }; // keep an eye on viewport size changes
+
+
+  breakpoint.addListener(breakpointChecker); // kickstart
+
+  breakpointChecker();
+});
+
+/***/ }),
+
 /***/ "./src/blocks/modules/section-tariffs/section-tariffs.js":
 /*!***************************************************************!*\
   !*** ./src/blocks/modules/section-tariffs/section-tariffs.js ***!
@@ -372,6 +423,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/reviews/reviews */ "./src/blocks/modules/reviews/reviews.js");
 /* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/teachers/teachers */ "./src/blocks/modules/teachers/teachers.js");
 /* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _modules_section_smi_section_smi__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/section-smi/section-smi */ "./src/blocks/modules/section-smi/section-smi.js");
+
 
 
 

@@ -11,3 +11,16 @@ mixin firstblock-item(data)
     .firstblock__bottom-item__info
       .firstblock__bottom-item__title=data.title
       .firstblock__bottom-item__text=data.text
+
+mixin smi-item(data)
+  a.section-smi__item.section-smi__item--text.swiper-slide(href="#" target="_blank")
+    .section-smi__item-wrapper
+      .section-smi__item-info
+        .section-smi__item-logo
+          img.img-fluid(src=data.image, alt="")
+        .section-smi__item-text=data.text
+    .section-smi__item-more
+      .section-smi__item-more__wrapper
+        | Читать статью
+        <!-- Смотреть видео -->
+        span.ic-arrow

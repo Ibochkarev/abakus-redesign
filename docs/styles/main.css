@@ -723,36 +723,24 @@ a:hover {
 
 .section-smi__wrapper {
   display: flex;
-  flex-wrap: wrap;
   align-items: stretch;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .section-smi__item {
+  overflow: hidden;
   cursor: pointer;
+  position: relative;
   display: flex;
   align-items: center;
+  height: auto;
   min-height: 10.9375rem;
   margin-bottom: 1.25rem;
+  color: #000;
   background: #c3e6f5;
   border-radius: 11px;
   transition: all 0.5s ease-in-out;
-}
-
-.section-smi__item:hover {
-  background: #dfefad;
-}
-
-.section-smi__item:hover .section-smi__item-info {
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.section-smi__item:hover .section-smi__item-more {
-  display: flex;
-  opacity: 1;
-  visibility: visible;
 }
 
 .section-smi__item-wrapper {
@@ -767,17 +755,12 @@ a:hover {
 }
 
 .section-smi__item-logo {
-  flex: none;
-  width: 110px;
-  height: 3.3125rem;
   margin-right: 1.875rem;
+  flex: none;
 }
 
 .section-smi__item-logo img {
   display: block;
-  width: auto;
-  max-width: 100%;
-  height: 100%;
   margin: auto;
 }
 
@@ -787,10 +770,31 @@ a:hover {
 }
 
 .section-smi__item-more {
-  display: none;
-  background: #dfefad;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #000;
   opacity: 0;
-  visibility: hidden;
+  transition: .5s ease;
+  background-color: #dfefad;
+}
+
+.section-smi__item-more__wrapper {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-family: "Neometric Alt", sans-serif;
+  font-size: 1.5625rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+  transform: translateY(-50%);
 }
 
 .section-tariffs {
@@ -1586,10 +1590,6 @@ a:hover {
     width: calc(100% - 1.875rem);
   }
 
-  .section-smi__item {
-    width: calc(100% - 1.875rem);
-  }
-
   .section-map__col {
     width: calc(100% - 1.875rem);
   }
@@ -1711,6 +1711,12 @@ a:hover {
   }
 }
 
+@media (min-width: 1180px) {
+  .section-smi__item:hover .section-smi__item-more {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 1200px) {
   .lesson-consist__imageblock__1 {
     max-width: 18.125rem;
@@ -1732,6 +1738,35 @@ a:hover {
   }
 
   .firstblock ._star {
+    display: none;
+  }
+}
+
+@media (max-width: 1179px) {
+  .section-smi__item-wrapper {
+    padding: 2.8125rem 1.5625rem;
+  }
+
+  .section-smi__item-info {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .section-smi__item-logo {
+    margin-right: 0;
+  }
+
+  .section-smi__item-logo img {
+    max-height: 2.3125rem;
+    margin: 0 0 1.125rem 0;
+  }
+
+  .section-smi__item-text {
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+  }
+
+  .section-smi__item-more {
     display: none;
   }
 }
@@ -1783,23 +1818,6 @@ a:hover {
 
   .footer__social {
     margin-bottom: 3rem;
-  }
-
-  .section-smi__item-wrapper {
-    flex-direction: column;
-    padding: 2.0625rem 1.875rem 2.5rem;
-  }
-
-  .section-smi__item-info {
-    flex-direction: column;
-  }
-
-  .section-smi__item-logo img {
-    max-height: 2.1875rem;
-  }
-
-  .section-smi__item-more {
-    flex-direction: column;
   }
 
   .section-tariffs__wrapper {

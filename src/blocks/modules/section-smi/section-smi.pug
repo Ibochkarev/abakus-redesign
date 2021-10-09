@@ -5,54 +5,41 @@ section.section.section-smi
       span.section__title-border.b_top-right
       span.section__title-border.b_bottom
       span.section__title-border.b_bottom-right
-    .section-smi__wrapper
-      .section-smi__item
-        .section-smi__item-wrapper
-          .section-smi__item-logo
-            img(src="./img/smi-logo/vedomosti.png", alt="")
-          .section-smi__item-text Учить детей с использованием древнекитайских счетов оказалось весьма прибыльным дело
-      .section-smi__item
-        .section-smi__item-wrapper
-          .section-smi__item-logo
-            img(src="./img/smi-logo/one-chanel.png", alt="")
-          .section-smi__item-text Мой ребенок — эрудит. Доброе утро. Фрагмент выпуска от 05.02.2020
-      .section-smi__item
-        .section-smi__item-wrapper
-          .section-smi__item-logo
-            img(src="./img/smi-logo/russia.png", alt="")
-          .section-smi__item-text «Удивительные люди». Ёсуман Исмонзода. Молниеносный счет в уме
-      .section-smi__item
-        .section-smi__item-wrapper
-          .section-smi__item-logo
-            img(src="./img/smi-logo/russia.png", alt="")
-          .section-smi__item-text «Удивительные люди». Ёсуман Исмонзода. Молниеносный счет в уме
-      .section-smi__item
-        .section-smi__item-wrapper
-          .section-smi__item-logo
-            img(src="./img/smi-logo/vedomosti.png", alt="")
-          .section-smi__item-text Учить детей с использованием древнекитайских счетов оказалось весьма прибыльным дело
-      .section-smi__item
-        .section-smi__item-wrapper
-          .section-smi__item-logo
-            img(src="./img/smi-logo/vedomosti.png", alt="")
-          .section-smi__item-text Учить детей с использованием древнекитайских счетов оказалось весьма прибыльным дело
-      .section-smi__item
-        .section-smi__item-wrapper
-          .section-smi__item-logo
-            img(src="./img/smi-logo/one-chanel.png", alt="")
-          .section-smi__item-text Мой ребенок — эрудит. Доброе утро. Фрагмент выпуска от 05.02.2020
-      .section-smi__item
-        .section-smi__item-wrapper
-          .section-smi__item-logo
-            img(src="./img/smi-logo/one-chanel.png", alt="")
-          .section-smi__item-text Мой ребенок — эрудит. Доброе утро. Фрагмент выпуска от 05.02.2020
-      .section-smi__item._active
-        .section-smi__item-wrapper
-          .section-smi__item-info
-            .section-smi__item-logo
-              img(src="./img/smi-logo/russia.png", alt="")
-            .section-smi__item-text «Удивительные люди». Ёсуман Исмонзода. Молниеносный счет в уме
-          .section-smi__item-more(href="#")
-            .section-smi__item-wrapper
-              | Читать статью
-              span.ic-arrow
+    .section-smi__wrapper.swiper-wrapper
+      +smi-item({
+        image: "./img/smi-logo/vedomosti.png",
+        text: "Учить детей с использованием древнекитайских счетов оказалось весьма прибыльным дело"
+      })
+      +smi-item({
+        image: "./img/smi-logo/vedomosti.png",
+        text: "Мой ребенок — эрудит. Доброе утро. Фрагмент выпуска от 05.02.2020"
+      })
+      +smi-item({
+        image: "./img/smi-logo/vedomosti.png",
+        text: "«Удивительные люди». Ёсуман Исмонзода. Молниеносный счет в уме"
+      })
+      +smi-item({
+        image: "./img/smi-logo/vedomosti.png",
+        text: "«Удивительные люди». Ёсуман Исмонзода. Молниеносный счет в уме"
+      })
+      +smi-item({
+        image: "./img/smi-logo/vedomosti.png",
+        text: "«Удивительные люди». Ёсуман Исмонзода. Молниеносный счет в уме"
+      })
+      +smi-item({
+        image: "./img/smi-logo/vedomosti.png",
+        text: "Учить детей с использованием древнекитайских счетов оказалось весьма прибыльным дело"
+      })
+      +smi-item({
+        image: "./img/smi-logo/vedomosti.png",
+        text: "Учить детей с использованием древнекитайских счетов оказалось весьма прибыльным дело"
+      })
+      +smi-item({
+        image: "./img/smi-logo/one-chanel.png",
+        text: "Мой ребенок — эрудит. Доброе утро. Фрагмент выпуска от 05.02.2020"
+      })
+      +smi-item({
+        image: "./img/smi-logo/one-chanel.png",
+        text: "Мой ребенок — эрудит. Доброе утро. Фрагмент выпуска от 05.02.2020"
+      })
+
