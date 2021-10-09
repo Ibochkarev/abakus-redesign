@@ -273,43 +273,42 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/swiper/swiper-bundle */ "./node_modules/swiper/swiper-bundle.js");
 /* harmony import */ var _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__);
+ // Todo не срабатывает проверка https://codepen.io/aaronkahlhamer/pen/GveaXP
 
-document.addEventListener("DOMContentLoaded", function () {
-  var breakpoint = window.matchMedia("(min-width: 768px)");
-  var mySwiper;
+var breakpoint = window.matchMedia("(min-width: 768px)");
+var mySwiper;
 
-  var breakpointChecker = function breakpointChecker() {
-    // if larger viewport and multi-row layout needed
-    if (breakpoint.matches === true) {
-      // clean up old instances and inline styles when available
-      if (mySwiper !== undefined) mySwiper.destroy(true, true); // or/and do nothing
+var breakpointChecker = function breakpointChecker() {
+  // if larger viewport and multi-row layout needed
+  if (breakpoint.matches === true) {
+    // clean up old instances and inline styles when available
+    if (mySwiper !== undefined) mySwiper.destroy(true, true); // or/and do nothing
 
-      return; // else if a small viewport and single column layout needed
-    } else if (breakpoint.matches === false) {
-      // fire small viewport version of swiper
-      return enableSwiper();
-    }
-  };
+    return; // else if a small viewport and single column layout needed
+  } else if (breakpoint.matches === false) {
+    // fire small viewport version of swiper
+    return enableSwiper();
+  }
+};
 
-  var enableSwiper = function enableSwiper() {
-    mySwiper = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default.a(".section-smi .swiper-wrapper", {
-      loop: true,
-      slidesPerView: "auto",
-      centeredSlides: true,
-      a11y: true,
-      keyboardControl: true,
-      grabCursor: true,
-      // pagination
-      pagination: ".swiper-pagination",
-      paginationClickable: true
-    });
-  }; // keep an eye on viewport size changes
+var enableSwiper = function enableSwiper() {
+  mySwiper = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default.a(".section-smi .swiper-wrapper", {
+    loop: true,
+    slidesPerView: "auto",
+    centeredSlides: true,
+    a11y: true,
+    keyboardControl: true,
+    grabCursor: true,
+    // pagination
+    pagination: ".swiper-pagination",
+    paginationClickable: true
+  });
+}; // keep an eye on viewport size changes
 
 
-  breakpoint.addListener(breakpointChecker); // kickstart
+breakpoint.addListener(breakpointChecker); // kickstart
 
-  breakpointChecker();
-});
+breakpointChecker();
 
 /***/ }),
 
