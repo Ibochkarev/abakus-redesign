@@ -72,9 +72,32 @@
     transition: all 0.5s ease-in-out;
     white-space: nowrap;
 
+    &.elem-fixed {
+      position: fixed;
+      top: 24px;
+      z-index: 999;
+      animation: show 1s;
+
+      @media (max-width: 574px) {
+        width:  calc(100% - 30px);
+        left: 50%;
+        transform: translate(-50%);
+      }
+
+      @keyframes show {
+        0%{
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+
     @media (max-width: 574px) {
       justify-content: center;
-      width: 100%;
+      width:  100%;
     }
 
     img {
@@ -94,8 +117,16 @@
     display: flex;
     justify-content: right;
 
+    &.hide-elem {
+      display: none;
+    }
+
     @media (max-width: 574px) {
       display: none;
+
+      &.hide-elem {
+        display: none;
+      }
     }
   }
 

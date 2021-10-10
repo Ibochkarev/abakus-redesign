@@ -209,6 +209,38 @@ var lessonConsist = new swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___defaul
 
 /***/ }),
 
+/***/ "./src/blocks/modules/mainblock/mainblock.js":
+/*!***************************************************!*\
+  !*** ./src/blocks/modules/mainblock/mainblock.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var $firstblockButton = document.querySelector('.firstblock__button');
+var $arrowLeftWrap = document.querySelector('.arrow-left-wrap');
+
+if ($firstblockButton) {
+  var addFixedElemOnWindow = function addFixedElemOnWindow(positionElem, elem) {
+    var positionWindow = window.pageYOffset;
+
+    if (positionElem <= positionWindow) {
+      elem.classList.add('elem-fixed');
+      $arrowLeftWrap.classList.add('hide-elem');
+    } else {
+      elem.classList.remove('elem-fixed');
+      $arrowLeftWrap.classList.remove('hide-elem');
+    }
+  };
+
+  var elemTop = window.pageYOffset + $firstblockButton.getBoundingClientRect().top;
+  addFixedElemOnWindow(elemTop, $firstblockButton);
+  window.addEventListener('scroll', function () {
+    addFixedElemOnWindow(elemTop, $firstblockButton);
+  });
+}
+
+/***/ }),
+
 /***/ "./src/blocks/modules/modals/modals.js":
 /*!*********************************************!*\
   !*** ./src/blocks/modules/modals/modals.js ***!
@@ -351,15 +383,7 @@ var tarifs = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-modules.define('teachers', ['i-bem-dom'], function (provide, bemDom) {
-  provide(bemDom.declBlock(this.name, {
-    onSetMod: {
-      js: {
-        inited: function inited() {}
-      }
-    }
-  }));
-});
+
 
 /***/ }),
 
@@ -421,10 +445,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_ticker_1_ticker_1__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/ticker-1/ticker-1 */ "./src/blocks/modules/ticker-1/ticker-1.js");
 /* harmony import */ var _modules_lesson_consist_3_lesson_consist_3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! %modules%/lesson-consist-3/lesson-consist-3 */ "./src/blocks/modules/lesson-consist-3/lesson-consist-3.js");
 /* harmony import */ var _modules_modals_modals__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/modals/modals */ "./src/blocks/modules/modals/modals.js");
-/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/reviews/reviews */ "./src/blocks/modules/reviews/reviews.js");
-/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/teachers/teachers */ "./src/blocks/modules/teachers/teachers.js");
-/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _modules_section_smi_section_smi__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/section-smi/section-smi */ "./src/blocks/modules/section-smi/section-smi.js");
+/* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/mainblock/mainblock.js */ "./src/blocks/modules/mainblock/mainblock.js");
+/* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/reviews/reviews */ "./src/blocks/modules/reviews/reviews.js");
+/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/teachers/teachers */ "./src/blocks/modules/teachers/teachers.js");
+/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _modules_section_smi_section_smi__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/section-smi/section-smi */ "./src/blocks/modules/section-smi/section-smi.js");
+
 
 
 

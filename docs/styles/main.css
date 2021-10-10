@@ -1292,6 +1292,23 @@ a:hover {
   white-space: nowrap;
 }
 
+.firstblock__button.elem-fixed {
+  position: fixed;
+  top: 24px;
+  z-index: 999;
+  animation: show 1s;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .firstblock__button img {
   display: block;
   width: auto;
@@ -1307,6 +1324,10 @@ a:hover {
   width: 72%;
   display: flex;
   justify-content: right;
+}
+
+.firstblock .arrow-left-wrap.hide-elem {
+  display: none;
 }
 
 .firstblock .arrow-left {
@@ -2208,12 +2229,22 @@ a:hover {
     margin-bottom: 2.5rem;
   }
 
+  .firstblock__button.elem-fixed {
+    width: calc(100% - 30px);
+    left: 50%;
+    transform: translate(-50%);
+  }
+
   .firstblock__button {
     justify-content: center;
     width: 100%;
   }
 
   .firstblock .arrow-left-wrap {
+    display: none;
+  }
+
+  .firstblock .arrow-left-wrap.hide-elem {
     display: none;
   }
 

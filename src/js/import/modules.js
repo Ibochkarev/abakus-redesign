@@ -4,6 +4,7 @@ import "%modules%/section-tariffs/section-tariffs";
 import "%modules%/ticker-1/ticker-1";
 import "%modules%/lesson-consist-3/lesson-consist-3";
 import "%modules%/modals/modals";
+import "%modules%/mainblock/mainblock.js";
 import "%modules%/reviews/reviews";
 import "%modules%/teachers/teachers";
 import "%modules%/section-smi/section-smi";
