@@ -597,6 +597,49 @@ a:hover {
   padding: 1.5625rem 0;
 }
 
+.header__bottom-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__menu-close {
+  display: none;
+}
+
+.header__menu._active {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 22.5rem;
+  padding: 5.4375rem 3.125rem 2.5rem;
+  overflow-y: auto;
+  background-color: #C3E6F5;
+}
+
+.header__menu._active .header__menu-close {
+  cursor: pointer;
+  position: absolute;
+  top: 2.75rem;
+  right: 2.5rem;
+  display: block;
+  content: " ";
+}
+
+.header__menu-button {
+  cursor: pointer;
+  border: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: transparent;
+}
+
+.header__menu-button:hover {
+  opacity: 0.8;
+}
+
 .footer {
   box-sizing: border-box;
   width: 100%;
@@ -1690,18 +1733,46 @@ a:hover {
 
 .section-reviews__wrapper {
   display: flex;
-  justify-content: space-between;
+  margin: 0 -1%;
   padding-top: 1.875rem;
   flex-wrap: wrap;
 }
 
 .section-reviews__item {
-  position: relative;
-  width: 24%;
-  margin-bottom: 1.25rem;
-  padding: 2rem 2.5rem 5rem 2.5rem;
+  width: 31%;
+  height: auto;
+  max-width: 31%;
+  margin: 1%;
   border: 0.4375rem solid #C3E6F5;
   border-radius: 1.4375rem;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.section-reviews__item--text {
+  padding: 2rem 2.5rem 5rem 2.5rem;
+}
+
+.section-reviews__item--text.hide-elem {
+  display: none;
+}
+
+.section-reviews__item--wrap-video {
+  background-color: #0b2530;
+  border-radius: 1.125rem;
+  height: 100%;
+  min-height: 20rem;
+}
+
+.section-reviews__item--wrap-video video {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.125rem;
+  object-fit: cover;
+}
+
+.section-reviews__item--wrap-video.hide-elem {
+  display: none;
 }
 
 .section-reviews__author {
@@ -1789,8 +1860,8 @@ a:hover {
 }
 
 .section-reviews__more-btn:active {
-  background: var(--lightblue-color);
   color: var(--black-color);
+  background: var(--lightblue-color);
 }
 
 @media screen and (min-width: 20rem) {
@@ -1927,6 +1998,38 @@ a:hover {
   }
 }
 
+@media (min-width: 992px) {
+  .header__menu-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__menu-list .header__menu-item:not(:last-child) {
+    margin-right: 2.6875rem;
+  }
+
+  .header__menu-list .header__menu-item ul {
+    display: none;
+  }
+
+  .header__menu-list .header__menu-link {
+    font-family: 'Neometric Alt', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black-color);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .header__menu-list .header__menu-link:hover {
+    color: var(--lightblue-color);
+  }
+
+  .header__menu-button {
+    display: none;
+  }
+}
+
 @media (min-width: 1180px) {
   .section-smi__item:hover .section-smi__item-more {
     opacity: 1;
@@ -1955,6 +2058,12 @@ a:hover {
 
   .firstblock ._star {
     display: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .section-reviews__item--text {
+    padding: 1.5rem 1.5rem 5rem 1.5rem;
   }
 }
 
@@ -1987,9 +2096,9 @@ a:hover {
   }
 
   .section-reviews__item {
-    width: 26%;
-    margin-bottom: 1rem;
-    padding: 1.5rem 1.5rem 5rem 1.5rem;
+    margin: 1%;
+    width: 48%;
+    max-width: 48%;
   }
 
   .section-reviews__insta {
@@ -2010,6 +2119,10 @@ a:hover {
   }
 
   .header__top {
+    display: none;
+  }
+
+  .header__menu {
     display: none;
   }
 
@@ -2194,11 +2307,6 @@ a:hover {
     top: 1.375rem;
     right: 1.5625rem;
   }
-
-  .section-reviews__item {
-    width: 40%;
-    margin-bottom: 0.75rem;
-  }
 }
 
 @media (max-width: 797px) {
@@ -2212,6 +2320,10 @@ a:hover {
   .firstblock {
     padding: 1.875rem 0 3.75rem;
   }
+
+  .section-reviews__wrapper {
+    margin: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2219,6 +2331,10 @@ a:hover {
     margin: 0 auto 1.875rem;
     padding: 0.625rem 1.5625rem;
     font-size: 1.5625rem;
+  }
+
+  .header__logo img {
+    height: 3.125rem;
   }
 
   .footer__copyrite {
@@ -2358,7 +2474,9 @@ a:hover {
   }
 
   .section-reviews__item {
+    margin: 1% 0;
     width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -2384,6 +2502,10 @@ a:hover {
 }
 
 @media (max-width: 574px) {
+  .header__logo img {
+    height: 2.25rem;
+  }
+
   .footer {
     padding: 1.625rem 0 3.875rem;
   }
@@ -2454,6 +2576,12 @@ a:hover {
     padding: 1.5rem 2.5rem;
     font-size: 1.125rem;
     line-height: 120%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header__menu-list .header__menu-item:not(:last-child) {
+    margin-right: 1.5625rem;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */

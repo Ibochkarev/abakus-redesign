@@ -173,7 +173,15 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
+var menuButton = document.querySelector(".header__menu-button");
+var menuButtonClose = document.querySelector(".header__menu-close");
+var mobileMenu = document.querySelector(".header__menu");
+menuButton.addEventListener("click", function () {
+  mobileMenu.classList.toggle("_active");
+});
+menuButtonClose.addEventListener("click", function () {
+  mobileMenu.classList.toggle("_active");
+});
 
 /***/ }),
 
@@ -275,7 +283,10 @@ document.addEventListener("DOMContentLoaded", function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var sectionReviewsReview = document.querySelectorAll('.section-reviews__review');
+var sectionReviewsReview = document.querySelectorAll(".section-reviews__review");
+var sectionReviewsWrapper = document.querySelector(".section-reviews__wrapper");
+var sectionReviewsItemText = sectionReviewsWrapper.querySelectorAll(".section-reviews__item--text");
+var sectionReviewsWrapViseo = sectionReviewsWrapper.querySelectorAll(".section-reviews__item--wrap-video");
 
 if (sectionReviewsReview) {
   sectionReviewsReview.forEach(function (elem, i) {
@@ -284,6 +295,15 @@ if (sectionReviewsReview) {
     if (text.length <= limit) return text;
     text = text.slice(0, limit);
     elem.innerHTML = text.trim() + "...";
+  });
+}
+
+if (sectionReviewsWrapper) {
+  sectionReviewsItemText.forEach(function (elem) {
+    if (!elem.innerHTML) elem.classList.add("hide-elem");
+  });
+  sectionReviewsWrapViseo.forEach(function (elem) {
+    if (!elem.innerHTML) elem.classList.add("hide-elem");
   });
 }
 

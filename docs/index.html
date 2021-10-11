@@ -50,7 +50,49 @@
       </div>
       <div class="header__bottom">
         <div class="container">
-          <div class="header__logo"><a href="#"><img src="./img/global/logo-header.svg" alt=""></a></div>
+          <div class="header__bottom-wrapper">
+            <div class="header__logo"><a href="#"><img src="./img/global/logo-header.svg" alt=""></a></div>
+            <div class="header__menu">
+              <div class="header__menu-close">
+                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 2L27 27" stroke="#29A4DD" stroke-width="4" stroke-linecap="round"></path>
+                  <path d="M27 2L2 27" stroke="#29A4DD" stroke-width="4" stroke-linecap="round"></path>
+                </svg>
+              </div>
+              <nav>
+                <ul class="header__menu-list">
+                  <li class="header__menu-item"><a class="header__menu-link" href="#">О нас</a>
+                    <ul>
+                      <li><a href="#">История центра</a></li>
+                      <li><a href="#">О методике центра</a></li>
+                      <li><a href="#">Франшиза</a></li>
+                      <li><a href="#">СМИ о нас</a></li>
+                      <li><a href="#">Команда Абакус</a></li>
+                      <li><a href="#">Лицензии и сертификаты</a></li>
+                      <li><a href="#">Ответы на вопросы</a></li>
+                      <li><a href="#">Реквизиты</a></li>
+                      <li><a href="#">Отзывы родителей</a></li>
+                      <li><a href="#">Вакансии</a></li>
+                    </ul>
+                  </li>
+                  <li class="header__menu-item"><a class="header__menu-link" href="#">Программы</a></li>
+                  <li class="header__menu-item"><a class="header__menu-link" href="#">Цены</a></li>
+                  <li class="header__menu-item"><a class="header__menu-link" href="#">Новости</a></li>
+                  <li class="header__menu-item"><a class="header__menu-link" href="#">Статьи</a></li>
+                  <li class="header__menu-item"><a class="header__menu-link" href="#">Полезное</a></li>
+                  <li class="header__menu-item"><a class="header__menu-link" href="#">Магазин</a></li>
+                  <li class="header__menu-item"><a class="header__menu-link" href="#">Контакты</a></li>
+                </ul>
+              </nav>
+            </div>
+            <button class="header__menu-button" type="button">
+              <svg width="35" height="22" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="35" height="4" rx="2" fill="#171663"></rect>
+                <rect y="9" width="35" height="4" rx="2" fill="#171663"></rect>
+                <rect y="18" width="35" height="4" rx="2" fill="#171663"></rect>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </header>
@@ -362,6 +404,17 @@
               <div class="section-reviews__insta" title="Перейти"></div>
             </div>
             <div class="section-reviews__item--video"></div>
+          </div>
+          <div class="section-reviews__item">
+            <div class="section-reviews__item--text hide-elem"></div>
+            <div class="section-reviews__item--wrap-video">
+              <video class="video-js section-reviews__item--video" id="video-main" controls preload="auto" loop="true" poster="./img/mainblock/cover.jpg" muted="true" data-setup="{}">
+                <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+                <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm">
+                <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that</p>
+              </video>
+            </div>
           </div>
         </div>
         <div class="section-reviews__more-reviews">
