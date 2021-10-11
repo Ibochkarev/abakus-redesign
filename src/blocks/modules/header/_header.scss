@@ -4,7 +4,7 @@
         padding-bottom: rem(8);
         font-size: rem(12);
         line-height: 1.4;
-        color: #000;
+        color: var(--black-color);
         background: #eff4ff;
 
         @media (max-width: 991px) {
@@ -30,7 +30,7 @@
                 }
 
                 a {
-                    color: #000;
+                    color: var(--black-color);
                 }
 
                 span {
@@ -63,7 +63,7 @@
                 font-family: "Neometric Alt", sans-serif;
                 font-size: rem(14);
                 font-weight: 600;
-                color: #000;
+                color: var(--black-color);
             }
 
             &-text {

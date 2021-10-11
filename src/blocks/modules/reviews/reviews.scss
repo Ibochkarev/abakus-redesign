@@ -11,7 +11,7 @@
     font-size: rem(25);
     font-weight: 600;
     line-height: rem(30);
-    background: #FAEB99;
+    background: var(--lightyellow-color);
 
     @media(max-width: 539px) {
       padding: rem(24) rem(40);
@@ -90,7 +90,7 @@
     display: inline-block;
     width: rem(35);
     height: rem(35);
-    background: #29A4DD;
+    background: var(--lightblue-color);
     transition: 0.2s;
     background-size: contain;
     -webkit-mask-image: url(../img/svg/insta.svg);
@@ -114,7 +114,7 @@
 
       font-weight: 700;
       line-height: rem(17);
-      color: #29A4DD;
+      color: var(--lightblue-color);
       background: none;
       border: none;
       outline: inherit;
@@ -146,12 +146,12 @@
     outline: inherit;
 
     &:hover {
-      background: #29A4DD;
+      background: var(--lightblue-color);
     }
 
     &:active {
-      background: #29A4DD;
-      color: #000;
+      background: var(--lightblue-color);
+      color: var(--black-color);
     }
   }
 }

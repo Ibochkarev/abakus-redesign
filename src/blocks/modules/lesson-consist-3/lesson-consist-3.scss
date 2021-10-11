@@ -18,7 +18,7 @@
 
   &__3 {
     padding: rem(150) 0 rem(128);
-    background: #FAEB99;
+    background: var(--lightyellow-color);
 
     @media (max-width: 991px) {
       padding: rem(120) 0 rem(80);
@@ -111,7 +111,7 @@
       font-size: rem(28);
       font-weight: 600;
       line-height: rem(34);
-      background: #FFFFFF;
+      background: var(--white-color);
       transform: rotate(-5.61deg);
 
       @media (max-width: 991px) {
@@ -143,7 +143,7 @@
   &__infoblock {
     position: relative;
     padding: rem(45) rem(20);
-    background: #FFFFFF;
+    background: var(--white-color);
 
     @media (max-width: 767px) {
       margin-top: rem(70);

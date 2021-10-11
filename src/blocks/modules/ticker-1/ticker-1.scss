@@ -1,6 +1,6 @@
 .ticker {
   height: rem(72);
-  color: #fff;
+  color: var(--white-color);
   overflow: hidden;
 
   @media (max-width: 991px) {
@@ -12,14 +12,14 @@
   }
 
   &_2 {
-    background: #29A4DD;
+    background: var(--lightblue-color);
   }
 
   &_3 {
     background: #DFEFAD;
 
     .ticker__item {
-      color: #000;
+      color: var(--black-color);
     }
   }
 
