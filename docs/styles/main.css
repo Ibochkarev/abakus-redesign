@@ -1667,7 +1667,6 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border: 1px solid gray;
 }
 
 .section-reviews__item {
