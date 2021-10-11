@@ -5,6 +5,32 @@
     padding: rem(30) 0 rem(60);
   }
 
+  @keyframes resizeAnimate {
+    0% {
+      width: 90%;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    @keyframes resizeAnimate {
+      0% {
+        width: 70%;
+      }
+      50% {
+        width: 100%;
+      }
+      100% {
+        width: 70%;
+      }
+    }
+  }
+
   &__title {
     position: relative;
     margin-bottom: rem(25);
@@ -50,8 +76,8 @@
   &__buttons {
     display: flex;
     align-items: center;
-    margin-bottom: rem(22);
     justify-content: space-between;
+    margin-bottom: rem(22);
   }
 
   &__button {
@@ -72,15 +98,28 @@
     transition: all 0.5s ease-in-out;
     white-space: nowrap;
 
+    @media (max-width: 574px) {
+      justify-content: center;
+      width:  100%;
+    }
+
     &.elem-fixed {
-      position: fixed;
-      top: 24px;
       z-index: 999;
+      position: fixed;
+      padding-right: rem(16);
+      padding-left: rem(16);
+      top: rem(24);
+      font-size: rem(10);
+      height: rem(45);
       animation: show 1s;
 
+      img{
+        height: rem(32);
+      }
+
       @media (max-width: 574px) {
-        width:  calc(100% - 30px);
         left: 50%;
+        width:  calc(100% - rem(30));
         transform: translate(-50%);
       }
 
@@ -93,11 +132,6 @@
           opacity: 1;
         }
       }
-    }
-
-    @media (max-width: 574px) {
-      justify-content: center;
-      width:  100%;
     }
 
     img {
@@ -113,13 +147,9 @@
   }
 
   .arrow-left-wrap {
-    width: 72%;
     display: flex;
     justify-content: right;
-
-    &.hide-elem {
-      display: none;
-    }
+    width: 72%;
 
     @media (max-width: 574px) {
       display: none;
@@ -127,6 +157,10 @@
       &.hide-elem {
         display: none;
       }
+    }
+
+    &.hide-elem {
+      display: none;
     }
   }
 
@@ -158,32 +192,6 @@
       margin-left: rem(-1);
       background: #171663;
       content: " ";
-    }
-  }
-
-  @keyframes resizeAnimate {
-    0% {
-      width: 90%;
-    }
-    50% {
-      width: 100%;
-    }
-    100% {
-      width: 90%;
-    }
-  }
-
-  @media (max-width: 991px) {
-    @keyframes resizeAnimate {
-      0% {
-        width: 70%;
-      }
-      50% {
-        width: 100%;
-      }
-      100% {
-        width: 70%;
-      }
     }
   }
 

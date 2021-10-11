@@ -24,3 +24,15 @@ mixin smi-item(data)
         | Читать статью
         <!-- Смотреть видео -->
         span.ic-arrow
+
+mixin reviews-item(data)
+  .section-reviews__item
+    .section-reviews__item--text
+        .section-reviews__author
+            img(src=data.image, alt="", class="section-reviews__photo")
+            p.section-reviews__name=data.name
+        p.section-reviews__review=data.text
+        .section-reviews__more
+            button Подробнее
+        .section-reviews__insta(title="Перейти")
+    .section-reviews__item--video

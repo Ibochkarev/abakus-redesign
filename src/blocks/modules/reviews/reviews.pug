@@ -9,15 +9,25 @@ section.section.section-reviews
             p Подавляющее большинство наших учеников приглашают к нам своих друзей и знакомых.
             img(src='./img/svg/start-reviews.svg')
         .section-reviews__wrapper
-            .section-reviews__item
-                .section-reviews__item--text
-                    .section-reviews__author
-                        img(src='./img/reviews/irina.jpg' class="section-reviews__photo")
-                        p.section-reviews__name Ира, 6 лет
-                    p.section-reviews__review Ловите от нас обзор, мы с удовольствием рекомендуем и советуем! Интересный подход, интересные задания на развитие творческого и аналитического интеллекта ребёнка.
-                    .section-reviews__more
-                        button Подробнее
-                    .section-reviews__insta(title="Перейти")
-                .section-reviews__item--video
+            +reviews-item({
+                image: "./img/reviews/irina.jpg",
+                name: "Ира, 6 лет",
+                text: "Ловите от нас обзор, мы с удовольствием рекомендуем и советуем! Интересный подход, интересные задания на развитие творческого и аналитического интеллекта ребёнка."
+            })
+            +reviews-item({
+                image: "./img/reviews/alex.jpg",
+                name: "Александр, 10 лет",
+                text: "Вот и все)) Можно выдохнуть и поздравить моего маленького счетовода с очередным вторым местом в Международной Олимпиаде, прошедшей вчера, 22 декабря 2019"
+            })
+            +reviews-item({
+                image: "./img/reviews/irina.jpg",
+                name: "Александр, 10 лет",
+                text: "Вот и все)) Можно выдохнуть и поздравить моего маленького счетовода с очередным вторым местом в Международной Олимпиаде, прошедшей вчера, 22 декабря 2019"
+            })
+            +reviews-item({
+                image: "./img/reviews/alex.jpg",
+                name: "Ира, 6 лет",
+                text: "Ловите от нас обзор, мы с удовольствием рекомендуем и советуем! Интересный подход, интересные задания на развитие творческого и аналитического интеллекта ребёнка."
+            })
         .section-reviews__more-reviews
             button.section-reviews__more-btn Больше отзывов
