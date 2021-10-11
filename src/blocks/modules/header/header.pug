@@ -22,49 +22,63 @@ header.header
           a(href="#")
             img(src="./img/global/logo-header.svg", alt="")
         .header__menu
-          .header__menu-close
-            svg(width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg")
-              path(d="M2 2L27 27" stroke="#29A4DD" stroke-width="4" stroke-linecap="round")
-              path(d="M27 2L2 27" stroke="#29A4DD" stroke-width="4" stroke-linecap="round")
-          nav
-            ul.header__menu-list
-              li.header__menu-item
-                a.header__menu-link(href="#") О нас
-                ul
-                  li
-                    a(href="#") История центра
-                  li
-                    a(href="#") О методике центра
-                  li
-                    a(href="#") Франшиза
-                  li
-                    a(href="#") СМИ о нас
-                  li
-                    a(href="#") Команда Абакус
-                  li
-                    a(href="#") Лицензии и сертификаты
-                  li
-                    a(href="#") Ответы на вопросы
-                  li
-                    a(href="#") Реквизиты
-                  li
-                    a(href="#") Отзывы родителей
-                  li
-                    a(href="#") Вакансии
-              li.header__menu-item
-                a.header__menu-link(href="#") Программы
-              li.header__menu-item
-                a.header__menu-link(href="#") Цены
-              li.header__menu-item
-                a.header__menu-link(href="#") Новости
-              li.header__menu-item
-                a.header__menu-link(href="#") Статьи
-              li.header__menu-item
-                a.header__menu-link(href="#") Полезное
-              li.header__menu-item
-                a.header__menu-link(href="#") Магазин
-              li.header__menu-item
-                a.header__menu-link(href="#") Контакты
+          .header__menu-wrapper
+            .header__menu-close
+              svg(width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M2 2L27 27" stroke="#29A4DD" stroke-width="4" stroke-linecap="round")
+                path(d="M27 2L2 27" stroke="#29A4DD" stroke-width="4" stroke-linecap="round")
+            nav
+              ul.header__menu-list
+                li.header__menu-item._dropdown
+                  a.header__menu-link(href="#") О нас
+                  ul
+                    li
+                      a(href="#") История центра
+                    li
+                      a(href="#") О методике центра
+                    li
+                      a(href="#") Франшиза
+                    li
+                      a(href="#") СМИ о нас
+                    li
+                      a(href="#") Команда Абакус
+                    li
+                      a(href="#") Лицензии и сертификаты
+                    li
+                      a(href="#") Ответы на вопросы
+                    li
+                      a(href="#") Реквизиты
+                    li
+                      a(href="#") Отзывы родителей
+                    li
+                      a(href="#") Вакансии
+                li.header__menu-item
+                  a.header__menu-link(href="#") Программы
+                li.header__menu-item
+                  a.header__menu-link(href="#") Цены
+                li.header__menu-item
+                  a.header__menu-link(href="#") Новости
+                li.header__menu-item
+                  a.header__menu-link(href="#") Статьи
+                li.header__menu-item._dropdown
+                  a.header__menu-link(href="#") Полезное
+                li.header__menu-item
+                  a.header__menu-link(href="#") Магазин
+                li.header__menu-item
+                  a.header__menu-link(href="#") Контакты
+            .header__menu-bottom
+              .header__menu-address
+                .header__menu-address__title Международная сеть школ Абакус центр
+                .header__menu-address__item
+                  span.ic-clock
+                  | пн-вск 9:00 - 19:00
+                .header__menu-address__item
+                  span.ic-mail
+                  a(href="mailto:abakus@abakus-center.ru") abakus@abakus-center.ru
+              .header__menu-phone
+                a.header__menu-phone__link(href="tel:88005553465") 8 800 555-34-65
+                .header__menu-phone__text (звонок по России бесплатный)
+
         button.header__menu-button(type="button")
           svg(width="35" height="22" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg")
             rect(width="35" height="4" rx="2" fill="#171663")
