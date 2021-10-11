@@ -1,15 +1,11 @@
-import MicroModal from "micromodal";
+const sectionReviewsReview = document.querySelectorAll('.section-reviews__review');
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    MicroModal.init({
-        awaitCloseAnimation: true,// set to false, to remove close animation
-        onShow: function(modal) {
-            console.log("micromodal open");
-        },
-        onClose: function(modal) {
-            console.log("micromodal close");
-        }
-    });
-
-});
+if(sectionReviewsReview) {
+    sectionReviewsReview.forEach(function(elem, i) {
+        let text = elem.innerHTML.trim();
+        let limit = 200;
+        if( text.length <= limit) return text;
+        text = text.slice(0, limit);
+        elem.innerHTML = text.trim() + "...";
+    })
+}

@@ -272,25 +272,20 @@ document.addEventListener("DOMContentLoaded", function () {
 /*!***********************************************!*\
   !*** ./src/blocks/modules/reviews/reviews.js ***!
   \***********************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var micromodal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! micromodal */ "./node_modules/micromodal/dist/micromodal.es.js");
+var sectionReviewsReview = document.querySelectorAll('.section-reviews__review');
 
-document.addEventListener("DOMContentLoaded", function () {
-  micromodal__WEBPACK_IMPORTED_MODULE_0__["default"].init({
-    awaitCloseAnimation: true,
-    // set to false, to remove close animation
-    onShow: function onShow(modal) {
-      console.log("micromodal open");
-    },
-    onClose: function onClose(modal) {
-      console.log("micromodal close");
-    }
+if (sectionReviewsReview) {
+  sectionReviewsReview.forEach(function (elem, i) {
+    var text = elem.innerHTML.trim();
+    var limit = 200;
+    if (text.length <= limit) return text;
+    text = text.slice(0, limit);
+    elem.innerHTML = text.trim() + "...";
   });
-});
+}
 
 /***/ }),
 
@@ -448,6 +443,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/mainblock/mainblock.js */ "./src/blocks/modules/mainblock/mainblock.js");
 /* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/reviews/reviews */ "./src/blocks/modules/reviews/reviews.js");
+/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/teachers/teachers */ "./src/blocks/modules/teachers/teachers.js");
 /* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _modules_section_smi_section_smi__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/section-smi/section-smi */ "./src/blocks/modules/section-smi/section-smi.js");
