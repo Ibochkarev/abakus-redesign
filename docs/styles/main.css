@@ -1667,6 +1667,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  border: 1px solid gray;
 }
 
 .section-reviews__item {
@@ -1734,6 +1735,34 @@ a:hover {
 
 .section-reviews__more button:hover {
   color: #36A753;
+}
+
+.section-reviews__more-reviews {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.section-reviews__more-btn {
+  background: #C3E6F5;
+  border: none;
+  border-radius: 30px;
+  padding: 20px;
+  width: 380px;
+  cursor: pointer;
+  outline: inherit;
+  transition: 0.2s;
+  font-family: "Neometric Alt", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.section-reviews__more-btn:hover {
+  background: #cbe8f5;
+}
+
+.section-reviews__more-btn:active {
+  background: #93d5f3;
 }
 
 @media screen and (min-width: 20rem) {
