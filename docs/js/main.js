@@ -176,12 +176,21 @@
 var menuButton = document.querySelector(".header__menu-button");
 var menuButtonClose = document.querySelector(".header__menu-close");
 var mobileMenu = document.querySelector(".header__menu");
-menuButton.addEventListener("click", function () {
-  mobileMenu.classList.toggle("_active");
-});
-menuButtonClose.addEventListener("click", function () {
-  mobileMenu.classList.toggle("_active");
-});
+var headerMenuOverlay = document.querySelector(".header__menu-overlay");
+var headerArray = [headerMenuOverlay, mobileMenu];
+
+if (headerArray.length) {
+  menuButton.addEventListener("click", function () {
+    headerArray.forEach(function (elem) {
+      elem.classList.toggle("_active");
+    });
+  });
+  menuButtonClose.addEventListener("click", function () {
+    headerArray.forEach(function (elem) {
+      elem.classList.toggle("_active");
+    });
+  });
+}
 
 /***/ }),
 

@@ -1,11 +1,20 @@
-let menuButton = document.querySelector(".header__menu-button");
-let menuButtonClose = document.querySelector(".header__menu-close");
-let mobileMenu = document.querySelector(".header__menu");
+const menuButton = document.querySelector(".header__menu-button");
+const menuButtonClose = document.querySelector(".header__menu-close");
+const mobileMenu = document.querySelector(".header__menu");
+const headerMenuOverlay = document.querySelector(".header__menu-overlay");
 
-menuButton.addEventListener("click", function() {
-    mobileMenu.classList.toggle("_active");
-});
+const headerArray = [headerMenuOverlay, mobileMenu];
 
-menuButtonClose.addEventListener("click", function () {
-    mobileMenu.classList.toggle("_active");
-});
+if(headerArray.length) {
+    menuButton.addEventListener("click", function() {
+        headerArray.forEach((elem) => {
+            elem.classList.toggle("_active");
+        })
+    });
+
+    menuButtonClose.addEventListener("click", function () {
+        headerArray.forEach((elem) => {
+            elem.classList.toggle("_active");
+        })
+    });
+}
