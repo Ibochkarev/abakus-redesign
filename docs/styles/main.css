@@ -1651,6 +1651,54 @@ a:hover {
   color: #171664;
 }
 
+#modal-review-text .modal__container {
+  max-width: 34.1875rem;
+  padding: 1.875rem 3.125rem;
+  background-color: var(--white-color);
+}
+
+#modal-review-text .modal__close {
+  top: 1.5625rem;
+  right: 1.5625rem;
+}
+
+#modal-review-text .modal-review__author {
+  display: flex;
+  align-items: flex-end;
+}
+
+#modal-review-text .modal-review__photo {
+  width: 4.1875rem;
+  height: 4.1875rem;
+  margin-right: 0.75rem;
+  border-radius: 50%;
+}
+
+#modal-review-text .modal-review__name {
+  margin: 0;
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  line-height: 1.5rem;
+}
+
+#modal-review-text .modal-review__insta {
+  cursor: pointer;
+  display: inline-block;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  background: var(--lightblue-color);
+  transition: 0.2s;
+  background-size: contain;
+  -webkit-mask-image: url(../img/svg/insta.svg);
+  mask-image: url(../img/svg/insta.svg);
+}
+
+#modal-review-text .modal-review__insta:hover {
+  background: #36A753;
+}
+
 @keyframes mmfadeIn {
   from {
     opacity: 0;
@@ -1751,6 +1799,7 @@ a:hover {
 }
 
 .section-reviews__item {
+  position: relative;
   width: 31%;
   height: auto;
   max-width: 31%;
@@ -1770,10 +1819,10 @@ a:hover {
 }
 
 .section-reviews__item--wrap-video {
-  background-color: #0b2530;
-  border-radius: 1.125rem;
   height: 100%;
   min-height: 20rem;
+  border-radius: 1.125rem;
+  background-color: #0b2530;
 }
 
 .section-reviews__item--wrap-video video {
@@ -1829,6 +1878,10 @@ a:hover {
 
 .section-reviews__insta:hover {
   background: #36A753;
+}
+
+.section-reviews__more {
+  margin-top: 0.3125rem;
 }
 
 .section-reviews__more button {
@@ -2107,10 +2160,14 @@ a:hover {
     display: none;
   }
 
+  #modal-review-text .modal-review__insta {
+    left: 1.5rem;
+  }
+
   .section-reviews__item {
-    margin: 1%;
     width: 48%;
     max-width: 48%;
+    margin: 1%;
   }
 
   .section-reviews__insta {
@@ -2589,10 +2646,16 @@ a:hover {
     line-height: 1.0625rem;
   }
 
+  #modal-review-text .modal__container {
+    max-width: calc(100vw - 15%);
+    padding: 1.875rem 1.875rem;
+    border: 0;
+  }
+
   .section-reviews__item {
-    margin: 1% 0;
     width: 100%;
     max-width: 100%;
+    margin: 1% 0;
   }
 }
 
@@ -2683,6 +2746,10 @@ a:hover {
   }
 
   .modal__container {
+    max-width: calc(100vw - 30px);
+  }
+
+  #modal-review-text .modal__container {
     max-width: calc(100vw - 30px);
   }
 }

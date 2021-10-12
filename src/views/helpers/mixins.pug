@@ -29,10 +29,10 @@ mixin reviews-item(data)
   .section-reviews__item
     .section-reviews__item--text
         .section-reviews__author
-            img(src=data.image, alt="", class="section-reviews__photo")
+            img.section-reviews__photo(src=data.image, alt="")
             p.section-reviews__name=data.name
         p.section-reviews__review=data.text
         .section-reviews__more
-            button Подробнее
-        .section-reviews__insta(title="Перейти")
+            button(type="button", data-micromodal-trigger="modal-review-text") Подробнее
+        a.section-reviews__insta(href="#", target="_blank", rel="noopener", aria-label="Instagram")
     .section-reviews__item--video
