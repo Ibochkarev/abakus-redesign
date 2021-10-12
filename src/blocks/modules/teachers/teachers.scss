@@ -1,0 +1,16 @@
+.section-teachers {
+  overflow: hidden;
+  padding: rem(75) 0 rem(100);
+
+  &__wrapper {
+    margin-top: rem(80);
+
+    @media (max-width: 991px) {
+      margin-top: rem(40);
+    }
+
+    @media (max-width: 574px) {
+      margin-top: rem(70);
+    }
+  }
+}
