@@ -4,6 +4,8 @@ const sectionReviewsWrapper = document.querySelector(".section-reviews__wrapper"
 const sectionReviewsItemText = sectionReviewsWrapper.querySelectorAll(".section-reviews__item--text");
 const sectionReviewsWrapViseo = sectionReviewsWrapper.querySelectorAll(".section-reviews__item--wrap-video");
 
+const sectionReviewsItemArray = [...sectionReviewsItemText, ...sectionReviewsWrapViseo];
+
 if(sectionReviewsReview) {
     sectionReviewsReview.forEach(function(elem, i) {
         let text = elem.innerHTML.trim();
@@ -14,12 +16,8 @@ if(sectionReviewsReview) {
     });
 }
 
-if(sectionReviewsWrapper) {
-    sectionReviewsItemText.forEach((elem) => {
-        if(!elem.innerHTML)elem.classList.add("hide-elem");
-    });
-
-    sectionReviewsWrapViseo.forEach((elem) => {
+if(sectionReviewsItemArray.length) {
+    sectionReviewsItemArray.forEach((elem) => {
         if(!elem.innerHTML)elem.classList.add("hide-elem");
     });
 }
