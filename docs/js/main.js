@@ -234,9 +234,12 @@ var lessonConsist = new swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___defaul
 /***/ (function(module, exports) {
 
 var $firstblockButton = document.querySelector('.firstblock__button');
+var $firstblockMiddle = document.querySelector('.firstblock__middle');
 var $arrowLeftWrap = document.querySelector('.arrow-left-wrap');
+var $firstblockMiddleClose = document.querySelector('.firstblock__middle--close');
+var $firstblockItemArray = [$firstblockButton, $firstblockMiddle];
 
-if ($firstblockButton) {
+if ($firstblockItemArray.length) {
   var addFixedElemOnWindow = function addFixedElemOnWindow(positionElem, elem) {
     var positionWindow = window.pageYOffset;
 
@@ -249,10 +252,21 @@ if ($firstblockButton) {
     }
   };
 
-  var elemTop = window.pageYOffset + $firstblockButton.getBoundingClientRect().top;
-  addFixedElemOnWindow(elemTop, $firstblockButton);
+  var elemsTopArray = [];
+  var $firstblockMiddleFlug = true;
+  $firstblockItemArray.forEach(function (elem) {
+    var elemTop = window.pageYOffset + elem.getBoundingClientRect().top;
+    elemsTopArray.push(elemTop);
+  });
+  addFixedElemOnWindow(elemsTopArray[0], $firstblockButton);
+  if ($firstblockMiddleFlug) addFixedElemOnWindow(elemsTopArray[1], $firstblockMiddle);
   window.addEventListener('scroll', function () {
-    addFixedElemOnWindow(elemTop, $firstblockButton);
+    addFixedElemOnWindow(elemsTopArray[0], $firstblockButton);
+    if ($firstblockMiddleFlug) addFixedElemOnWindow(elemsTopArray[1], $firstblockMiddle);
+  });
+  $firstblockMiddleClose.addEventListener('click', function () {
+    $firstblockMiddle.classList.remove('elem-fixed');
+    $firstblockMiddleFlug = false;
   });
 }
 
