@@ -224,6 +224,18 @@
   }
 
   &__middle {
+
+    &--cap {
+      @media (min-width: 991px) {
+        &.elem-fixed {
+          min-height: 460px;
+          background-color: #0b2530;
+          margin-bottom: rem(60);
+          border-radius: rem(32);
+        }
+      }
+    }
+
     @media(min-width: 991px) {
       &.elem-fixed {
         position: fixed;
@@ -236,6 +248,7 @@
 
 
         .firstblock__middle--close {
+          cursor: pointer;
           position: absolute;
           z-index: 999;
           top: rem(-32);

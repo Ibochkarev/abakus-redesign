@@ -2066,6 +2066,13 @@ a:hover {
 }
 
 @media (min-width: 991px) {
+  .firstblock__middle--cap.elem-fixed {
+    min-height: 460px;
+    background-color: #0b2530;
+    margin-bottom: 3.75rem;
+    border-radius: 2rem;
+  }
+
   .firstblock__middle.elem-fixed {
     position: fixed;
     bottom: 2.5rem;
@@ -2077,6 +2084,7 @@ a:hover {
   }
 
   .firstblock__middle.elem-fixed .firstblock__middle--close {
+    cursor: pointer;
     position: absolute;
     z-index: 999;
     top: -2rem;

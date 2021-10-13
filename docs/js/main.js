@@ -237,6 +237,7 @@ var $firstblockButton = document.querySelector('.firstblock__button');
 var $firstblockMiddle = document.querySelector('.firstblock__middle');
 var $arrowLeftWrap = document.querySelector('.arrow-left-wrap');
 var $firstblockMiddleClose = document.querySelector('.firstblock__middle--close');
+var $firstblockMiddleCap = document.querySelector('.firstblock__middle--cap');
 var $firstblockItemArray = [$firstblockButton, $firstblockMiddle];
 
 if ($firstblockItemArray.length) {
@@ -246,9 +247,17 @@ if ($firstblockItemArray.length) {
     if (positionElem <= positionWindow) {
       elem.classList.add('elem-fixed');
       $arrowLeftWrap.classList.add('hide-elem');
+
+      if (elem === $firstblockMiddle) {
+        $firstblockMiddleCap.classList.add('elem-fixed');
+      }
     } else {
       elem.classList.remove('elem-fixed');
       $arrowLeftWrap.classList.remove('hide-elem');
+
+      if (elem === $firstblockMiddle) {
+        $firstblockMiddleCap.classList.remove('elem-fixed');
+      }
     }
   };
 
@@ -266,6 +275,7 @@ if ($firstblockItemArray.length) {
   });
   $firstblockMiddleClose.addEventListener('click', function () {
     $firstblockMiddle.classList.remove('elem-fixed');
+    $firstblockMiddleCap.classList.remove('elem-fixed');
     $firstblockMiddleFlug = false;
   });
 }
