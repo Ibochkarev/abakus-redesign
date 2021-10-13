@@ -13,4 +13,123 @@
       margin-top: rem(70);
     }
   }
+
+  &__description {
+    max-width: 780px;
+    font-size: 18px;
+    line-height: 140%;
+    padding-bottom: rem(10);
+  }
+
+  &__wrap {
+    display: flex;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    box-sizing: border-box;
+
+    &:first-child {
+      min-width: rem(780);
+      height: rem(440);
+      margin-right: rem(20);
+
+      @media(max-width: 1179px) {
+        min-width: 65%;
+      }
+
+      @media(max-width: 991px) {
+        margin-right: rem(0);
+        height: auto;
+      }
+    }
+
+  }
+
+
+  &__sub-item {
+    box-sizing: border-box;
+    position: relative;
+
+    &--mask {
+      z-index: 100;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    &:first-child {
+      height: 54%;
+      border-radius: rem(12);
+      margin-bottom: 5%;
+
+      @media (max-width: 991px) {
+        display: none;
+        margin-bottom: 5%;
+      }
+
+      video {
+        border-radius: rem(12);
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &:last-child {
+      position: relative;
+      height: 42%;
+      background: #FAEB99;
+      padding: rem(34) rem(42) 0 rem(42);
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 30px;
+
+      @media (max-width: 1179px) {
+        padding: rem(24) rem(42) 0 rem(42);
+      }
+
+      @media (max-width: 991px) {
+        height: auto;
+        padding: rem(34) rem(42);
+      }
+    }
+
+    &--ico {
+      position: absolute;
+      right: rem(0);
+      bottom: rem(-36);
+    }
+  }
+
+  &__item--video video {
+    max-width: rem(780);
+    max-height: rem(440);
+    width: 100%;
+    height: rem(582);
+    overflow: hidden;
+    border-radius: rem(18);
+
+    @media (max-width: 991px) {
+      height: rem(360);
+      margin-bottom: rem(20);
+    }
+
+    @media (max-width: 767) {
+      height: rem(220);
+      margin-bottom: rem(20);
+    }
+
+    @media (max-width: 574px) {
+      height: rem(175);
+    }
+
+    .vjs-poster {
+      background-size: cover;
+    }
+  }
 }

@@ -6,3 +6,24 @@ section.section.section-teachers
       span.section__title-border.b_bottom
       span.section__title-border.b_bottom-right
     .section-teachers__wrapper
+      p.section-teachers__description С вашим ребенком занимаются только высококвалифицированные преподаватели благодаря комплексной системе отбора, нескольким этапам собеседования, а также повышению их квалификации через дополнительные сертификации.
+      .section-teachers__wrap
+        .section-teachers__item.section-teachers__item--video
+          .section-teachers__item--mask
+          video#video-main.video-js(controls preload="auto" loop="true" autoplay="true" poster="./img/mainblock/cover.jpg" muted="true" data-setup="{}")
+            source(src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4")
+            source(src="//vjs.zencdn.net/v/oceans.webm" type="video/webm")
+            source(src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg")
+            p.vjs-no-js
+              | To view this video please enable JavaScript, and consider upgrading to a web browser that
+        .section-teachers__item
+          .section-teachers__sub-item.section-teachers__sub-item--video
+            .section-teachers__sub-item--mask
+            video#video-main.video-js(controls preload="auto" loop="true" poster="./img/mainblock/cover.jpg" muted="true" data-setup="{}")
+              source(src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4")
+              source(src="//vjs.zencdn.net/v/oceans.webm" type="video/webm")
+              source(src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg")
+              p.vjs-no-js
+                | To view this video please enable JavaScript, and consider upgrading to a web browser that
+          .section-teachers__sub-item Можем подобрать нового преподавателя, если что-то пойдет не так
+            img(src="../img/svg/ico-!.svg" class="section-teachers__sub-item--ico")

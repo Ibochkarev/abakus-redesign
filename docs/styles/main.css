@@ -1931,6 +1931,82 @@ a:hover {
   margin-top: 5rem;
 }
 
+.section-teachers__description {
+  max-width: 780px;
+  font-size: 18px;
+  line-height: 140%;
+  padding-bottom: 0.625rem;
+}
+
+.section-teachers__wrap {
+  display: flex;
+}
+
+.section-teachers__item {
+  box-sizing: border-box;
+}
+
+.section-teachers__item:first-child {
+  min-width: 48.75rem;
+  height: 27.5rem;
+  margin-right: 1.25rem;
+}
+
+.section-teachers__sub-item {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.section-teachers__sub-item--mask {
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.section-teachers__sub-item:first-child {
+  height: 54%;
+  border-radius: 0.75rem;
+  margin-bottom: 5%;
+}
+
+.section-teachers__sub-item:first-child video {
+  border-radius: 0.75rem;
+  height: 100%;
+  width: 100%;
+}
+
+.section-teachers__sub-item:last-child {
+  position: relative;
+  height: 42%;
+  background: #FAEB99;
+  padding: 2.125rem 2.625rem 0 2.625rem;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.section-teachers__sub-item--ico {
+  position: absolute;
+  right: 0rem;
+  bottom: -2.25rem;
+}
+
+.section-teachers__item--video video {
+  max-width: 48.75rem;
+  max-height: 27.5rem;
+  width: 100%;
+  height: 36.375rem;
+  overflow: hidden;
+  border-radius: 1.125rem;
+}
+
+.section-teachers__item--video video .vjs-poster {
+  background-size: cover;
+}
+
 @media screen and (min-width: 20rem) {
   .footer__col {
     width: calc(100% - 1.875rem);
@@ -2214,6 +2290,14 @@ a:hover {
 
   .section-reviews__insta {
     left: 1.5rem;
+  }
+
+  .section-teachers__item:first-child {
+    min-width: 65%;
+  }
+
+  .section-teachers__sub-item:last-child {
+    padding: 1.5rem 2.625rem 0 2.625rem;
   }
 }
 
@@ -2582,6 +2666,30 @@ a:hover {
   .section-teachers__wrapper {
     margin-top: 2.5rem;
   }
+
+  .section-teachers__wrap {
+    flex-direction: column;
+  }
+
+  .section-teachers__item:first-child {
+    margin-right: 0rem;
+    height: auto;
+  }
+
+  .section-teachers__sub-item:first-child {
+    display: none;
+    margin-bottom: 5%;
+  }
+
+  .section-teachers__sub-item:last-child {
+    height: auto;
+    padding: 2.125rem 2.625rem;
+  }
+
+  .section-teachers__item--video video {
+    height: 22.5rem;
+    margin-bottom: 1.25rem;
+  }
 }
 
 @media (max-width: 797px) {
@@ -2780,6 +2888,11 @@ a:hover {
     margin-bottom: 3.125rem;
     border-radius: 0.625rem;
   }
+
+  .section-teachers__item--video video {
+    height: 13.75rem;
+    margin-bottom: 1.25rem;
+  }
 }
 
 @media (max-width: 574px) {
@@ -2857,6 +2970,10 @@ a:hover {
 
   .section-teachers__wrapper {
     margin-top: 4.375rem;
+  }
+
+  .section-teachers__item--video video {
+    height: 10.9375rem;
   }
 }
 

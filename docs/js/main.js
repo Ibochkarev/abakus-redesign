@@ -441,7 +441,26 @@ var tarifs = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+var sectionTeachersItem = document.querySelector('.section-teachers__item');
+var sectionTeachersItemVideo = document.querySelector('.section-teachers__item--video');
+var sectionTeachersSubItemVideo = document.querySelector('.section-teachers__sub-item--video');
+var sectionTeachersItemMask = document.querySelector('.section-teachers__item--mask');
+var sectionTeachersSubItemMask = document.querySelector('.section-teachers__sub-item--mask');
 
+if (sectionTeachersItem) {
+  sectionTeachersSubItemMask.addEventListener('click', function () {
+    var sectionTeachersItemVideoPlayer = document.querySelector('.section-teachers__item--video video');
+    var sectionTeachersSubItemVideoPlayer = document.querySelector('.section-teachers__sub-item--video video');
+    var firstElem = sectionTeachersItemMask.nextElementSibling;
+    var LastElem = sectionTeachersSubItemMask.nextElementSibling;
+    sectionTeachersItemVideo.appendChild(LastElem);
+    sectionTeachersSubItemVideo.appendChild(firstElem);
+    sectionTeachersItemVideoPlayer.pause();
+    sectionTeachersItemVideoPlayer.id = 'video-main';
+    sectionTeachersSubItemVideoPlayer.play();
+    sectionTeachersSubItemVideoPlayer.id = 'video-main';
+  });
+}
 
 /***/ }),
 
