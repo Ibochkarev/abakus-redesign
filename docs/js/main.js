@@ -291,6 +291,7 @@ var lessonConsist = new swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___defaul
 /***/ (function(module, exports) {
 
 var $firstblockButton = document.querySelector('.firstblock__button');
+var $firstblockPlayer = document.querySelector('.firstblock__middle video');
 var $firstblockMiddle = document.querySelector('.firstblock__middle');
 var $arrowLeftWrap = document.querySelector('.arrow-left-wrap');
 var $firstblockMiddleClose = document.querySelector('.firstblock__middle--close');
@@ -333,6 +334,7 @@ if ($firstblockItemArray.length) {
   $firstblockMiddleClose.addEventListener('click', function () {
     $firstblockMiddle.classList.remove('elem-fixed');
     $firstblockMiddleCap.classList.remove('elem-fixed');
+    $firstblockPlayer.pause();
     $firstblockMiddleFlug = false;
   });
 }

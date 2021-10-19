@@ -1,4 +1,5 @@
 const $firstblockButton = document.querySelector('.firstblock__button');
+const $firstblockPlayer = document.querySelector('.firstblock__middle video');
 const $firstblockMiddle = document.querySelector('.firstblock__middle');
 const $arrowLeftWrap = document.querySelector('.arrow-left-wrap');
 const $firstblockMiddleClose = document.querySelector('.firstblock__middle--close');
@@ -49,6 +50,7 @@ if ($firstblockItemArray.length) {
     $firstblockMiddleClose.addEventListener('click', () => {
         $firstblockMiddle.classList.remove('elem-fixed');
         $firstblockMiddleCap.classList.remove('elem-fixed');
+        $firstblockPlayer.pause();
         $firstblockMiddleFlug = false;
     })
 
