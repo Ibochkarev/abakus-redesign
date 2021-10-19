@@ -4,6 +4,7 @@ const sectionTeachersSubItemVideo = document.querySelector('.section-teachers__s
 const sectionTeachersItemMask = document.querySelector('.section-teachers__item--mask');
 const sectionTeachersSubItemMask = document.querySelector('.section-teachers__sub-item--mask');
 
+
 if(sectionTeachersItem) {
 
     sectionTeachersSubItemMask.addEventListener('click', function() {
