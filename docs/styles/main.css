@@ -1012,7 +1012,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 7.5rem;
+  margin-bottom: 5rem;
 }
 
 .section-platform__info-item {
@@ -1046,6 +1046,44 @@ a:hover {
 
 .section-platform__info-item__image._orange img {
   border-color: var(--lightyellow-color);
+}
+
+.section-platform__teacher-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0rem 4rem;
+  justify-content: space-between;
+  margin-bottom: 7.5rem;
+}
+
+.section-platform__description {
+  max-width: 40%;
+  font-weight: 600;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
+}
+
+.section-platform__description span {
+  color: #171664;
+}
+
+.section-platform__teacher {
+  position: relative;
+  z-index: 2;
+}
+
+.section-platform__line {
+  position: absolute;
+  z-index: 1;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+.section-platform__line img {
+  width: 100%;
 }
 
 .section-map {
@@ -2328,6 +2366,14 @@ a:hover {
     display: none;
   }
 
+  .section-platform__teacher-wrap {
+    margin-bottom: 3.75rem;
+  }
+
+  .section-platform__line {
+    bottom: -20%;
+  }
+
   #modal-review-text .modal-review__insta {
     left: 1.5rem;
   }
@@ -2591,6 +2637,14 @@ a:hover {
     margin-bottom: 1.25rem;
   }
 
+  .section-platform__teacher-wrap {
+    padding: 0rem;
+  }
+
+  .section-platform__line {
+    bottom: -16%;
+  }
+
   .section-map__info-item {
     margin-bottom: 0.625rem;
   }
@@ -2755,6 +2809,19 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .section-platform__teacher-wrap {
+    flex-wrap: wrap;
+  }
+
+  .section-platform__description {
+    max-width: 100%;
+    order: -1;
+  }
+
+  .section-platform__line {
+    bottom: 20%;
+  }
+
   .lesson-consist__video {
     width: 100%;
     margin-top: 2rem;
@@ -3043,6 +3110,21 @@ a:hover {
 
   .section-teachers__item--video video {
     height: 10.9375rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .section-platform__teacher {
+    width: 8.75rem;
+  }
+
+  .section-platform__teacher img {
+    width: 100%;
+    height: auto;
+  }
+
+  .section-platform__line {
+    bottom: 40px;
   }
 }
 
