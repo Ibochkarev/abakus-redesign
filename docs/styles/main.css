@@ -3136,6 +3136,18 @@ a:hover {
   }
 }
 
+@media (max-width: 400px) {
+  .section__title {
+    font-size: 1.25rem;
+    padding: 0.875rem 0.5rem;
+  }
+
+  .section-map .section__title {
+    font-size: 1.25rem;
+    padding: 0.875rem 0.5rem;
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .header__menu-list .header__menu-item:not(:last-child) {
     margin-right: 1.5625rem;
