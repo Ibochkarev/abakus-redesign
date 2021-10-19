@@ -1843,6 +1843,7 @@ a:hover {
 .section-reviews__item {
   position: relative;
   width: 31%;
+  min-height: 17.5rem;
   height: auto;
   max-width: 31%;
   margin: 1%;
@@ -2770,6 +2771,10 @@ a:hover {
 
   .section-reviews__wrapper {
     margin: 0;
+  }
+
+  .section-reviews__more-btn {
+    width: 100%;
   }
 }
 
