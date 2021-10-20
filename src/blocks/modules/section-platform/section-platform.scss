@@ -139,7 +139,14 @@
 
     @media (max-width: 768px) {
       max-width: 100%;
+      font-size: rem(20);
+      line-height: rem(24);
       order: -1;
+    }
+
+    @media (max-width: 575px) {
+      font-size: rem(18);
+      line-height: rem(22);
     }
 
     span {

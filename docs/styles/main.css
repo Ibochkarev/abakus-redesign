@@ -1873,6 +1873,7 @@ a:hover {
   position: absolute;
   right: -2.5rem;
   bottom: -2.5rem;
+  width: 7.5rem;
 }
 
 .section-reviews__wrapper {
@@ -1885,9 +1886,9 @@ a:hover {
 .section-reviews__item {
   position: relative;
   width: 31%;
-  min-height: 17.5rem;
   height: auto;
   max-width: 31%;
+  min-height: 17.5rem;
   margin: 1%;
   border: 0.4375rem solid #C3E6F5;
   border-radius: 1.4375rem;
@@ -2024,10 +2025,10 @@ a:hover {
 }
 
 .section-teachers__description {
-  max-width: 780px;
-  font-size: 18px;
-  line-height: 140%;
+  max-width: 48.75rem;
   padding-bottom: 0.625rem;
+  font-size: 1.125rem;
+  line-height: 140%;
 }
 
 .section-teachers__wrap {
@@ -2039,45 +2040,45 @@ a:hover {
 }
 
 .section-teachers__item:first-child {
-  min-width: 48.75rem;
   height: 27.5rem;
+  min-width: 48.75rem;
   margin-right: 1.25rem;
 }
 
 .section-teachers__sub-item {
-  box-sizing: border-box;
   position: relative;
+  box-sizing: border-box;
 }
 
 .section-teachers__sub-item--mask {
   z-index: 100;
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
 }
 
 .section-teachers__sub-item:first-child {
   height: 54%;
-  border-radius: 0.75rem;
   margin-bottom: 5%;
+  border-radius: 0.75rem;
 }
 
 .section-teachers__sub-item:first-child video {
-  border-radius: 0.75rem;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
 }
 
 .section-teachers__sub-item:last-child {
   position: relative;
   height: 42%;
-  background: #FAEB99;
   padding: 2.125rem 2.625rem 0 2.625rem;
+  font-size: 1.5625rem;
   font-weight: 600;
-  font-size: 25px;
-  line-height: 30px;
+  line-height: 1.875rem;
+  background: #FAEB99;
 }
 
 .section-teachers__sub-item--ico {
@@ -2087,11 +2088,11 @@ a:hover {
 }
 
 .section-teachers__item--video video {
-  max-width: 48.75rem;
-  max-height: 27.5rem;
+  overflow: hidden;
   width: 100%;
   height: 36.375rem;
-  overflow: hidden;
+  max-width: 48.75rem;
+  max-height: 27.5rem;
   border-radius: 1.125rem;
 }
 
@@ -2812,6 +2813,12 @@ a:hover {
     right: 1.5625rem;
   }
 
+  .section-reviews__description {
+    padding: 2rem 1.6875rem;
+    font-size: 1rem;
+    line-height: 0.8125rem;
+  }
+
   .section-teachers__wrapper {
     margin-top: 2.5rem;
   }
@@ -2821,8 +2828,8 @@ a:hover {
   }
 
   .section-teachers__item:first-child {
-    margin-right: 0rem;
     height: auto;
+    margin-right: 0rem;
   }
 
   .section-teachers__sub-item:first-child {
@@ -2855,6 +2862,8 @@ a:hover {
 
   .section-platform__description {
     max-width: 100%;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     order: -1;
   }
 
@@ -3042,6 +3051,7 @@ a:hover {
     width: 100%;
     max-width: 100%;
     margin: 1% 0;
+    margin-bottom: 1.25rem;
   }
 }
 
@@ -3072,6 +3082,11 @@ a:hover {
 }
 
 @media (max-width: 575px) {
+  .section-platform__description {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+
   .section-platform__line ._desktop {
     display: none;
   }
@@ -3080,6 +3095,40 @@ a:hover {
     display: block;
     width: 5rem;
     margin: 0 auto;
+  }
+
+  .section-reviews__description {
+    max-width: 100%;
+    margin-right: 0;
+    padding: 1.625rem 1.4375rem;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+
+  .section-reviews__description img {
+    right: 0;
+    width: 5rem;
+  }
+
+  .section-reviews__item {
+    margin-bottom: 1.5625rem;
+  }
+
+  .section-reviews__item:nth-child(3) {
+    margin-bottom: 0;
+  }
+
+  .section-reviews__item:nth-child(4),
+  .section-reviews__item:nth-child(5),
+  .section-reviews__item:nth-child(6) {
+    display: none;
+  }
+
+  .section-teachers__sub-item:last-child {
+    height: auto;
+    padding: 1.5625rem 1.4375rem;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
   }
 }
 
@@ -3145,6 +3194,10 @@ a:hover {
     max-width: calc(100vw - 30px);
   }
 
+  .section-teachers {
+    padding: 3.75rem 0 4.375rem;
+  }
+
   .section-teachers__wrapper {
     margin-top: 4.375rem;
   }
@@ -3166,14 +3219,6 @@ a:hover {
 
   .section-platform__line {
     bottom: 40px;
-  }
-}
-
-@media (max-width: 539px) {
-  .section-reviews__description {
-    padding: 1.5rem 2.5rem;
-    font-size: 1.125rem;
-    line-height: 120%;
   }
 }
 
