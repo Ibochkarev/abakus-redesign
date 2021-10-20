@@ -98,11 +98,6 @@
     transition: all 0.5s ease-in-out;
     white-space: nowrap;
 
-    @media (max-width: 574px) {
-      justify-content: center;
-      width: 100%;
-    }
-
     &.elem-fixed {
       z-index: 999;
       position: fixed;
@@ -115,12 +110,6 @@
 
       img {
         height: rem(32);
-      }
-
-      @media (max-width: 574px) {
-        left: 50%;
-        width: calc(100% - rem(30));
-        transform: translate(-50%);
       }
 
       @keyframes show {

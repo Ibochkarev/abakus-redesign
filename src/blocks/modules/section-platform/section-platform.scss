@@ -10,9 +10,9 @@
   }
 
   &__full-video {
+    overflow: hidden;
     width: 100%;
     height: rem(582);
-    overflow: hidden;
     margin-bottom: rem(95);
     border-radius: rem(18);
 
@@ -37,9 +37,9 @@
 
   &__info {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: rem(80);
+    flex-wrap: wrap;
 
     @media (max-width: 991px) {
       margin-bottom: rem(70);
@@ -50,11 +50,11 @@
     }
 
     &-item {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
       @include size-lg(7);
       @include size-md(7);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
 
       @media (max-width: 767) {
         width: 100%;
@@ -114,9 +114,9 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: rem(0) rem(64);
     justify-content: space-between;
     margin-bottom: rem(120);
+    padding: rem(0) rem(64);
 
     @media (max-width: 1179px) {
       margin-bottom: rem(60);
@@ -133,23 +133,23 @@
 
   &__description {
     max-width: 40%;
-    font-weight: 600;
     font-size: rem(25);
+    font-weight: 600;
     line-height: rem(30);
-
-    span {
-      color: #171664;
-    }
 
     @media (max-width: 768px) {
       max-width: 100%;
       order: -1;
     }
+
+    span {
+      color: #171664;
+    }
   }
 
   &__teacher {
-    position: relative;
     z-index: 2;
+    position: relative;
 
     @media(max-width: 540px) {
       width: rem(140);
@@ -162,16 +162,12 @@
   }
 
   &__line {
-    position: absolute;
     z-index: 1;
+    position: absolute;
     bottom: -50%;
     left: 50%;
-    transform: translateX(-50%);
     width: 80%;
-
-    img {
-      width: 100%;
-    }
+    transform: translateX(-50%);
 
     @media(max-width: 1179px) {
       bottom: -20%;
@@ -185,8 +181,27 @@
       bottom: 20%;
     }
 
+    @media (max-width: 575px) {
+      ._desktop {
+        display: none;
+      }
+      ._mobile {
+        display: block;
+        width: rem(80);
+        margin: 0 auto;
+      }
+    }
+
     @media (max-width: 540px) {
       bottom: 40px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    ._mobile {
+      display: none;
     }
   }
 }
