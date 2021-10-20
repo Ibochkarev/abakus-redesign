@@ -3,6 +3,7 @@ import "%modules%/footer/footer";
 import "%modules%/section-tariffs/section-tariffs";
 import "%modules%/ticker-1/ticker-1";
 import "%modules%/lesson-consist-3/lesson-consist-3";
+import "%modules%/lesson-consist-1/lesson-consist-1";
 import "%modules%/modals/modals";
 import "%modules%/mainblock/mainblock.js";
 import "%modules%/reviews/reviews";

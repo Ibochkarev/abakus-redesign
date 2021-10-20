@@ -194,6 +194,63 @@ if (headerArray.length) {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/lesson-consist-1/lesson-consist-1.js":
+/*!*****************************************************************!*\
+  !*** ./src/blocks/modules/lesson-consist-1/lesson-consist-1.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var lessonConsistControl = document.querySelector('.lesson-consist__control');
+var lessonConsistPlayer = document.querySelector('.lesson-consist__video video');
+var lessonConsistTimeline = document.querySelectorAll('.lesson-consist__timeline img');
+var lessonConsistVolume = document.querySelectorAll('.lesson-consist__volume img');
+var lessonConsistScreenSize = document.querySelector('.lesson-consist__screensize');
+
+if (lessonConsistControl) {
+  lessonConsistPlayer.controls = false;
+  lessonConsistPlayer.muted = true;
+  var playerFlagPlay = true;
+  var playerFlagVolume = true;
+  lessonConsistScreenSize.addEventListener('click', function () {
+    lessonConsistPlayer.requestFullscreen();
+  });
+  lessonConsistTimeline.forEach(function (el, i, arr) {
+    el.addEventListener('click', function () {
+      toggleShowElem(arr);
+
+      if (playerFlagPlay) {
+        lessonConsistPlayer.pause();
+        playerFlagPlay = false;
+      } else {
+        lessonConsistPlayer.play();
+        playerFlagPlay = true;
+      }
+    });
+  });
+  lessonConsistVolume.forEach(function (el, i, arr) {
+    el.addEventListener('click', function () {
+      toggleShowElem(arr);
+
+      if (playerFlagVolume) {
+        lessonConsistPlayer.muted = false;
+        playerFlagVolume = false;
+      } else {
+        lessonConsistPlayer.muted = true;
+        playerFlagVolume = true;
+      }
+    });
+  });
+}
+
+function toggleShowElem(arr) {
+  arr.forEach(function (el) {
+    el.classList.contains('hide-elem') ? el.classList.remove('hide-elem') : el.classList.add('hide-elem');
+  });
+}
+
+/***/ }),
+
 /***/ "./src/blocks/modules/lesson-consist-3/lesson-consist-3.js":
 /*!*****************************************************************!*\
   !*** ./src/blocks/modules/lesson-consist-3/lesson-consist-3.js ***!
@@ -234,6 +291,7 @@ var lessonConsist = new swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___defaul
 /***/ (function(module, exports) {
 
 var $firstblockButton = document.querySelector('.firstblock__button');
+var $firstblockPlayer = document.querySelector('.firstblock__middle video');
 var $firstblockMiddle = document.querySelector('.firstblock__middle');
 var $arrowLeftWrap = document.querySelector('.arrow-left-wrap');
 var $firstblockMiddleClose = document.querySelector('.firstblock__middle--close');
@@ -276,6 +334,7 @@ if ($firstblockItemArray.length) {
   $firstblockMiddleClose.addEventListener('click', function () {
     $firstblockMiddle.classList.remove('elem-fixed');
     $firstblockMiddleCap.classList.remove('elem-fixed');
+    $firstblockPlayer.pause();
     $firstblockMiddleFlug = false;
   });
 }
@@ -527,14 +586,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_section_tariffs_section_tariffs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/section-tariffs/section-tariffs */ "./src/blocks/modules/section-tariffs/section-tariffs.js");
 /* harmony import */ var _modules_ticker_1_ticker_1__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/ticker-1/ticker-1 */ "./src/blocks/modules/ticker-1/ticker-1.js");
 /* harmony import */ var _modules_lesson_consist_3_lesson_consist_3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! %modules%/lesson-consist-3/lesson-consist-3 */ "./src/blocks/modules/lesson-consist-3/lesson-consist-3.js");
-/* harmony import */ var _modules_modals_modals__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/modals/modals */ "./src/blocks/modules/modals/modals.js");
-/* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/mainblock/mainblock.js */ "./src/blocks/modules/mainblock/mainblock.js");
-/* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/reviews/reviews */ "./src/blocks/modules/reviews/reviews.js");
-/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/teachers/teachers */ "./src/blocks/modules/teachers/teachers.js");
-/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _modules_section_smi_section_smi__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/section-smi/section-smi */ "./src/blocks/modules/section-smi/section-smi.js");
+/* harmony import */ var _modules_lesson_consist_1_lesson_consist_1__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/lesson-consist-1/lesson-consist-1 */ "./src/blocks/modules/lesson-consist-1/lesson-consist-1.js");
+/* harmony import */ var _modules_lesson_consist_1_lesson_consist_1__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_lesson_consist_1_lesson_consist_1__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _modules_modals_modals__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/modals/modals */ "./src/blocks/modules/modals/modals.js");
+/* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/mainblock/mainblock.js */ "./src/blocks/modules/mainblock/mainblock.js");
+/* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/reviews/reviews */ "./src/blocks/modules/reviews/reviews.js");
+/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/teachers/teachers */ "./src/blocks/modules/teachers/teachers.js");
+/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _modules_section_smi_section_smi__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/section-smi/section-smi */ "./src/blocks/modules/section-smi/section-smi.js");
+
 
 
 

@@ -1,3 +1,10 @@
+.section__title {
+  @media(max-width: 400px) {
+    font-size: rem(20);
+    padding: rem(14) rem(8);
+  }
+}
+
 .section-map {
   padding: rem(120) 0 rem(60);
 
@@ -10,6 +17,11 @@
 
     @media (max-width: 767px) {
       margin-bottom: rem(60);
+    }
+
+    @media(max-width: 400px) {
+      font-size: rem(20);
+      padding: rem(14) rem(8);
     }
   }
 

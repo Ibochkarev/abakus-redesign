@@ -1012,7 +1012,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 7.5rem;
+  margin-bottom: 5rem;
 }
 
 .section-platform__info-item {
@@ -1046,6 +1046,44 @@ a:hover {
 
 .section-platform__info-item__image._orange img {
   border-color: var(--lightyellow-color);
+}
+
+.section-platform__teacher-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0rem 4rem;
+  justify-content: space-between;
+  margin-bottom: 7.5rem;
+}
+
+.section-platform__description {
+  max-width: 40%;
+  font-weight: 600;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
+}
+
+.section-platform__description span {
+  color: #171664;
+}
+
+.section-platform__teacher {
+  position: relative;
+  z-index: 2;
+}
+
+.section-platform__line {
+  position: absolute;
+  z-index: 1;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+.section-platform__line img {
+  width: 100%;
 }
 
 .section-map {
@@ -1163,6 +1201,55 @@ a:hover {
   position: relative;
   overflow: hidden;
   padding: 0 1.25rem;
+}
+
+.lesson-consist__video {
+  position: relative;
+  width: 28.125rem;
+  height: 17.5rem;
+  border: 6px solid #fff;
+  border-radius: 2.25rem;
+}
+
+.lesson-consist__video:before {
+  position: absolute;
+  content: "";
+  width: 17.5rem;
+  height: 17.5rem;
+  top: -40%;
+  right: -15%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../img/svg/consist-star.svg);
+}
+
+.lesson-consist__video video {
+  border-radius: 2rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lesson-consist__control {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5625rem;
+}
+
+.lesson-consist__control img {
+  cursor: pointer;
+}
+
+.lesson-consist .hide-elem {
+  display: none;
+}
+
+.lesson-consist__timeline {
+  min-width: 70%;
+}
+
+.lesson-consist__timeline--body {
+  border-bottom: 4px solid #ffff;
 }
 
 .lesson-consist__imageblock {
@@ -1794,6 +1881,7 @@ a:hover {
 .section-reviews__item {
   position: relative;
   width: 31%;
+  min-height: 17.5rem;
   height: auto;
   max-width: 31%;
   margin: 1%;
@@ -2278,6 +2366,14 @@ a:hover {
     display: none;
   }
 
+  .section-platform__teacher-wrap {
+    margin-bottom: 3.75rem;
+  }
+
+  .section-platform__line {
+    bottom: -20%;
+  }
+
   #modal-review-text .modal-review__insta {
     left: 1.5rem;
   }
@@ -2541,6 +2637,14 @@ a:hover {
     margin-bottom: 1.25rem;
   }
 
+  .section-platform__teacher-wrap {
+    padding: 0rem;
+  }
+
+  .section-platform__line {
+    bottom: -16%;
+  }
+
   .section-map__info-item {
     margin-bottom: 0.625rem;
   }
@@ -2573,6 +2677,11 @@ a:hover {
   .ticker__item-icon {
     height: 2.75rem;
     margin-right: 1.875rem;
+  }
+
+  .lesson-consist__video {
+    width: 48%;
+    height: 13.125rem;
   }
 
   .lesson-consist__imageblock-star__1 {
@@ -2700,12 +2809,39 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .section-platform__teacher-wrap {
+    flex-wrap: wrap;
+  }
+
+  .section-platform__description {
+    max-width: 100%;
+    order: -1;
+  }
+
+  .section-platform__line {
+    bottom: 20%;
+  }
+
+  .lesson-consist__video {
+    width: 100%;
+    margin-top: 2rem;
+    height: 13.125rem;
+  }
+
+  .lesson-consist__video:before {
+    display: none;
+  }
+
   .firstblock {
     padding: 1.875rem 0 3.75rem;
   }
 
   .section-reviews__wrapper {
     margin: 0;
+  }
+
+  .section-reviews__more-btn {
+    width: 100%;
   }
 }
 
@@ -2977,11 +3113,38 @@ a:hover {
   }
 }
 
+@media (max-width: 540px) {
+  .section-platform__teacher {
+    width: 8.75rem;
+  }
+
+  .section-platform__teacher img {
+    width: 100%;
+    height: auto;
+  }
+
+  .section-platform__line {
+    bottom: 40px;
+  }
+}
+
 @media (max-width: 539px) {
   .section-reviews__description {
     padding: 1.5rem 2.5rem;
     font-size: 1.125rem;
     line-height: 120%;
+  }
+}
+
+@media (max-width: 400px) {
+  .section__title {
+    font-size: 1.25rem;
+    padding: 0.875rem 0.5rem;
+  }
+
+  .section-map .section__title {
+    font-size: 1.25rem;
+    padding: 0.875rem 0.5rem;
   }
 }
 
