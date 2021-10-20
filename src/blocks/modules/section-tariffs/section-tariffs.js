@@ -16,3 +16,10 @@ const tarifs = new Swiper(".section-tariffs__wrapper", {
     },
 });
 
+document.querySelector(".section-tariffs__item-button").addEventListener("click", function() {
+    const modal = document.querySelector(".modal"),
+        packageName = document.querySelector(this).data("package");
+    console.log("test");
+
+    modal.querySelector("input[name=package-name]").value(packageName);
+});

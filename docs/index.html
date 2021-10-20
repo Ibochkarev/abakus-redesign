@@ -311,7 +311,7 @@
                     <div class="section-tariffs__item-info__line">4 занятия по 45 минут</div>
                     <div class="section-tariffs__item-info__line">1 ученик</div>
                   </div>
-                  <button class="section-tariffs__item-button" type="button" data-micromodal-trigger="modal-form">Выбрать</button>
+                  <button class="section-tariffs__item-button" type="button" data-micromodal-trigger="modal-form" data-package="Базовый">Выбрать</button>
                   <div class="section-tariffs__item-adds"><span class="ic-people"></span>Индивидуальный тариф</div>
                 </div>
               </div>
@@ -326,7 +326,7 @@
                     <div class="section-tariffs__item-info__line">4 занятия по 60 минут</div>
                     <div class="section-tariffs__item-info__line">1 ученик</div>
                   </div>
-                  <button class="section-tariffs__item-button" type="button" data-micromodal-trigger="modal-form">Выбрать</button>
+                  <button class="section-tariffs__item-button" type="button" data-micromodal-trigger="modal-form" data-package="Популярный">Выбрать</button>
                   <div class="section-tariffs__item-adds"><span class="ic-people"></span>Индивидуальный тариф</div>
                 </div>
               </div>
@@ -341,7 +341,7 @@
                     <div class="section-tariffs__item-info__line">8занятия по 45 минут</div>
                     <div class="section-tariffs__item-info__line">1 ученик</div>
                   </div>
-                  <button class="section-tariffs__item-button" type="button" data-micromodal-trigger="modal-form">Выбрать</button>
+                  <button class="section-tariffs__item-button" type="button" data-micromodal-trigger="modal-form" data-package="Интенсив">Выбрать</button>
                   <div class="section-tariffs__item-adds"><span class="ic-people"></span>Индивидуальный тариф</div>
                 </div>
               </div>
@@ -592,24 +592,27 @@
             <h2 class="modal__title" id="modal-form-title">Оставить заявку</h2>
           </header>
           <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-          <main class="modal__content">
-            <label class="modal__form-label" for="name">
-              <input class="modal__form-input" id="name" type="text" name="name" placeholder="Имя">
-            </label>
-            <label class="modal__form-label" for="name">
-              <input class="modal__form-input" id="email" type="email" name="email" placeholder="Электронная почта">
-            </label>
-            <label class="modal__form-label" for="phone">
-              <input class="modal__form-input" id="name" type="tel" name="phone" placeholder="Телефон">
-            </label>
-          </main>
-          <footer class="modal__footer">
-            <button class="modal__btn" type="submit">Отправить</button>
-            <div class="modal__legal">
-              Нажимая кнопку, вы соглашаетесь
-              <a href="#">на обработку персональных данных</a>
-            </div>
-          </footer>
+          <form action="">
+            <input type="hidden" name="package-name" value="">
+            <main class="modal__content">
+              <label class="modal__form-label" for="name">
+                <input class="modal__form-input" id="name" type="text" name="name" placeholder="Имя">
+              </label>
+              <label class="modal__form-label" for="name">
+                <input class="modal__form-input" id="email" type="email" name="email" placeholder="Электронная почта">
+              </label>
+              <label class="modal__form-label" for="phone">
+                <input class="modal__form-input" id="name" type="tel" name="phone" placeholder="Телефон">
+              </label>
+            </main>
+            <footer class="modal__footer">
+              <button class="modal__btn" type="submit">Отправить</button>
+              <div class="modal__legal">
+                Нажимая кнопку, вы соглашаетесь
+                <a href="#">на обработку персональных данных</a>
+              </div>
+            </footer>
+          </form>
         </div>
       </div>
     </div>

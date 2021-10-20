@@ -431,6 +431,12 @@ var tarifs = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__
     }
   }
 });
+document.querySelector(".section-tariffs__item-button").addEventListener("click", function () {
+  var modal = document.querySelector(".modal"),
+      packageName = document.querySelector(this).data("package");
+  console.log("test");
+  modal.querySelector("input[name=package-name]").value(packageName);
+});
 
 /***/ }),
 

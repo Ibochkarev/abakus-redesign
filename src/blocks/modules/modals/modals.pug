@@ -5,19 +5,21 @@
         h2#modal-form-title(class="modal__title")
           | Оставить заявку
       button.modal__close(aria-label="Close modal" data-micromodal-close)
-      main.modal__content
-        label.modal__form-label(for="name")
-          input#name.modal__form-input(type="text", name="name", placeholder="Имя")
-        label.modal__form-label(for="name")
-          input#email.modal__form-input(type="email", name="email", placeholder="Электронная почта")
-        label.modal__form-label(for="phone")
-          input#name.modal__form-input(type="tel", name="phone", placeholder="Телефон")
-      footer.modal__footer
-        button.modal__btn(type="submit") Отправить
-        .modal__legal Нажимая кнопку, вы соглашаетесь
-          |
-          |
-          a(href="#") на обработку персональных данных
+      form(action="")
+        input(type="hidden", name="package-name", value="")
+        main.modal__content
+          label.modal__form-label(for="name")
+            input#name.modal__form-input(type="text", name="name", placeholder="Имя")
+          label.modal__form-label(for="name")
+            input#email.modal__form-input(type="email", name="email", placeholder="Электронная почта")
+          label.modal__form-label(for="phone")
+            input#name.modal__form-input(type="tel", name="phone", placeholder="Телефон")
+        footer.modal__footer
+          button.modal__btn(type="submit") Отправить
+          .modal__legal Нажимая кнопку, вы соглашаетесь
+            |
+            |
+            a(href="#") на обработку персональных данных
 
 #modal-review-text.modal.micromodal-slide(aria-hidden="true")
   .modal__overlay(tabindex="-1" data-micromodal-close)

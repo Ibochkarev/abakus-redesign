@@ -9,12 +9,12 @@ if(headerArray.length) {
     menuButton.addEventListener("click", function() {
         headerArray.forEach((elem) => {
             elem.classList.toggle("_active");
-        })
+        });
     });
 
     menuButtonClose.addEventListener("click", function () {
         headerArray.forEach((elem) => {
             elem.classList.toggle("_active");
-        })
+        });
     });
 }
