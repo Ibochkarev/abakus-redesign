@@ -874,12 +874,12 @@ a:hover {
 }
 
 .section-smi__item-more__wrapper .ic-arrow {
-  background-image: url("data:image/svg+xml,%3Csvg width='38' height='24' viewBox='0 0 38 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M37.0607 13.0607C37.6464 12.4749 37.6464 11.5251 37.0607 10.9393L27.5147 1.3934C26.9289 0.807611 25.9792 0.807611 25.3934 1.3934C24.8076 1.97919 24.8076 2.92893 25.3934 3.51472L33.8787 12L25.3934 20.4853C24.8076 21.0711 24.8076 22.0208 25.3934 22.6066C25.9792 23.1924 26.9289 23.1924 27.5147 22.6066L37.0607 13.0607ZM0 13.5H36V10.5H0V13.5Z' fill='black'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
   width: 2.375rem;
   height: 1.5rem;
   margin-left: 0.4375rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='38' height='24' viewBox='0 0 38 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M37.0607 13.0607C37.6464 12.4749 37.6464 11.5251 37.0607 10.9393L27.5147 1.3934C26.9289 0.807611 25.9792 0.807611 25.3934 1.3934C24.8076 1.97919 24.8076 2.92893 25.3934 3.51472L33.8787 12L25.3934 20.4853C24.8076 21.0711 24.8076 22.0208 25.3934 22.6066C25.9792 23.1924 26.9289 23.1924 27.5147 22.6066L37.0607 13.0607ZM0 13.5H36V10.5H0V13.5Z' fill='black'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .section-tariffs {
@@ -1900,26 +1900,46 @@ a:hover {
   padding: 2rem 2.5rem 5rem 2.5rem;
 }
 
-.section-reviews__item--text.hide-elem {
-  display: none;
-}
-
-.section-reviews__item--wrap-video {
+.section-reviews__item-cover {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
   height: 100%;
   min-height: 20rem;
   border-radius: 1.125rem;
   background-color: #0b2530;
 }
 
-.section-reviews__item--wrap-video video {
+.section-reviews__item-cover::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  content: '';
+}
+
+.section-reviews__item-cover::before {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 3.8125rem;
+  height: 4.375rem;
+  transform: translate(-50%, -50%);
+  content: '';
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg width='61' height='70' viewBox='0 0 61 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M59 31.5359C61.6667 33.0755 61.6667 36.9245 59 38.4641L6.49999 68.775C3.83333 70.3146 0.500001 68.3901 0.500001 65.3109L0.5 4.6891C0.5 1.6099 3.83333 -0.314592 6.5 1.22501L59 31.5359Z' fill='%23C3E6F5'/%3E%3C/svg%3E");
+}
+
+.section-reviews__item-cover img {
+  position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 1.125rem;
   object-fit: cover;
-}
-
-.section-reviews__item--wrap-video.hide-elem {
-  display: none;
 }
 
 .section-reviews__author {
@@ -2651,6 +2671,10 @@ a:hover {
     margin-bottom: 3rem;
   }
 
+  .section-smi {
+    padding: 3.125rem 0 5rem;
+  }
+
   .section-tariffs__wrapper {
     margin-top: 2.5rem;
   }
@@ -2771,6 +2795,10 @@ a:hover {
     max-width: 17.625rem;
   }
 
+  .firstblock {
+    padding: 0 0 3.75rem;
+  }
+
 @keyframes resizeAnimate {
     0% {
       width: 70%;
@@ -2857,6 +2885,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .section-platform__teacher-wrap {
+    margin-bottom: 0;
     flex-wrap: wrap;
   }
 
@@ -2881,10 +2910,6 @@ a:hover {
     display: none;
   }
 
-  .firstblock {
-    padding: 1.875rem 0 3.75rem;
-  }
-
   .section-reviews__wrapper {
     margin: 0;
   }
@@ -2907,6 +2932,10 @@ a:hover {
 
   .footer__copyrite {
     margin-bottom: 3.75rem;
+  }
+
+  .section-smi {
+    padding: 1.5625rem 0 3.125rem;
   }
 
   .section-map {
@@ -2956,6 +2985,14 @@ a:hover {
 
   .lesson-consist__imageblock-star__2 {
     right: 0;
+  }
+
+  .lesson-consist__1 {
+    padding: 7.5rem 0 3.75rem;
+  }
+
+  .lesson-consist__2 {
+    padding: 7.5rem 0 3.75rem;
   }
 
   .lesson-consist__3 {
@@ -3082,6 +3119,27 @@ a:hover {
 }
 
 @media (max-width: 575px) {
+  .section__title-border {
+    width: 0.3125rem;
+    height: 0.3125rem;
+  }
+
+  .section__title .b_top {
+    display: none;
+  }
+
+  .section__title .b_top-right {
+    display: none;
+  }
+
+  .section__title .b_bottom {
+    display: none;
+  }
+
+  .section__title .b_bottom-right {
+    display: none;
+  }
+
   .section-platform__description {
     font-size: 1.125rem;
     line-height: 1.375rem;
@@ -3095,6 +3153,18 @@ a:hover {
     display: block;
     width: 5rem;
     margin: 0 auto;
+  }
+
+  .lesson-consist__1 {
+    padding: 2.9375rem 0 6.875rem;
+  }
+
+  .lesson-consist__2 {
+    padding: 7.5rem 0 3.5625rem;
+  }
+
+  .lesson-consist__3 {
+    padding: 5.625rem 0 3.5625rem;
   }
 
   .section-reviews__description {

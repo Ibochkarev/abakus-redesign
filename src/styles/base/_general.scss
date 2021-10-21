@@ -87,27 +87,48 @@ a{
                 width: rem(10);
                 height: rem(10);
             }
+
+            @media (max-width: 575px) {
+                width: rem(5);
+                height: rem(5);
+            }
         }
 
         .b_top {
             z-index: 10;
             top: rem(-12);
             left: rem(-6);
+
+            @media (max-width: 575px) {
+                display: none;
+            }
         }
         .b_top-right {
             z-index: 10;
             top: rem(-12);
             right: rem(-18);
+
+            @media (max-width: 575px) {
+                display: none;
+            }
         }
         .b_bottom {
             z-index: 10;
             bottom: rem(-12);
             left: rem(-6);
+
+            @media (max-width: 575px) {
+                display: none;
+            }
         }
         .b_bottom-right {
             z-index: 10;
             right: rem(-18);
             bottom: rem(-12);
+
+            @media (max-width: 575px) {
+                display: none;
+            }
         }
     }
 }

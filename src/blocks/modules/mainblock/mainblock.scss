@@ -1,8 +1,8 @@
 .firstblock {
   padding: rem(55) 0 rem(70);
 
-  @media (max-width: 768px) {
-    padding: rem(30) 0 rem(60);
+  @media (max-width: 991px) {
+    padding: 0 0 rem(60);
   }
 
   @keyframes resizeAnimate {

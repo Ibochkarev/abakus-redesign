@@ -118,9 +118,7 @@
         <div class="firstblock__middle">
           <div class="firstblock__middle--close"></div>
           <video class="video-js firstblock__full-video" id="video-main" controls preload="auto" loop="true" autoplay="true" poster="./img/mainblock/cover.jpg" muted="true">
-            <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-            <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm">
-            <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+            <source src="//abakus-center.ru/videos/video_1.mp4" type="video/mp4">
             <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that</p>
           </video>
         </div>
@@ -174,9 +172,7 @@
           </div>
           <div class="lesson-consist__video">
             <video class="video-js" id="video-main" controls preload="auto" loop="true" autoplay="true" poster="./img/mainblock/cover.jpg" muted="true">
-              <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-              <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm">
-              <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+              <source src="//abakus-center.ru/videos/video_2.mp4" type="video/mp4">
               <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that</p>
             </video>
             <div class="lesson-consist__control">
@@ -246,10 +242,8 @@
       <div class="container">
         <h2 class="section__title">Занятия проходят с использованием интерактивной платформы Абакус<span class="section__title-border b_top"></span><span class="section__title-border b_top-right"></span><span class="section__title-border b_bottom"></span><span class="section__title-border b_bottom-right"></span></h2>
         <div class="section-platform__wrapper">
-          <video class="video-js section-platform__full-video" id="video-platform" controls preload="auto" loop="true" autoplay="true" poster="./img/platform/cover.jpg" muted="true" data-setup="{}">
-            <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-            <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm">
-            <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+          <video class="video-js section-platform__full-video" id="video-platform" controls preload="auto" loop="true" autoplay="true" poster="./img/platform/cover.jpg" muted="true">
+            <source src="//abakus-center.ru/videos/video_3.mp4" type="video/mp4">
             <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that</p>
           </video>
           <div class="section-platform__info">
@@ -451,10 +445,8 @@
             </div>
             <div class="section-reviews__item--video"></div>
           </div>
-          <div class="section-reviews__item">
-            <div class="section-reviews__item--text hide-elem"></div>
-            <div class="section-reviews__item--wrap-video"></div>
-          </div>
+          <div class="section-reviews__item"><a class="section-reviews__item--video" data-micromodal-trigger="modal-review-video">
+              <div class="section-reviews__item-cover"><img src="./img/platform/cover.jpg" alt=""></div></a></div>
         </div>
         <div class="section-reviews__more-reviews">
           <button class="section-reviews__more-btn">Больше отзывов</button>
@@ -636,6 +628,21 @@
       </div>
     </div>
     <div class="modal micromodal-slide" id="modal-review-text" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-form-title">
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+          <div class="modal-review">
+            <div class="modal-review__info">
+              <div class="modal-review__author"><img class="modal-review__photo" src="./img/reviews/alex.jpg" alt="">
+                <p class="modal-review__name">Александр, 10 лет</p>
+              </div>
+            </div>
+            <p class="modal-review__text">Вот и все)) Можно выдохнуть и поздравить моего маленького счетовода с очередным вторым местом в Международной Олимпиаде, прошедшей вчера, 22 декабря 2019 Вот и все)) Можно выдохнуть и поздравить моего маленького счетовода с очередным вторым местом в Международной Олимпиаде, прошедшей вчера, 22 декабря 2019</p><a class="modal-review__insta" href="#" target="_blank" rel="noopener" aria-label="Instagram"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal micromodal-slide" id="modal-review-video" aria-hidden="true">
       <div class="modal__overlay" tabindex="-1" data-micromodal-close>
         <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-form-title">
           <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
