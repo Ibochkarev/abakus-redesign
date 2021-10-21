@@ -1783,6 +1783,31 @@ a:hover {
   background: #36A753;
 }
 
+#modal-review-video .modal__container {
+  width: 100%;
+  max-width: 80rem;
+  padding: 0;
+  background-color: var(--white-color);
+}
+
+#modal-review-video .modal__close {
+  top: 1.5625rem;
+  right: 1.5625rem;
+}
+
+#modal-review-video .modal-review {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
+  overflow: hidden;
+}
+
+#modal-review-video .modal-review iframe {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 @keyframes mmfadeIn {
   from {
     opacity: 0;
@@ -2365,6 +2390,13 @@ a:hover {
 @media (min-width: 1180px) {
   .section-smi__item:hover .section-smi__item-more {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1280px) {
+  #modal-review-video .modal__container {
+    max-width: calc(100vw - 15%);
+    border: 0;
   }
 }
 
@@ -3249,6 +3281,10 @@ a:hover {
   }
 
   #modal-review-text .modal__container {
+    max-width: calc(100vw - 30px);
+  }
+
+  #modal-review-video .modal__container {
     max-width: calc(100vw - 30px);
   }
 

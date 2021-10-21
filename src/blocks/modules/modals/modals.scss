@@ -240,6 +240,43 @@
   }
 }
 
+#modal-review-video {
+  .modal {
+    &__container {
+      width: 100%;
+      max-width: rem(1280);
+      padding: 0;
+      background-color: var(--white-color);
+
+      @media (max-width: 1280px) {
+        max-width: calc(100vw - 15%);
+        border: 0;
+      }
+
+      @media (max-width: 574px) {
+        max-width: calc(100vw - 30px);
+      }
+    }
+
+    &__close {
+      top: rem(25);
+      right: rem(25);
+    }
+
+    &-review {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      overflow: hidden;
+
+      iframe {
+        position: absolute;
+        width: 100%!important;
+        height: 100%!important;
+      }
+    }
+  }
+}
+
 @keyframes mmfadeIn {
   from {
     opacity: 0;
