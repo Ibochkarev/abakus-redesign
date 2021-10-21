@@ -362,6 +362,14 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     onClose: function onClose(modal) {
       console.log("micromodal close");
+
+      if (modal.id = "modal-review-video") {
+        document.querySelector("#modal-review-video .youtube-player").contentWindow.postMessage(JSON.stringify({
+          "event": "command",
+          "func": "stopVideo",
+          "args": []
+        }), "*");
+      }
     }
   });
 });
@@ -406,6 +414,16 @@ if (sectionReviewsReview) {
 if (sectionReviewsItemArray.length) {
   sectionReviewsItemArray.forEach(function (elem) {
     if (!elem.innerHTML) elem.classList.add("hide-elem");
+  });
+}
+
+var videoPopupTrigger = document.querySelector("a.section-reviews__item--video");
+
+if (videoPopupTrigger) {
+  videoPopupTrigger.addEventListener("click", function (e) {
+    var videoLink = videoPopupTrigger.dataset.video;
+    var modalReviewVideoFrame = document.querySelector("#modal-review-video .youtube-player");
+    modalReviewVideoFrame.src = "https://www.youtube.com/embed/".concat(videoLink, "?wmode=opaque&autohide=1&autoplay=1&muted=1&enablejsapi=1");
   });
 }
 
@@ -490,12 +508,18 @@ var tarifs = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__
     }
   }
 });
-document.querySelector(".section-tariffs__item-button").addEventListener("click", function () {
-  var modal = document.querySelector(".modal"),
-      packageName = document.querySelector(this).data("package");
-  console.log("test");
-  modal.querySelector("input[name=package-name]").value(packageName);
-});
+var tarifButtons = document.querySelectorAll(".section-tariffs__item-button");
+
+if (tarifButtons.length > 0) {
+  tarifButtons.forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      var modal = document.querySelector("#modal-form"),
+          packageName = e.target.dataset.package;
+      modal.querySelector("input[name=\"package-name\"]").value = packageName;
+      console.log(modal, packageName, modal.querySelector("input[name=\"package-name\"]"));
+    });
+  });
+}
 
 /***/ }),
 

@@ -16,10 +16,15 @@ const tarifs = new Swiper(".section-tariffs__wrapper", {
     },
 });
 
-document.querySelector(".section-tariffs__item-button").addEventListener("click", function() {
-    const modal = document.querySelector(".modal"),
-        packageName = document.querySelector(this).data("package");
-    console.log("test");
+const tarifButtons = document.querySelectorAll(".section-tariffs__item-button");
 
-    modal.querySelector("input[name=package-name]").value(packageName);
-});
+if (tarifButtons.length > 0) {
+    tarifButtons.forEach((button) => {
+        button.addEventListener("click", function(e) {
+            const modal = document.querySelector("#modal-form"),
+                packageName = e.target.dataset.package;
+            modal.querySelector("input[name=\"package-name\"]").value = packageName;
+            console.log(modal, packageName, modal.querySelector("input[name=\"package-name\"]"));
+        });
+    });
+}

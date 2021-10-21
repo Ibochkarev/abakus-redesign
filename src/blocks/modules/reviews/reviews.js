@@ -21,3 +21,13 @@ if(sectionReviewsItemArray.length) {
         if(!elem.innerHTML)elem.classList.add("hide-elem");
     });
 }
+
+const videoPopupTrigger = document.querySelector("a.section-reviews__item--video");
+
+if (videoPopupTrigger) {
+    videoPopupTrigger.addEventListener("click", (e) => {
+        const videoLink = videoPopupTrigger.dataset.video;
+        const modalReviewVideoFrame = document.querySelector("#modal-review-video .youtube-player");
+        modalReviewVideoFrame.src = `https://www.youtube.com/embed/${videoLink}?wmode=opaque&autohide=1&autoplay=1&muted=1&enablejsapi=1`;
+    });
+}

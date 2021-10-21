@@ -11,6 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         onClose: function(modal) {
             console.log("micromodal close");
+            if (modal.id = "modal-review-video") {
+                document.querySelector("#modal-review-video .youtube-player").contentWindow.postMessage(JSON.stringify({
+                    "event": "command",
+                    "func": "stopVideo",
+                    "args": []
+                }), "*");
+            }
         }
     });
 
