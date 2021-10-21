@@ -12,23 +12,23 @@
   &__full-video {
     overflow: hidden;
     width: 100%;
-    height: rem(582);
+    height: auto;
     margin-bottom: rem(95);
     border-radius: rem(18);
 
     @media (max-width: 991px) {
-      height: rem(360);
+      // height: rem(360);
       margin-bottom: rem(70);
     }
 
     @media (max-width: 767) {
-      height: rem(220);
+      // height: rem(220);
       margin-bottom: rem(50);
     }
 
-    @media (max-width: 574px) {
-      height: rem(175);
-    }
+    // @media (max-width: 574px) {
+    //   height: rem(175);
+    // }
 
     .vjs-poster {
       background-size: cover;

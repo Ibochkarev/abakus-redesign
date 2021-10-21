@@ -187,23 +187,17 @@
   &__full-video {
     overflow: hidden;
     width: 100%;
-    height: rem(460);
+    height: auto;
     margin-bottom: rem(60);
     border-radius: rem(24);
 
     @media (max-width: 991px) {
-      height: rem(260);
       margin-bottom: rem(35);
     }
 
     @media (max-width: 767) {
-      height: rem(220);
       margin-bottom: rem(50);
       border-radius: rem(10);
-    }
-
-    @media (max-width: 574px) {
-      height: rem(175);
     }
 
     .vjs-poster {
