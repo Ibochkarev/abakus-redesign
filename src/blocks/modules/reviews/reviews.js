@@ -31,3 +31,8 @@ if (videoPopupTrigger) {
         modalReviewVideoFrame.src = `https://www.youtube.com/embed/${videoLink}?wmode=opaque&autohide=1&autoplay=1&muted=1&enablejsapi=1`;
     });
 }
+
+document.querySelector(".section-reviews__more-btn").click(function(){
+    document.querySelector(".section-reviews__item:hidden").slice(0,3).fadeIn();
+    if (document.querySelector(".section-reviews__item:hidden").length < 1) document.querySelector(this).fadeOut();
+});

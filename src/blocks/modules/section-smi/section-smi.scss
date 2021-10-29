@@ -72,6 +72,7 @@
             img {
                 display: block;
                 margin: auto;
+                max-width: rem(110);
 
                 @media (max-width: 1179px) {
                     max-height: rem(37);
