@@ -138,7 +138,9 @@
 
   .arrow-left-wrap {
     display: flex;
+    display: -webkit-flex;
     justify-content: right;
+    -webkit-justify-content: right;
     width: 72%;
 
     @media (max-width: 574px) {
