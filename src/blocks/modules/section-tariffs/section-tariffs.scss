@@ -25,7 +25,9 @@
         &._hit {
 
             @media (max-width: 574px) {
-                display: none;
+                &::before{
+                    display: none;
+                }
             }
             .section-tariffs__item-headline {
                 color: var(--black-color);

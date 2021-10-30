@@ -32,7 +32,18 @@ if (videoPopupTrigger) {
     });
 }
 
-document.querySelector(".section-reviews__more-btn").click(function(){
-    document.querySelector(".section-reviews__item:hidden").slice(0,3).fadeIn();
-    if (document.querySelector(".section-reviews__item:hidden").length < 1) document.querySelector(this).fadeOut();
-});
+const getHiddenReviews = () =>
+    Array.from(document.querySelectorAll(".section-reviews__item")).filter(
+        (el) => el.style.display === "none"
+    );
+
+document
+    .querySelector(".section-reviews__more-btn")
+    .addEventListener("click", (e) => {
+        e.preventDefault();
+        getHiddenReviews()
+            .slice(0, 3)
+            .forEach((el) => (el.style.display = "block"));
+
+        if (getHiddenReviews().length < 1) e.target.style.display = "none";
+    });

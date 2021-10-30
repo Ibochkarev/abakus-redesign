@@ -3263,7 +3263,7 @@ a:hover {
     margin-top: 4.375rem;
   }
 
-  .section-tariffs__item._hit {
+  .section-tariffs__item._hit::before {
     display: none;
   }
 
