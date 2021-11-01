@@ -290,12 +290,12 @@ var lessonConsist = new swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___defaul
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var $firstblockButton = document.querySelector('.firstblock__button');
-var $firstblockPlayer = document.querySelector('.firstblock__middle video');
-var $firstblockMiddle = document.querySelector('.firstblock__middle');
-var $arrowLeftWrap = document.querySelector('.arrow-left-wrap');
-var $firstblockMiddleClose = document.querySelector('.firstblock__middle--close');
-var $firstblockMiddleCap = document.querySelector('.firstblock__middle--cap');
+var $firstblockButton = document.querySelector(".firstblock__button");
+var $firstblockPlayer = document.querySelector(".firstblock__middle video");
+var $firstblockMiddle = document.querySelector(".firstblock__middle");
+var $arrowLeftWrap = document.querySelector(".arrow-left-wrap");
+var $firstblockMiddleClose = document.querySelector(".firstblock__middle--close");
+var $firstblockMiddleCap = document.querySelector(".firstblock__middle--cap");
 var $firstblockItemArray = [$firstblockButton, $firstblockMiddle];
 
 if ($firstblockItemArray.length) {
@@ -303,18 +303,18 @@ if ($firstblockItemArray.length) {
     var positionWindow = window.pageYOffset;
 
     if (positionElem <= positionWindow) {
-      elem.classList.add('elem-fixed');
-      $arrowLeftWrap.classList.add('hide-elem');
+      elem.classList.add("elem-fixed");
+      $arrowLeftWrap.classList.add("hide-elem");
 
       if (elem === $firstblockMiddle) {
-        $firstblockMiddleCap.classList.add('elem-fixed');
+        $firstblockMiddleCap.classList.add("elem-fixed");
       }
     } else {
-      elem.classList.remove('elem-fixed');
-      $arrowLeftWrap.classList.remove('hide-elem');
+      elem.classList.remove("elem-fixed");
+      $arrowLeftWrap.classList.remove("hide-elem");
 
       if (elem === $firstblockMiddle) {
-        $firstblockMiddleCap.classList.remove('elem-fixed');
+        $firstblockMiddleCap.classList.remove("elem-fixed");
       }
     }
   };
@@ -327,13 +327,13 @@ if ($firstblockItemArray.length) {
   });
   addFixedElemOnWindow(elemsTopArray[0], $firstblockButton);
   if ($firstblockMiddleFlug) addFixedElemOnWindow(elemsTopArray[1], $firstblockMiddle);
-  window.addEventListener('scroll', function () {
+  window.addEventListener("scroll", function () {
     addFixedElemOnWindow(elemsTopArray[0], $firstblockButton);
     if ($firstblockMiddleFlug) addFixedElemOnWindow(elemsTopArray[1], $firstblockMiddle);
   });
-  $firstblockMiddleClose.addEventListener('click', function () {
-    $firstblockMiddle.classList.remove('elem-fixed');
-    $firstblockMiddleCap.classList.remove('elem-fixed');
+  $firstblockMiddleClose.addEventListener("click", function () {
+    $firstblockMiddle.classList.remove("elem-fixed");
+    $firstblockMiddleCap.classList.remove("elem-fixed");
     $firstblockPlayer.pause();
     $firstblockMiddleFlug = false;
   });
@@ -357,19 +357,13 @@ document.addEventListener("DOMContentLoaded", function () {
   micromodal__WEBPACK_IMPORTED_MODULE_0__["default"].init({
     awaitCloseAnimation: true,
     // set to false, to remove close animation
-    onShow: function onShow(modal) {
-      console.log("micromodal open");
-    },
+    onShow: function onShow(modal) {},
     onClose: function onClose(modal) {
-      console.log("micromodal close");
-
-      if (modal.id = "modal-review-video") {
-        document.querySelector("#modal-review-video .youtube-player").contentWindow.postMessage(JSON.stringify({
-          "event": "command",
-          "func": "stopVideo",
-          "args": []
-        }), "*");
-      }
+      document.querySelector("#modal-review-video .youtube-player").contentWindow.postMessage(JSON.stringify({
+        "event": "command",
+        "func": "stopVideo",
+        "args": []
+      }), "*");
     }
   });
 });

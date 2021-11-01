@@ -109,6 +109,11 @@
       height: rem(45);
       animation: show 1s;
 
+      @media (min-width: 992px) {
+        bottom: inherit;
+        top: rem(40);
+      }
+
       img {
         height: rem(32);
       }

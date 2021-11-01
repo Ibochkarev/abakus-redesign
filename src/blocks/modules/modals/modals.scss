@@ -16,9 +16,9 @@
 
 
   &__container {
-    max-width: 830px;
+    max-width: 762px;
     max-height: 100vh;
-    padding: rem(110) rem(90) rem(85);
+    padding: rem(91) rem(98) rem(85);
     border: rem(6) solid var(--lightblue-color);
     border-radius: rem(24);
     background-color: #C3E6F5;
@@ -42,9 +42,9 @@
 
   &__title {
     margin-top: 0;
-    margin-bottom: rem(70);
+    margin-bottom: rem(45);
     font-family: "Neometric Alt", sans-serif;
-    font-size: rem(45);
+    font-size: rem(35);
     font-weight: 600;
     line-height: 1.1;
     color: var(--black-color);
@@ -88,7 +88,7 @@
 
   &__form {
     &-label {
-      margin-bottom: rem(25);
+      margin-bottom: rem(20);
 
       @media (max-width: 767px) {
         margin-bottom: rem(10);
@@ -97,11 +97,11 @@
 
     &-input {
       width: 100%;
-      height: rem(98);
+      height: rem(82);
       padding-right: rem(45);
       padding-left: rem(45);
       font-size: rem(25);
-      line-height: rem(98);
+      line-height: rem(82);
       color: var(--black-color);
       background: var(--white-color);
       border: rem(3) solid var(--lightblue-color);
@@ -131,12 +131,12 @@
   &__btn {
     cursor: pointer;
     width: 100%;
-    height: rem(110);
-    margin-bottom: rem(58);
+    height: rem(82);
+    margin-bottom: rem(30);
     font-family: "Neometric Alt", sans-serif;
     font-size: rem(25);
     font-weight: 600;
-    line-height: rem(110);
+    line-height: rem(82);
     text-align: center;
     text-transform: uppercase;
     color: var(--white-color);
@@ -158,8 +158,8 @@
   }
 
   &__legal {
-    font-size: rem(25);
-    line-height: rem(30);
+    font-size: rem(20);
+    line-height: rem(24);
     color: var(--black-color);
 
     @media (max-width: 767px) {
@@ -173,7 +173,7 @@
   }
 }
 
-#modal-review-text {
+.modal-review-text {
   .modal {
     &__container {
       max-width: rem(547);

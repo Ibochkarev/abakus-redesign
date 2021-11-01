@@ -70,16 +70,22 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        width: rem(160);
         margin-right: rem(12);
 
+        @media (min-width: 1141px) {
+          width: rem(160);
+        }
+
+        @media (max-width: 1140px) {
+          width: rem(120);
+        }
+
         @media (max-width: 991px) {
-          width: rem(80);
+          width: auto;
           margin-right: rem(15);
         }
 
         @media (max-width: 767px) {
-          width: rem(65);
           margin-right: rem(10);
         }
 
