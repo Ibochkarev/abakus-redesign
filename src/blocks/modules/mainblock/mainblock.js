@@ -1,5 +1,4 @@
 const $firstblockButton = document.querySelector(".firstblock__button");
-const $firstblockPlayer = document.querySelector(".firstblock__middle video");
 const $firstblockMiddle = document.querySelector(".firstblock__middle");
 const $arrowLeftWrap = document.querySelector(".arrow-left-wrap");
 const $firstblockMiddleClose = document.querySelector(".firstblock__middle--close");
@@ -7,7 +6,16 @@ const $firstblockMiddleCap = document.querySelector(".firstblock__middle--cap");
 
 const $firstblockItemArray = [$firstblockButton, $firstblockMiddle];
 
+
 if ($firstblockItemArray.length) {
+
+    var mainVideoFrame = document.querySelector('#main-video');
+    var mainVideo = new Vimeo.Player(mainVideoFrame);
+
+    mainVideo.setVolume(0);
+    mainVideo.play();
+    mainVideo.setAutopause(false);
+
     let elemsTopArray = [];
 
     let $firstblockMiddleFlug = true;
@@ -50,8 +58,9 @@ if ($firstblockItemArray.length) {
     $firstblockMiddleClose.addEventListener("click", () => {
         $firstblockMiddle.classList.remove("elem-fixed");
         $firstblockMiddleCap.classList.remove("elem-fixed");
-        $firstblockPlayer.pause();
+        mainVideo.pause();
         $firstblockMiddleFlug = false;
     });
 
 }
+

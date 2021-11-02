@@ -18,6 +18,7 @@
     <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles/main.css">
+    <script src="https://player.vimeo.com/api/player.js"></script>
   </head>
   <body>
     <header class="header">
@@ -117,10 +118,7 @@
         <div class="firstblock__middle--cap"></div>
         <div class="firstblock__middle">
           <div class="firstblock__middle--close"></div>
-          <video class="video-js firstblock__full-video" id="video-main" controls preload="auto" loop="true" autoplay="true" poster="./img/mainblock/cover.jpg" muted="true">
-            <source src="//abakus-center.ru/videos/video_1.mp4" type="video/mp4">
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that</p>
-          </video>
+          <div class="firstblock__full-video"><iframe id="main-video" style="background-color: #000" src="https://player.vimeo.com/video/344519650?h=8e93f46e87&color=ff214f&byline=0&portrait=0&badge=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
         </div>
         <div class="firstblock__bottom">
           <div class="firstblock__bottom-item">
@@ -170,11 +168,7 @@
             </div>
             <div class="lesson-consist__text">Знакомим с теорией чисел, логическими операциями по сложению и вычитанию, умножению и делению. Развиваем  навыки скоростного и комбинаторного счета, аналитических и мыслительных процессов. Тренируем концентрацию, внимание и память.</div>
           </div>
-          <div class="lesson-consist__video">
-            <video class="video-js" id="video-main" controls preload="auto" loop="true" autoplay="true" poster="./img/mainblock/cover.jpg" muted="true">
-              <source src="//abakus-center.ru/videos/video_2.mp4" type="video/mp4">
-              <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that</p>
-            </video>
+          <div class="lesson-consist__video"><iframe id="lesson-consist__1--video" style="background-color: #000" src="https://player.vimeo.com/video/344519650?h=8e93f46e87&color=ff214f&byline=0&portrait=0&badge=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             <div class="lesson-consist__control">
               <div class="lesson-consist__timeline"><img class="lesson-consist__play--on hide-elem" src="./img/svg/play.svg"><img class="lesson-consist__play--off" src="./img/svg/pause.svg"></div>
               <div class="lesson-consist__volume"><img class="lesson-consist__volume--off" src="./img/svg/volume-off.svg"><img class="lesson-consist__volume--on hide-elem" src="./img/svg/volume-on.svg"></div>
@@ -242,10 +236,7 @@
       <div class="container">
         <h2 class="section__title">Занятия проходят с использованием интерактивной платформы Абакус<span class="section__title-border b_top"></span><span class="section__title-border b_top-right"></span><span class="section__title-border b_bottom"></span><span class="section__title-border b_bottom-right"></span></h2>
         <div class="section-platform__wrapper">
-          <video class="video-js section-platform__full-video" id="video-platform" controls preload="auto" loop="true" autoplay="true" poster="./img/platform/cover.jpg" muted="true">
-            <source src="//abakus-center.ru/videos/video_3.mp4" type="video/mp4">
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that</p>
-          </video>
+          <div class="section-platform__full-video"><iframe id="section-platform" src="https://player.vimeo.com/video/344519650?h=8e93f46e87&color=ff214f&byline=0&portrait=0&badge=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
           <div class="section-platform__info">
             <div class="section-platform__info-item">
               <div class="section-platform__info-item__title">Преподаватель отслеживает<span> динамику обучения ученика.</span></div>
@@ -285,23 +276,11 @@
           <p class="section-teachers__description">С вашим ребенком занимаются только высококвалифицированные преподаватели благодаря комплексной системе отбора, нескольким этапам собеседования, а также повышению их квалификации через дополнительные сертификации.</p>
           <div class="section-teachers__wrap">
             <div class="section-teachers__item section-teachers__item--video">
-              <div class="section-teachers__item--mask"></div>
-              <video class="video-js" id="video-main" controls preload="auto" loop="true" autoplay="true" poster="./img/mainblock/cover.jpg" muted="true">
-                <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-                <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm">
-                <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
-                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that</p>
-              </video>
+              <div class="section-teachers__item--mask"></div><iframe id="section-teachers__item--video" style="background-color: #000" src="https://player.vimeo.com/video/344519650?h=8e93f46e87&color=ff214f&byline=0&portrait=0&badge=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="section-teachers__item">
               <div class="section-teachers__sub-item section-teachers__sub-item--video">
-                <div class="section-teachers__sub-item--mask"></div>
-                <video class="video-js" id="video-main" controls preload="auto" loop="true" poster="./img/mainblock/cover.jpg" muted="true">
-                  <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-                  <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm">
-                  <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
-                  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that</p>
-                </video>
+                <div class="section-teachers__sub-item--mask"></div><iframe id="section-teachers__sub-item--video" style="background-color: #000" src="https://player.vimeo.com/video/136405903?h=001dcbe407" frameborder="0" allow="autoplay;" ></iframe>
               </div>
               <div class="section-teachers__sub-item">Можем подобрать нового преподавателя, если что-то пойдет не так<img class="section-teachers__sub-item--ico" src="./img/svg/ico-!.svg"></div>
             </div>

@@ -1,77 +1,77 @@
 .ticker {
-  height: rem(72);
-  color: var(--white-color);
-  overflow: hidden;
-
-  @media (max-width: 991px) {
-    height: rem(58);
-  }
-
-  &_1 {
-    background: #F2CF0B;
-  }
-
-  &_2 {
-    background: var(--lightblue-color);
-  }
-
-  &_3 {
-    background: #DFEFAD;
-
-    .ticker__item {
-      color: var(--black-color);
-    }
-  }
-
-  &_4 {
-    background: #29A4DD;
-  }
-
-  &_5 {
-    background: #F2CF0B;
-  }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    font-family: "Neometric Alt", sans-serif;
-    font-size: rem(20);
-    font-weight: 600;
-    text-transform: uppercase;
+    height: rem(72);
+    color: var(--white-color);
+    overflow: hidden;
 
     @media (max-width: 991px) {
-      font-size: rem(16);
+        height: rem(58);
     }
 
-
-    &-icon {
-      width: auto;
-      height: rem(46);
-      margin-right: rem(35);
-
-      @media (max-width: 991px) {
-        height: rem(44);
-        margin-right: rem(30);
-      }
+    .swiper-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
     }
-  }
 
-  .swiper-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
+    .swiper-wrapper {
+        transition-timing-function: linear;
+        position: relative;
+    }
 
-  .swiper-wrapper{
-    transition-timing-function: linear;
-    position: relative;
-  }
+    .swiper-slide {
+        position: relative;
+        width: auto;
+        overflow: hidden;
+        padding: 0 rem(20);
+    }
 
-  .swiper-slide {
-    width: auto;
-    position: relative;
-    overflow: hidden;
-    padding: 0 rem(20);
-  }
+    &__item {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-family: "Neometric Alt", sans-serif;
+        font-size: rem(20);
+        font-weight: 600;
+        text-transform: uppercase;
+
+        @media (max-width: 991px) {
+            font-size: rem(16);
+        }
+
+
+        &-icon {
+            width: auto;
+            height: rem(46);
+            margin-right: rem(35);
+
+            @media (max-width: 991px) {
+                height: rem(44);
+                margin-right: rem(30);
+            }
+        }
+    }
+
+    &_1 {
+        background: #f2cf0b;
+    }
+
+    &_2 {
+        background: var(--lightblue-color);
+    }
+
+    &_3 {
+        background: #dfefad;
+
+        .ticker__item {
+            color: var(--black-color);
+        }
+    }
+
+    &_4 {
+        background: #29a4dd;
+    }
+
+    &_5 {
+        background: #f2cf0b;
+    }
 }

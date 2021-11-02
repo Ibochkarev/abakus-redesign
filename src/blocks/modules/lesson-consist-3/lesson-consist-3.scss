@@ -1,209 +1,209 @@
 .lesson-consist {
-  overflow: hidden;
+    overflow: hidden;
 
-  &__1 {
-    padding: rem(70) 0 rem(180);
-    background: #DFEFAD;
+    &__1 {
+        padding: rem(70) 0 rem(180);
+        background: #dfefad;
 
-    @media (max-width: 767px) {
-      padding: rem(120) 0 rem(60);
+        @media (max-width: 767px) {
+            padding: rem(120) 0 rem(60);
+        }
+
+        @media (max-width: 575px) {
+            padding: rem(47) 0 rem(110);
+        }
     }
 
-    @media (max-width: 575px) {
-      padding: rem(47) 0 rem(110);
-    }
-  }
+    &__2 {
+        padding: rem(150) 0 rem(60);
+        background: #c3e6f5;
 
-  &__2 {
-    padding: rem(150) 0 rem(60);
-    background: #C3E6F5;
+        @media (max-width: 767px) {
+            padding: rem(120) 0 rem(60);
+        }
 
-    @media (max-width: 767px) {
-      padding: rem(120) 0 rem(60);
-    }
+        @media (max-width: 575px) {
+            padding: rem(120) 0 rem(57);
+        }
 
-    @media (max-width: 575px) {
-      padding: rem(120) 0 rem(57);
-    }
-
-    .lesson-consist__title-icon {
-      top: rem(-105);
-      left: rem(-40);
-    }
-  }
-
-  &__3 {
-    padding: rem(150) 0 rem(128);
-    background: var(--lightyellow-color);
-
-    @media (max-width: 991px) {
-      padding: rem(120) 0 rem(80);
+        .lesson-consist__title-icon {
+            top: rem(-105);
+            left: rem(-40);
+        }
     }
 
-    @media (max-width: 767px) {
-      padding: rem(120) 0 rem(60);
-    }
-
-    @media (max-width: 575px) {
-      padding: rem(90) 0 rem(57);
-    }
-
-    .lesson-consist{
-      &__wrapper {
-        margin-bottom: rem(40);
+    &__3 {
+        padding: rem(150) 0 rem(128);
+        background: var(--lightyellow-color);
 
         @media (max-width: 991px) {
-          margin-bottom: rem(90);
+            padding: rem(120) 0 rem(80);
         }
 
         @media (max-width: 767px) {
-          margin-bottom: rem(30);
+            padding: rem(120) 0 rem(60);
         }
-      }
 
-      &__title-icon {
-        top: rem(-100);
-        left: rem(-40);
-      }
+        @media (max-width: 575px) {
+            padding: rem(90) 0 rem(57);
+        }
+
+        .lesson-consist {
+            &__wrapper {
+                margin-bottom: rem(40);
+
+                @media (max-width: 991px) {
+                    margin-bottom: rem(90);
+                }
+
+                @media (max-width: 767px) {
+                    margin-bottom: rem(30);
+                }
+            }
+
+            &__title-icon {
+                top: rem(-100);
+                left: rem(-40);
+            }
+        }
     }
-  }
 
-  &__headtitle {
-    margin-bottom: rem(60);
-    font-family: 'Neometric Alt';
-    font-size: rem(45);
-    font-weight: 600;
-    text-align: center;
-
-    @media (max-width: 991px) {
-      margin-bottom: rem(90);
-      font-size: rem(30);
-    }
-
-    @media (max-width: 767px) {
-      margin-bottom: rem(90);
-      font-size: rem(25);
-      text-align: left;
-    }
-  }
-
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  &__col {
-    @include size-lg(6);
-    @include size-md(6);
-    @include size-sm(12);
-    @include size-xs(12);
-  }
-
-  &__title {
-    position: relative;
-    margin-bottom: rem(48);
-
-    &-icon {
-      z-index: 1;
-      position: absolute;
-      top: rem(-80);
-      left: 0;
-
-      @media (max-width: 991px) {
-        top: rem(-65) !important;
-        left: 0 !important;
-      }
-
-      img {
-        max-height: rem(140);
+    &__headtitle {
+        margin-bottom: rem(60);
+        font-family: "Neometric Alt";
+        font-size: rem(45);
+        font-weight: 600;
+        text-align: center;
 
         @media (max-width: 991px) {
-          max-height: rem(90);
+            margin-bottom: rem(90);
+            font-size: rem(30);
         }
-      }
+
+        @media (max-width: 767px) {
+            margin-bottom: rem(90);
+            font-size: rem(25);
+            text-align: left;
+        }
     }
 
-    &-text {
-      width: fit-content;
-      padding: rem(15) rem(28);
-      font-family: 'Neometric Alt';
-      font-size: rem(28);
-      font-weight: 600;
-      line-height: rem(34);
-      background: var(--white-color);
-      transform: rotate(-5.61deg);
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 
-      @media (max-width: 991px) {
+    &__col {
+        @include size-lg(6);
+        @include size-md(6);
+        @include size-sm(12);
+        @include size-xs(12);
+    }
+
+    &__title {
+        position: relative;
+        margin-bottom: rem(48);
+
+        &-icon {
+            position: absolute;
+            z-index: 1;
+            top: rem(-80);
+            left: 0;
+
+            @media (max-width: 991px) {
+                top: rem(-65) !important;
+                left: 0 !important;
+            }
+
+            img {
+                max-height: rem(140);
+
+                @media (max-width: 991px) {
+                    max-height: rem(90);
+                }
+            }
+        }
+
+        &-text {
+            width: fit-content;
+            padding: rem(15) rem(28);
+            font-family: "Neometric Alt";
+            font-size: rem(28);
+            font-weight: 600;
+            line-height: rem(34);
+            background: var(--white-color);
+            transform: rotate(-5.61deg);
+
+            @media (max-width: 991px) {
+                font-size: rem(18);
+                line-height: rem(22);
+            }
+
+            @media (max-width: 767px) {
+                font-size: rem(20);
+                line-height: rem(24);
+            }
+        }
+    }
+
+    &__text {
+        max-width: rem(475);
         font-size: rem(18);
-        line-height: rem(22);
-      }
+        line-height: 1.4;
 
-      @media (max-width: 767px) {
-        font-size: rem(20);
-        line-height: rem(24);
-      }
-    }
-  }
+        @media (max-width: 991px) {
+            font-size: rem(16);
+        }
 
-  &__text {
-    max-width: rem(475);
-    font-size: rem(18);
-    line-height: 1.4;
-
-    @media (max-width: 991px) {
-      font-size: rem(16);
+        @media (max-width: 767px) {
+            font-size: rem(18);
+        }
     }
 
-    @media (max-width: 767px) {
-      font-size: rem(18);
+    &__infoblock {
+        position: relative;
+        padding: rem(45) rem(20);
+        background: var(--white-color);
+
+        @media (max-width: 767px) {
+            margin-top: rem(70);
+        }
+
+        &::before {
+            content: " ";
+            position: absolute;
+            top: rem(-40);
+            right: rem(20);
+            width: rem(77);
+            height: rem(74);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url("../img/lesson/clip.svg");
+        }
+
+        &-text {
+            font-size: rem(14);
+            line-height: 1.4;
+            // Todo - добавить 700 жирность
+
+            @media (max-width: 767px) {
+                font-size: rem(16);
+            }
+        }
     }
-  }
 
-  &__infoblock {
-    position: relative;
-    padding: rem(45) rem(20);
-    background: var(--white-color);
+    &__carousel {
+        &-item {
+            max-width: rem(432);
 
-    @media (max-width: 767px) {
-      margin-top: rem(70);
+            @media (max-width: 991px) {
+                max-width: rem(282);
+            }
+
+            img {
+                border: rem(7) solid #e2cf67;
+                border-radius: rem(17);
+            }
+        }
     }
-
-    &::before {
-      position: absolute;
-      top: rem(-40);
-      right: rem(20);
-      width: rem(77);
-      height: rem(74);
-      content: " ";
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url("../img/lesson/clip.svg");
-    }
-
-    &-text {
-      font-size: rem(14);
-      line-height: 1.4;
-      // Todo - добавить 700 жирность
-
-      @media (max-width: 767px) {
-        font-size: rem(16);
-      }
-    }
-  }
-
-  &__carousel{
-    &-item {
-      max-width: rem(432);
-
-      @media (max-width: 991px) {
-        max-width: rem(282);
-      }
-
-      img {
-        border: rem(7) solid #E2CF67;
-        border-radius: rem(17);
-      }
-    }
-  }
 }

@@ -1,11 +1,12 @@
 import "%modules%/header/header";
 import "%modules%/footer/footer";
+import "%modules%/mainblock/mainblock.js";
 import "%modules%/section-tariffs/section-tariffs";
+import "%modules%/section-platform/section-platform";
 import "%modules%/ticker-1/ticker-1";
 import "%modules%/lesson-consist-3/lesson-consist-3";
 import "%modules%/lesson-consist-1/lesson-consist-1";
 import "%modules%/modals/modals";
-import "%modules%/mainblock/mainblock.js";
 import "%modules%/reviews/reviews";
 import "%modules%/teachers/teachers";
 import "%modules%/section-smi/section-smi";

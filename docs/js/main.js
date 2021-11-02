@@ -208,22 +208,25 @@ var lessonConsistVolume = document.querySelectorAll('.lesson-consist__volume img
 var lessonConsistScreenSize = document.querySelector('.lesson-consist__screensize');
 
 if (lessonConsistControl) {
-  lessonConsistPlayer.controls = false;
-  lessonConsistPlayer.muted = true;
+  var iframe2 = document.querySelector('#lesson-consist__1--video');
+  var lessonConsist1Player = new Vimeo.Player(iframe2);
+  lessonConsist1Player.setVolume(0);
+  lessonConsist1Player.play();
+  lessonConsist1Player.setAutopause(false);
   var playerFlagPlay = true;
   var playerFlagVolume = true;
   lessonConsistScreenSize.addEventListener('click', function () {
-    lessonConsistPlayer.requestFullscreen();
+    lessonConsist1Player.requestFullscreen();
   });
   lessonConsistTimeline.forEach(function (el, i, arr) {
     el.addEventListener('click', function () {
       toggleShowElem(arr);
 
       if (playerFlagPlay) {
-        lessonConsistPlayer.pause();
+        lessonConsist1Player.pause();
         playerFlagPlay = false;
       } else {
-        lessonConsistPlayer.play();
+        lessonConsist1Player.play();
         playerFlagPlay = true;
       }
     });
@@ -233,10 +236,10 @@ if (lessonConsistControl) {
       toggleShowElem(arr);
 
       if (playerFlagVolume) {
-        lessonConsistPlayer.muted = false;
+        lessonConsist1Player.setVolume(1);
         playerFlagVolume = false;
       } else {
-        lessonConsistPlayer.muted = true;
+        lessonConsist1Player.setVolume(0);
         playerFlagVolume = true;
       }
     });
@@ -291,7 +294,6 @@ var lessonConsist = new swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___defaul
 /***/ (function(module, exports) {
 
 var $firstblockButton = document.querySelector(".firstblock__button");
-var $firstblockPlayer = document.querySelector(".firstblock__middle video");
 var $firstblockMiddle = document.querySelector(".firstblock__middle");
 var $arrowLeftWrap = document.querySelector(".arrow-left-wrap");
 var $firstblockMiddleClose = document.querySelector(".firstblock__middle--close");
@@ -319,6 +321,11 @@ if ($firstblockItemArray.length) {
     }
   };
 
+  var mainVideoFrame = document.querySelector('#main-video');
+  var mainVideo = new Vimeo.Player(mainVideoFrame);
+  mainVideo.setVolume(0);
+  mainVideo.play();
+  mainVideo.setAutopause(false);
   var elemsTopArray = [];
   var $firstblockMiddleFlug = true;
   $firstblockItemArray.forEach(function (elem) {
@@ -334,7 +341,7 @@ if ($firstblockItemArray.length) {
   $firstblockMiddleClose.addEventListener("click", function () {
     $firstblockMiddle.classList.remove("elem-fixed");
     $firstblockMiddleCap.classList.remove("elem-fixed");
-    $firstblockPlayer.pause();
+    mainVideo.pause();
     $firstblockMiddleFlug = false;
   });
 }
@@ -434,6 +441,25 @@ document.querySelector(".section-reviews__more-btn").addEventListener("click", f
   });
   if (getHiddenReviews().length < 1) e.target.style.display = "none";
 });
+
+/***/ }),
+
+/***/ "./src/blocks/modules/section-platform/section-platform.js":
+/*!*****************************************************************!*\
+  !*** ./src/blocks/modules/section-platform/section-platform.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var sectionPlatformFullVideo = document.querySelector('.section-platform__full-video');
+
+if (sectionPlatformFullVideo) {
+  var sectionPlatformFrame = document.querySelector('#section-platform');
+  var sectionPlatform = new Vimeo.Player(sectionPlatformFrame);
+  sectionPlatform.setVolume(0);
+  sectionPlatform.play();
+  sectionPlatform.setAutopause(false);
+}
 
 /***/ }),
 
@@ -545,17 +571,23 @@ var sectionTeachersItemMask = document.querySelector('.section-teachers__item--m
 var sectionTeachersSubItemMask = document.querySelector('.section-teachers__sub-item--mask');
 
 if (sectionTeachersItem) {
+  var sectionTeachersItemVideoFrame = document.querySelector('#section-teachers__item--video');
+  var sectionTeachersItemVideoPlayer = new Vimeo.Player(sectionTeachersItemVideoFrame);
+  var sectionTeachersSubItemVideoFrame = document.querySelector('#section-teachers__sub-item--video');
+  var sectionTeachersSubItemVideoPlayer = new Vimeo.Player(sectionTeachersSubItemVideoFrame);
+  sectionTeachersItemVideoPlayer.setVolume(0);
+  sectionTeachersItemVideoPlayer.setAutopause(false);
+  sectionTeachersSubItemVideoPlayer.setVolume(0);
+  sectionTeachersSubItemVideoPlayer.setAutopause(false);
+  sectionTeachersItemVideoPlayer.play();
   sectionTeachersSubItemMask.addEventListener('click', function () {
-    var sectionTeachersItemVideoPlayer = document.querySelector('.section-teachers__item--video video');
-    var sectionTeachersSubItemVideoPlayer = document.querySelector('.section-teachers__sub-item--video video');
     var firstElem = sectionTeachersItemMask.nextElementSibling;
     var LastElem = sectionTeachersSubItemMask.nextElementSibling;
     sectionTeachersItemVideo.appendChild(LastElem);
     sectionTeachersSubItemVideo.appendChild(firstElem);
-    sectionTeachersItemVideoPlayer.pause();
-    sectionTeachersItemVideoPlayer.id = 'video-main';
-    sectionTeachersSubItemVideoPlayer.play();
-    sectionTeachersSubItemVideoPlayer.id = 'video-main';
+    sectionTeachersItemVideoPlayer.setVolume(0);
+    sectionTeachersItemVideoPlayer.setAutopause(false);
+    sectionTeachersItemVideoPlayer.play();
   });
 }
 
@@ -615,19 +647,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_header_header__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
 /* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_footer_footer__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _modules_section_tariffs_section_tariffs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/section-tariffs/section-tariffs */ "./src/blocks/modules/section-tariffs/section-tariffs.js");
-/* harmony import */ var _modules_ticker_1_ticker_1__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/ticker-1/ticker-1 */ "./src/blocks/modules/ticker-1/ticker-1.js");
-/* harmony import */ var _modules_lesson_consist_3_lesson_consist_3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! %modules%/lesson-consist-3/lesson-consist-3 */ "./src/blocks/modules/lesson-consist-3/lesson-consist-3.js");
-/* harmony import */ var _modules_lesson_consist_1_lesson_consist_1__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/lesson-consist-1/lesson-consist-1 */ "./src/blocks/modules/lesson-consist-1/lesson-consist-1.js");
-/* harmony import */ var _modules_lesson_consist_1_lesson_consist_1__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_lesson_consist_1_lesson_consist_1__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _modules_modals_modals__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/modals/modals */ "./src/blocks/modules/modals/modals.js");
-/* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/mainblock/mainblock.js */ "./src/blocks/modules/mainblock/mainblock.js");
-/* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/reviews/reviews */ "./src/blocks/modules/reviews/reviews.js");
-/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/teachers/teachers */ "./src/blocks/modules/teachers/teachers.js");
-/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _modules_section_smi_section_smi__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/section-smi/section-smi */ "./src/blocks/modules/section-smi/section-smi.js");
+/* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/mainblock/mainblock.js */ "./src/blocks/modules/mainblock/mainblock.js");
+/* harmony import */ var _modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_mainblock_mainblock_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_section_tariffs_section_tariffs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/section-tariffs/section-tariffs */ "./src/blocks/modules/section-tariffs/section-tariffs.js");
+/* harmony import */ var _modules_section_platform_section_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! %modules%/section-platform/section-platform */ "./src/blocks/modules/section-platform/section-platform.js");
+/* harmony import */ var _modules_section_platform_section_platform__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_section_platform_section_platform__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modules_ticker_1_ticker_1__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/ticker-1/ticker-1 */ "./src/blocks/modules/ticker-1/ticker-1.js");
+/* harmony import */ var _modules_lesson_consist_3_lesson_consist_3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/lesson-consist-3/lesson-consist-3 */ "./src/blocks/modules/lesson-consist-3/lesson-consist-3.js");
+/* harmony import */ var _modules_lesson_consist_1_lesson_consist_1__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/lesson-consist-1/lesson-consist-1 */ "./src/blocks/modules/lesson-consist-1/lesson-consist-1.js");
+/* harmony import */ var _modules_lesson_consist_1_lesson_consist_1__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_lesson_consist_1_lesson_consist_1__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _modules_modals_modals__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/modals/modals */ "./src/blocks/modules/modals/modals.js");
+/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/reviews/reviews */ "./src/blocks/modules/reviews/reviews.js");
+/* harmony import */ var _modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_reviews_reviews__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/teachers/teachers */ "./src/blocks/modules/teachers/teachers.js");
+/* harmony import */ var _modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_teachers_teachers__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _modules_section_smi_section_smi__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! %modules%/section-smi/section-smi */ "./src/blocks/modules/section-smi/section-smi.js");
+
 
 
 

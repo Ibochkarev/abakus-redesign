@@ -11,26 +11,26 @@
 
     &__wrapper {
         display: flex;
+        flex-wrap: wrap;
         align-items: stretch;
         justify-content: space-between;
-        flex-wrap: wrap;
     }
 
     &__item {
-        overflow: hidden;
-        cursor: pointer;
-        position: relative;
+        @include size-lg(4);
+        @include size-md(4);
         display: flex;
         align-items: center;
+        position: relative;
         height: auto;
         min-height: rem(175);
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
         margin-bottom: rem(20);
         color: var(--black-color);
         background: #c3e6f5;
         border-radius: 11px;
-        transition: all 0.5s ease-in-out;
-        @include size-lg(4);
-        @include size-md(4);
 
 
         &:hover {
@@ -56,14 +56,14 @@
             align-items: center;
 
             @media (max-width: 1179px) {
-                align-items: flex-start;
                 flex-direction: column;
+                align-items: flex-start;
             }
         }
 
         &-logo {
-            margin-right: rem(30);
             flex: none;
+            margin-right: rem(30);
 
             @media (max-width: 1179px) {
                 margin-right: 0;
@@ -71,8 +71,8 @@
 
             img {
                 display: block;
-                margin: auto;
                 max-width: rem(110);
+                margin: auto;
 
                 @media (max-width: 1179px) {
                     max-height: rem(37);
@@ -99,9 +99,9 @@
             left: 0;
             width: 100%;
             height: 100%;
+            transition: .5s ease;
             color: var(--black-color);
             opacity: 0;
-            transition: .5s ease;
             background-color: #dfefad;
 
             @media (max-width: 1179px) {
@@ -109,17 +109,17 @@
             }
 
             &__wrapper {
-                position: absolute;
-                top: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                position: absolute;
+                top: 50%;
                 width: 100%;
+                transform: translateY(-50%);
                 font-family: "Neometric Alt", sans-serif;
                 font-size: rem(25);
                 font-weight: 600;
                 line-height: rem(30);
-                transform: translateY(-50%);
 
                 .ic-arrow {
                     width: rem(38);

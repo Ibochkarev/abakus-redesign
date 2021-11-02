@@ -6,14 +6,19 @@ const lessonConsistScreenSize = document.querySelector('.lesson-consist__screens
 
 if(lessonConsistControl) {
 
-    lessonConsistPlayer.controls = false;
-    lessonConsistPlayer.muted = true;
+    var iframe2 = document.querySelector('#lesson-consist__1--video');
+    var lessonConsist1Player = new Vimeo.Player(iframe2);
+
+    lessonConsist1Player.setVolume(0);
+    lessonConsist1Player.play();
+    lessonConsist1Player.setAutopause(false);
+
 
     let playerFlagPlay = true;
     let playerFlagVolume = true;
 
     lessonConsistScreenSize.addEventListener('click', () => {
-        lessonConsistPlayer.requestFullscreen();
+        lessonConsist1Player.requestFullscreen();
     })
 
     lessonConsistTimeline.forEach((el, i, arr) => {
@@ -21,10 +26,10 @@ if(lessonConsistControl) {
             toggleShowElem(arr);
 
             if (playerFlagPlay) {
-                lessonConsistPlayer.pause();
+                lessonConsist1Player.pause();
                 playerFlagPlay = false;
             } else {
-                lessonConsistPlayer.play();
+                lessonConsist1Player.play();
                 playerFlagPlay = true;
             }
         })
@@ -35,10 +40,10 @@ if(lessonConsistControl) {
             toggleShowElem(arr);
 
             if (playerFlagVolume) {
-                lessonConsistPlayer.muted = false;
+                lessonConsist1Player.setVolume(1);
                 playerFlagVolume = false;
             } else {
-                lessonConsistPlayer.muted = true;
+                lessonConsist1Player.setVolume(0);
                 playerFlagVolume = true;
             }
         })

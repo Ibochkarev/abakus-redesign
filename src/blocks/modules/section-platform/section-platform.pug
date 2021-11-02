@@ -7,10 +7,8 @@ section.section-platform
       span.section__title-border.b_bottom-right
 
     .section-platform__wrapper
-      video#video-platform.video-js.section-platform__full-video(controls preload="auto" loop="true" autoplay="true" poster="./img/platform/cover.jpg" muted="true")
-        source(src="//abakus-center.ru/videos/video_3.mp4" type="video/mp4")
-        p.vjs-no-js
-          | To view this video please enable JavaScript, and consider upgrading to a web browser that
+      .section-platform__full-video
+        <iframe id="section-platform" src="https://player.vimeo.com/video/344519650?h=8e93f46e87&color=ff214f&byline=0&portrait=0&badge=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       .section-platform__info
         .section-platform__info-item
           .section-platform__info-item__title Преподаватель отслеживает
