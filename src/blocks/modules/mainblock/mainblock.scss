@@ -5,6 +5,10 @@
         padding: 0 0 rem(60);
     }
 
+    #main-video {
+        background-color: #000;
+    }
+
     @media (max-width: 991px) {
         @keyframes resizeAnimate {
             0% {
