@@ -34,5 +34,7 @@ mixin reviews-item(data)
         p.section-reviews__review=data.text
         .section-reviews__more
             button(type="button", data-micromodal-trigger="modal-review-text") Подробнее
-        a.section-reviews__insta(href="#", target="_blank", rel="noopener", aria-label="Instagram")
+        .section-reviews__btns
+          a.section-reviews__insta(href="#", target="_blank", rel="noopener", aria-label="Instagram")
+          a.section-reviews__otzovik(href="#", target="_blank", rel="noopener", aria-label="Otzovik")
     .section-reviews__item--video

@@ -164,19 +164,47 @@
         margin-bottom: 0;
     }
 
-    &__insta {
-        display: inline-block;
+    &__btns {
+        display: flex;
+        align-items: center;
         position: absolute;
         bottom: rem(28);
         left: rem(40);
+        margin-top: rem(10);
+    }
+
+    &__insta {
+        display: block;
         width: rem(35);
         height: rem(35);
         transition: 0.2s;
         cursor: pointer;
         background: var(--lightblue-color);
-        background-size: contain;
+        background-size: cover;
         -webkit-mask-image: url(../img/svg/insta.svg);
         mask-image: url(../img/svg/insta.svg);
+        margin-right: 15px;
+
+        @media(max-width: 1179px) {
+            left: rem(24);
+        }
+
+        &:hover {
+            background: #36a753;
+        }
+    }
+
+    &__otzovik {
+        display: block;
+        width: rem(34);
+        height: rem(34);
+        transition: 0.2s;
+        cursor: pointer;
+        background: var(--lightblue-color);
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-mask-image: url(../img/svg/otzovik.svg);
+        mask-image: url(../img/svg/otzovik.svg);
 
         @media(max-width: 1179px) {
             left: rem(24);

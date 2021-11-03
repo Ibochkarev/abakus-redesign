@@ -321,7 +321,7 @@ if ($firstblockItemArray.length) {
     }
   };
 
-  var mainVideoFrame = document.querySelector('#main-video');
+  var mainVideoFrame = document.querySelector("#main-video");
   var mainVideo = new Vimeo.Player(mainVideoFrame);
   mainVideo.setVolume(0);
   mainVideo.play();
