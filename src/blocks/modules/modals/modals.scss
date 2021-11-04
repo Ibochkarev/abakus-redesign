@@ -238,25 +238,24 @@
             }
 
             &__otzovik {
-              display: inline-block;
-              width: rem(34);
-              height: rem(34);
-              transition: 0.2s;
-              cursor: pointer;
-              background: var(--lightblue-color);
-              background-size: cover;
-              background-repeat: no-repeat;
-              -webkit-mask-image: url(../img/svg/otzovik.svg);
-              mask-image: url(../img/svg/otzovik.svg);
+                display: inline-block;
+                width: rem(34);
+                height: rem(34);
+                transition: 0.2s;
+                cursor: pointer;
+                background: var(--lightblue-color);
+                background-size: cover;
+                -webkit-mask-image: url(../img/svg/otzovik.svg);
+                mask-image: url(../img/svg/otzovik.svg);
 
-              @media(max-width: 1179px) {
-                  left: rem(24);
-              }
+                @media(max-width: 1179px) {
+                    left: rem(24);
+                }
 
-              &:hover {
-                  background: #36a753;
-              }
-          }
+                &:hover {
+                    background: #36a753;
+                }
+            }
         }
     }
 }

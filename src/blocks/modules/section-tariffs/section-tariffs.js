@@ -23,8 +23,8 @@ if (tarifButtons.length > 0) {
         button.addEventListener("click", function(e) {
             const modal = document.querySelector("#modal-form"),
                 packageName = e.target.dataset.package;
-            modal.querySelector("input[name=\"package-name\"]").value = packageName;
-            console.log(modal, packageName, modal.querySelector("input[name=\"package-name\"]"));
+            modal.querySelector("input[name=\"package\"]").value = packageName;
+            // console.log(modal, packageName, modal.querySelector("input[name=\"package\"]"));
         });
     });
 }

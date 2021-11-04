@@ -23,11 +23,31 @@
         }
     }
 
+    &__headline {
+        position: relative;
+    }
+
+    &__subtitle {
+        position: absolute;
+        font-size: 16px;
+        line-height: 19px;
+        bottom: 10%;
+        left: 50%;
+
+        @media (max-width: 1200px) {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    }
+
     ._star {
         content: " ";
         display: block;
         position: absolute;
-        top: -20%;
+        top: 20%;
         right: -3%;
         width: 290px;
         height: 290px;
@@ -104,14 +124,17 @@
         }
 
         @media (max-width: 797px) {
-            font-size: rem(34);
+            font-size: rem(32);
             line-height: 1.4;
+        }
+
+        b {
+            color: #27a3dd;
         }
 
         span {
             border: rem(4) dashed #27a3dd;
             padding: rem(5);
-            text-transform: uppercase;
             color: #27a3dd;
         }
     }
