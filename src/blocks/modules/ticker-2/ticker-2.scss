@@ -1,4 +1,4 @@
-.ticker_2, .ticker_4, .ticker_5 {
+.ticker_5 {
     .ticker__item {
         right: 100%;
         width: 50%;
@@ -17,7 +17,7 @@
         }
 
         @media(max-width:768px) {
-            width: 100%;
+            width: 90%;
         }
 
         @media (max-width: 991px) {
@@ -33,18 +33,5 @@
                 transform: translateX(0%);
             }
         }
-
-        @media(max-width:768px) {
-            @keyframes going2 {
-                from {
-                    transform: translateX(300%);
-                }
-    
-                to {
-                    transform: translateX(0%);
-                }
-            }
-        }
-
     }
 }
