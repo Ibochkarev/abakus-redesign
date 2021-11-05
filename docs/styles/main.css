@@ -1149,6 +1149,7 @@ a:hover {
 }
 
 .ticker {
+  position: relative;
   height: 4.5rem;
   color: var(--white-color);
   overflow: hidden;
@@ -1175,11 +1176,38 @@ a:hover {
 .ticker__item {
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  width: 30%;
   height: 100%;
+  animation: going 16s infinite linear;
   font-family: "Neometric Alt", sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.ticker__item:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.ticker__item:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.ticker__item:nth-child(4) {
+  animation-delay: 12s;
+}
+
+@keyframes going {
+  from {
+    transform: translateX(440%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
 }
 
 .ticker__item-icon {
@@ -2504,6 +2532,10 @@ a:hover {
 }
 
 @media (max-width: 1200px) {
+  .ticker__item {
+    width: 45%;
+  }
+
   .lesson-consist__imageblock__1 {
     max-width: 18.125rem;
   }
@@ -3024,6 +3056,22 @@ a:hover {
   }
 }
 
+@media (max-width: 960px) {
+  .ticker__item {
+    width: 50%;
+  }
+
+@keyframes going {
+    from {
+      transform: translateX(400%);
+    }
+
+    to {
+      transform: translateX(0%);
+    }
+}
+}
+
 @media (max-width: 797px) {
   .firstblock__title {
     font-size: 2.125rem;
@@ -3046,6 +3094,10 @@ a:hover {
 
   .section-platform__line {
     bottom: 20%;
+  }
+
+  .ticker__item {
+    width: 80%;
   }
 
   .lesson-consist__video {
