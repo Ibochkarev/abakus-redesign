@@ -23,15 +23,12 @@
         &-icon {
             width: auto;
             height: rem(46);
-            margin-right: rem(25);
+            margin-right: rem(35);
 
             @media (max-width: 991px) {
                 height: rem(44);
+                margin-right: rem(30);
             }
-        }
-
-        &-text {
-            white-space: nowrap;
         }
     }
 
@@ -60,7 +57,7 @@
     }
 }
 
-.ticker_1, .ticker_3 {
+.ticker_1, .ticker_2, .ticker_3, .ticker_4 {
     .ticker__item {
         width: 30%;
         animation: going 16s infinite linear;
