@@ -271,12 +271,15 @@ var lessonConsist = new swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___defaul
   slidesPerView: "auto",
   centeredSlides: true,
   spaceBetween: 20,
-  loop: true,
   breakpoints: {
     360: {
       slidesPerView: 1,
-      spaceBetween: 30,
-      centeredSlides: true
+      spaceBetween: 20
+    },
+    560: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true
     },
     991: {
       spaceBetween: 50
@@ -418,13 +421,15 @@ if (sectionReviewsItemArray.length) {
   });
 }
 
-var videoPopupTrigger = document.querySelector("a.section-reviews__item--video");
+var videoPopupTrigger = document.querySelectorAll("a.section-reviews__item--video");
 
-if (videoPopupTrigger) {
-  videoPopupTrigger.addEventListener("click", function (e) {
-    var videoLink = videoPopupTrigger.dataset.video;
-    var modalReviewVideoFrame = document.querySelector("#modal-review-video .youtube-player");
-    modalReviewVideoFrame.src = "https://www.youtube.com/embed/".concat(videoLink, "?wmode=opaque&autohide=1&autoplay=1&muted=1&enablejsapi=1");
+if (videoPopupTrigger.length) {
+  videoPopupTrigger.forEach(function (trigger) {
+    trigger.addEventListener("click", function (e) {
+      var videoLink = trigger.dataset.video;
+      var modalReviewVideoFrame = document.querySelector(".modal-review-video .youtube-player");
+      modalReviewVideoFrame.src = "https://www.youtube.com/embed/".concat(videoLink, "?wmode=opaque&autohide=1&autoplay=1&muted=1&enablejsapi=1");
+    });
   });
 }
 

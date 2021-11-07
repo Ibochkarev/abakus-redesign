@@ -5,12 +5,15 @@ const lessonConsist = new Swiper(".lesson-consist__carousel", {
     slidesPerView: "auto",
     centeredSlides: true,
     spaceBetween: 20,
-    loop: true,
     breakpoints: {
         360: {
             slidesPerView: 1,
-            spaceBetween: 30,
-            centeredSlides: true,
+            spaceBetween: 20,
+        },
+        560: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
         },
         991: {
             spaceBetween: 50,

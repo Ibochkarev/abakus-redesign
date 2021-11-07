@@ -19,24 +19,20 @@
         font-size: rem(20);
         font-weight: 600;
         text-transform: uppercase;
-    }
 
-    .swiper-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
+        &-icon {
+            width: auto;
+            height: rem(46);
+            margin-right: rem(25);
 
-    .swiper-wrapper {
-        transition-timing-function: linear;
-        position: relative;
-    }
+            @media (max-width: 991px) {
+                height: rem(44);
+            }
+        }
 
-    .swiper-slide {
-        position: relative;
-        width: auto;
-        overflow: hidden;
-        padding: 0 rem(20);
+        &-text {
+            white-space: nowrap;
+        }
     }
 
     &_1 {
@@ -112,22 +108,10 @@
                 from {
                     transform: translateX(400%);
                 }
-    
+
                 to {
                     transform: translateX(0%);
                 }
-            }
-        }
-
-
-        &-icon {
-            width: auto;
-            height: rem(46);
-            margin-right: rem(35);
-
-            @media (max-width: 991px) {
-                height: rem(44);
-                margin-right: rem(30);
             }
         }
     }
