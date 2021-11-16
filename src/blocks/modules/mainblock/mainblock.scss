@@ -124,7 +124,7 @@
         }
 
         @media (max-width: 797px) {
-            font-size: rem(32);
+            font-size: rem(28);
             line-height: 1.4;
         }
 
@@ -306,10 +306,7 @@
         width: 100%;
 
         &-item {
-            @include size-lg(4);
-            @include size-md(4);
-            @include size-sm(12);
-            @include size-xs(12);
+            width: calc(100% / 3 - 15px);
 
             @media (max-width: 767px) {
                 display: flex;
@@ -317,6 +314,7 @@
                 align-items: center;
                 justify-content: center;
                 text-align: center;
+                width: 100%;
 
                 &:not(:last-child) {
                     margin-bottom: rem(30);

@@ -27,8 +27,8 @@
 
         @media (max-width: 767px) {
             max-width: calc(100vw - 15%);
-            border: 0;
             padding: rem(50) rem(25);
+            width: 100%;
         }
 
         @media (max-width: 574px) {
@@ -169,6 +169,36 @@
 
         a {
             color: #171664;
+        }
+    }
+
+    &-text {
+        text-align: center;
+
+        &__title {
+            margin-top: 0;
+            margin-bottom: rem(42);
+            font-family: "Neometric Alt", sans-serif;
+            font-size: rem(35);
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--black-color);
+            box-sizing: border-box;
+
+            @media (max-width: 767px) {
+                margin-bottom: rem(23);
+                font-size: rem(22);
+            }
+        }
+
+        &__content {
+            font-size: rem(25);
+            line-height: rem(30);
+
+            @media (max-width: 767px) {
+                font-size: rem(16);
+                line-height: rem(19);
+            }
         }
     }
 }

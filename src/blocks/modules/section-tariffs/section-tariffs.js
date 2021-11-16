@@ -8,7 +8,7 @@ const tarifs = new Swiper(".section-tariffs__wrapper", {
     resistanceRatio: 0,
     breakpoints: {
         360: {
-            spaceBetween: 36,
+            spaceBetween: 20,
         },
         991: {
             spaceBetween: 20,

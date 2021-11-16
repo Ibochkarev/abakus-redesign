@@ -40,3 +40,15 @@
       button.modal__close(aria-label="Close modal" data-micromodal-close)
       .modal-review
         iframe.youtube-player(src="https://www.youtube.com/embed/9t7HxGW8ACo?wmode=opaque&autohide=1&autoplay=1&enablejsapi=1" frameborder="0" muted="muted")
+
+#modal-success.modal.micromodal-slide(aria-hidden="true")
+  .modal__overlay(tabindex="-1" data-micromodal-close)
+    .modal__container(role="dialog" aria-modal="true" aria-labelledby="modal-form-title")
+      button.modal__close(aria-label="Close modal" data-micromodal-close)
+      .modal-text
+        .modal-text__title Спасибо!
+        .modal-text__content
+          | Ваша заявка успешно отправлена.
+          |
+          br
+          | Мы скоро свяжемся с вами.

@@ -540,7 +540,7 @@ var tarifs = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__
   resistanceRatio: 0,
   breakpoints: {
     360: {
-      spaceBetween: 36
+      spaceBetween: 20
     },
     991: {
       spaceBetween: 20
