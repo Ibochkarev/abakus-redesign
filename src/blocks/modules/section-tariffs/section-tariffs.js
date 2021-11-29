@@ -6,14 +6,6 @@ const tarifs = new Swiper(".section-tariffs__wrapper", {
     spaceBetween: 20,
     resistance: true,
     resistanceRatio: 0,
-    breakpoints: {
-        360: {
-            spaceBetween: 20,
-        },
-        991: {
-            spaceBetween: 20,
-        },
-    },
 });
 
 const tarifButtons = document.querySelectorAll(".section-tariffs__item-button");

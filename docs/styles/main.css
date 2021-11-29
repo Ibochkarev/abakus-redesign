@@ -956,6 +956,10 @@ a:hover {
   color: var(--black-color);
 }
 
+.section-tariffs__item-info__line:first-child {
+  min-height: 3.4375rem;
+}
+
 .section-tariffs__item-info__line:not(:last-child) {
   margin-bottom: 0.6875rem;
 }
@@ -1443,13 +1447,29 @@ a:hover {
   line-height: 1.4;
 }
 
-.lesson-consist__carousel-item {
-  max-width: 27rem;
+.lesson-consist__carousel {
+  position: relative;
 }
 
-.lesson-consist__carousel-item img {
-  border: 0.4375rem solid #e2cf67;
+.lesson-consist__carousel-item {
   border-radius: 1.0625rem;
+}
+
+.lesson-consist__carousel .swiper-slide {
+  width: 27rem;
+}
+
+.lesson-consist__carousel .swiper-horizontal > .swiper-pagination-bullets,
+.lesson-consist__carousel .swiper-pagination-bullets.swiper-pagination-horizontal,
+.lesson-consist__carousel .swiper-pagination-custom,
+.lesson-consist__carousel .swiper-pagination-fraction {
+  bottom: -30px;
+}
+
+.lesson-consist__carousel .swiper-pagination-bullet {
+  height: 15px;
+  width: 15px;
+  margin: 0 10px !important;
 }
 
 .firstblock {
@@ -2968,8 +2988,8 @@ a:hover {
     font-size: 1.125rem;
   }
 
-  .lesson-consist__carousel-item {
-    max-width: 17.625rem;
+  .lesson-consist__carousel .swiper-slide {
+    width: 17.625rem;
   }
 
   .firstblock {

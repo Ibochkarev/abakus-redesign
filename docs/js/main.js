@@ -268,21 +268,23 @@ __webpack_require__.r(__webpack_exports__);
 
 var lessonConsist = new swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default.a(".lesson-consist__carousel", {
   grabCursor: true,
-  slidesPerView: "auto",
-  centeredSlides: true,
+  slidesPerView: 1,
   spaceBetween: 20,
+  resistance: true,
+  resistanceRatio: 0,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  },
   breakpoints: {
-    360: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    560: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true
+    768: {
+      slidesPerView: 2,
+      centeredSlides: true
     },
     991: {
-      spaceBetween: 50
+      spaceBetween: 20,
+      slidesPerView: 3
     }
   }
 });
@@ -537,15 +539,7 @@ var tarifs = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__
   slidesPerView: "auto",
   spaceBetween: 20,
   resistance: true,
-  resistanceRatio: 0,
-  breakpoints: {
-    360: {
-      spaceBetween: 20
-    },
-    991: {
-      spaceBetween: 20
-    }
-  }
+  resistanceRatio: 0
 });
 var tarifButtons = document.querySelectorAll(".section-tariffs__item-button");
 

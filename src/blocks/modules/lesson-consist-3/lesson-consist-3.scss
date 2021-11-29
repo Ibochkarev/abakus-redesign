@@ -190,17 +190,31 @@
     }
 
     &__carousel {
+        position: relative;
+
         &-item {
-            max-width: rem(432);
+            border-radius: rem(17);
+        }
+
+        .swiper-slide {
+            width: rem(432);
 
             @media (max-width: 991px) {
-                max-width: rem(282);
+                width: rem(282);
             }
+        }
 
-            img {
-                border: rem(7) solid #e2cf67;
-                border-radius: rem(17);
-            }
+        .swiper-horizontal > .swiper-pagination-bullets,
+        .swiper-pagination-bullets.swiper-pagination-horizontal,
+        .swiper-pagination-custom,
+        .swiper-pagination-fraction{
+            bottom: -30px;
+        }
+
+        .swiper-pagination-bullet {
+            height: 15px;
+            width: 15px;
+            margin: 0 10px !important;
         }
     }
 }

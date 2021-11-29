@@ -86,6 +86,10 @@
                 font-size: rem(16);
                 color: var(--black-color);
 
+                &:first-child {
+                    min-height: rem(55);
+                }
+
                 &:not(:last-child) {
                     margin-bottom: rem(11);
                 }

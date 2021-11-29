@@ -2,21 +2,23 @@ import Swiper from "swiper/swiper-bundle";
 
 const lessonConsist = new Swiper(".lesson-consist__carousel", {
     grabCursor: true,
-    slidesPerView: "auto",
-    centeredSlides: true,
+    slidesPerView: 1,
     spaceBetween: 20,
+    resistance: true,
+    resistanceRatio: 0,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
     breakpoints: {
-        360: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-        },
-        560: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
+        768: {
+            slidesPerView: 2,
+            centeredSlides: true,
         },
         991: {
-            spaceBetween: 50,
+            spaceBetween: 20,
+            slidesPerView: 3
         },
     },
 });
