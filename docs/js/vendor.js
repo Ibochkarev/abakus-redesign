@@ -9,447 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
-}
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
-}
-
-function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
-}
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(n);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
-
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-
-  return arr2;
-}
-
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-
-var MicroModal = function () {
-
-  var FOCUSABLE_ELEMENTS = ['a[href]', 'area[href]', 'input:not([disabled]):not([type="hidden"]):not([aria-hidden])', 'select:not([disabled]):not([aria-hidden])', 'textarea:not([disabled]):not([aria-hidden])', 'button:not([disabled]):not([aria-hidden])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex^="-"])'];
-
-  var Modal = /*#__PURE__*/function () {
-    function Modal(_ref) {
-      var targetModal = _ref.targetModal,
-          _ref$triggers = _ref.triggers,
-          triggers = _ref$triggers === void 0 ? [] : _ref$triggers,
-          _ref$onShow = _ref.onShow,
-          onShow = _ref$onShow === void 0 ? function () {} : _ref$onShow,
-          _ref$onClose = _ref.onClose,
-          onClose = _ref$onClose === void 0 ? function () {} : _ref$onClose,
-          _ref$openTrigger = _ref.openTrigger,
-          openTrigger = _ref$openTrigger === void 0 ? 'data-micromodal-trigger' : _ref$openTrigger,
-          _ref$closeTrigger = _ref.closeTrigger,
-          closeTrigger = _ref$closeTrigger === void 0 ? 'data-micromodal-close' : _ref$closeTrigger,
-          _ref$openClass = _ref.openClass,
-          openClass = _ref$openClass === void 0 ? 'is-open' : _ref$openClass,
-          _ref$disableScroll = _ref.disableScroll,
-          disableScroll = _ref$disableScroll === void 0 ? false : _ref$disableScroll,
-          _ref$disableFocus = _ref.disableFocus,
-          disableFocus = _ref$disableFocus === void 0 ? false : _ref$disableFocus,
-          _ref$awaitCloseAnimat = _ref.awaitCloseAnimation,
-          awaitCloseAnimation = _ref$awaitCloseAnimat === void 0 ? false : _ref$awaitCloseAnimat,
-          _ref$awaitOpenAnimati = _ref.awaitOpenAnimation,
-          awaitOpenAnimation = _ref$awaitOpenAnimati === void 0 ? false : _ref$awaitOpenAnimati,
-          _ref$debugMode = _ref.debugMode,
-          debugMode = _ref$debugMode === void 0 ? false : _ref$debugMode;
-
-      _classCallCheck(this, Modal);
-
-      // Save a reference of the modal
-      this.modal = document.getElementById(targetModal); // Save a reference to the passed config
-
-      this.config = {
-        debugMode: debugMode,
-        disableScroll: disableScroll,
-        openTrigger: openTrigger,
-        closeTrigger: closeTrigger,
-        openClass: openClass,
-        onShow: onShow,
-        onClose: onClose,
-        awaitCloseAnimation: awaitCloseAnimation,
-        awaitOpenAnimation: awaitOpenAnimation,
-        disableFocus: disableFocus
-      }; // Register click events only if pre binding eventListeners
-
-      if (triggers.length > 0) this.registerTriggers.apply(this, _toConsumableArray(triggers)); // pre bind functions for event listeners
-
-      this.onClick = this.onClick.bind(this);
-      this.onKeydown = this.onKeydown.bind(this);
-    }
-    /**
-     * Loops through all openTriggers and binds click event
-     * @param  {array} triggers [Array of node elements]
-     * @return {void}
-     */
-
-
-    _createClass(Modal, [{
-      key: "registerTriggers",
-      value: function registerTriggers() {
-        var _this = this;
-
-        for (var _len = arguments.length, triggers = new Array(_len), _key = 0; _key < _len; _key++) {
-          triggers[_key] = arguments[_key];
-        }
-
-        triggers.filter(Boolean).forEach(function (trigger) {
-          trigger.addEventListener('click', function (event) {
-            return _this.showModal(event);
-          });
-        });
-      }
-    }, {
-      key: "showModal",
-      value: function showModal() {
-        var _this2 = this;
-
-        var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-        this.activeElement = document.activeElement;
-        this.modal.setAttribute('aria-hidden', 'false');
-        this.modal.classList.add(this.config.openClass);
-        this.scrollBehaviour('disable');
-        this.addEventListeners();
-
-        if (this.config.awaitOpenAnimation) {
-          var handler = function handler() {
-            _this2.modal.removeEventListener('animationend', handler, false);
-
-            _this2.setFocusToFirstNode();
-          };
-
-          this.modal.addEventListener('animationend', handler, false);
-        } else {
-          this.setFocusToFirstNode();
-        }
-
-        this.config.onShow(this.modal, this.activeElement, event);
-      }
-    }, {
-      key: "closeModal",
-      value: function closeModal() {
-        var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-        var modal = this.modal;
-        this.modal.setAttribute('aria-hidden', 'true');
-        this.removeEventListeners();
-        this.scrollBehaviour('enable');
-
-        if (this.activeElement && this.activeElement.focus) {
-          this.activeElement.focus();
-        }
-
-        this.config.onClose(this.modal, this.activeElement, event);
-
-        if (this.config.awaitCloseAnimation) {
-          var openClass = this.config.openClass; // <- old school ftw
-
-          this.modal.addEventListener('animationend', function handler() {
-            modal.classList.remove(openClass);
-            modal.removeEventListener('animationend', handler, false);
-          }, false);
-        } else {
-          modal.classList.remove(this.config.openClass);
-        }
-      }
-    }, {
-      key: "closeModalById",
-      value: function closeModalById(targetModal) {
-        this.modal = document.getElementById(targetModal);
-        if (this.modal) this.closeModal();
-      }
-    }, {
-      key: "scrollBehaviour",
-      value: function scrollBehaviour(toggle) {
-        if (!this.config.disableScroll) return;
-        var body = document.querySelector('body');
-
-        switch (toggle) {
-          case 'enable':
-            Object.assign(body.style, {
-              overflow: ''
-            });
-            break;
-
-          case 'disable':
-            Object.assign(body.style, {
-              overflow: 'hidden'
-            });
-            break;
-        }
-      }
-    }, {
-      key: "addEventListeners",
-      value: function addEventListeners() {
-        this.modal.addEventListener('touchstart', this.onClick);
-        this.modal.addEventListener('click', this.onClick);
-        document.addEventListener('keydown', this.onKeydown);
-      }
-    }, {
-      key: "removeEventListeners",
-      value: function removeEventListeners() {
-        this.modal.removeEventListener('touchstart', this.onClick);
-        this.modal.removeEventListener('click', this.onClick);
-        document.removeEventListener('keydown', this.onKeydown);
-      }
-    }, {
-      key: "onClick",
-      value: function onClick(event) {
-        if (event.target.hasAttribute(this.config.closeTrigger)) {
-          this.closeModal(event);
-        }
-      }
-    }, {
-      key: "onKeydown",
-      value: function onKeydown(event) {
-        if (event.keyCode === 27) this.closeModal(event); // esc
-
-        if (event.keyCode === 9) this.retainFocus(event); // tab
-      }
-    }, {
-      key: "getFocusableNodes",
-      value: function getFocusableNodes() {
-        var nodes = this.modal.querySelectorAll(FOCUSABLE_ELEMENTS);
-        return Array.apply(void 0, _toConsumableArray(nodes));
-      }
-      /**
-       * Tries to set focus on a node which is not a close trigger
-       * if no other nodes exist then focuses on first close trigger
-       */
-
-    }, {
-      key: "setFocusToFirstNode",
-      value: function setFocusToFirstNode() {
-        var _this3 = this;
-
-        if (this.config.disableFocus) return;
-        var focusableNodes = this.getFocusableNodes(); // no focusable nodes
-
-        if (focusableNodes.length === 0) return; // remove nodes on whose click, the modal closes
-        // could not think of a better name :(
-
-        var nodesWhichAreNotCloseTargets = focusableNodes.filter(function (node) {
-          return !node.hasAttribute(_this3.config.closeTrigger);
-        });
-        if (nodesWhichAreNotCloseTargets.length > 0) nodesWhichAreNotCloseTargets[0].focus();
-        if (nodesWhichAreNotCloseTargets.length === 0) focusableNodes[0].focus();
-      }
-    }, {
-      key: "retainFocus",
-      value: function retainFocus(event) {
-        var focusableNodes = this.getFocusableNodes(); // no focusable nodes
-
-        if (focusableNodes.length === 0) return;
-        /**
-         * Filters nodes which are hidden to prevent
-         * focus leak outside modal
-         */
-
-        focusableNodes = focusableNodes.filter(function (node) {
-          return node.offsetParent !== null;
-        }); // if disableFocus is true
-
-        if (!this.modal.contains(document.activeElement)) {
-          focusableNodes[0].focus();
-        } else {
-          var focusedItemIndex = focusableNodes.indexOf(document.activeElement);
-
-          if (event.shiftKey && focusedItemIndex === 0) {
-            focusableNodes[focusableNodes.length - 1].focus();
-            event.preventDefault();
-          }
-
-          if (!event.shiftKey && focusableNodes.length > 0 && focusedItemIndex === focusableNodes.length - 1) {
-            focusableNodes[0].focus();
-            event.preventDefault();
-          }
-        }
-      }
-    }]);
-
-    return Modal;
-  }();
-  /**
-   * Modal prototype ends.
-   * Here on code is responsible for detecting and
-   * auto binding event handlers on modal triggers
-   */
-  // Keep a reference to the opened modal
-
-
-  var activeModal = null;
-  /**
-   * Generates an associative array of modals and it's
-   * respective triggers
-   * @param  {array} triggers     An array of all triggers
-   * @param  {string} triggerAttr The data-attribute which triggers the module
-   * @return {array}
-   */
-
-  var generateTriggerMap = function generateTriggerMap(triggers, triggerAttr) {
-    var triggerMap = [];
-    triggers.forEach(function (trigger) {
-      var targetModal = trigger.attributes[triggerAttr].value;
-      if (triggerMap[targetModal] === undefined) triggerMap[targetModal] = [];
-      triggerMap[targetModal].push(trigger);
-    });
-    return triggerMap;
-  };
-  /**
-   * Validates whether a modal of the given id exists
-   * in the DOM
-   * @param  {number} id  The id of the modal
-   * @return {boolean}
-   */
-
-
-  var validateModalPresence = function validateModalPresence(id) {
-    if (!document.getElementById(id)) {
-      console.warn("MicroModal: \u2757Seems like you have missed %c'".concat(id, "'"), 'background-color: #f8f9fa;color: #50596c;font-weight: bold;', 'ID somewhere in your code. Refer example below to resolve it.');
-      console.warn("%cExample:", 'background-color: #f8f9fa;color: #50596c;font-weight: bold;', "<div class=\"modal\" id=\"".concat(id, "\"></div>"));
-      return false;
-    }
-  };
-  /**
-   * Validates if there are modal triggers present
-   * in the DOM
-   * @param  {array} triggers An array of data-triggers
-   * @return {boolean}
-   */
-
-
-  var validateTriggerPresence = function validateTriggerPresence(triggers) {
-    if (triggers.length <= 0) {
-      console.warn("MicroModal: \u2757Please specify at least one %c'micromodal-trigger'", 'background-color: #f8f9fa;color: #50596c;font-weight: bold;', 'data attribute.');
-      console.warn("%cExample:", 'background-color: #f8f9fa;color: #50596c;font-weight: bold;', "<a href=\"#\" data-micromodal-trigger=\"my-modal\"></a>");
-      return false;
-    }
-  };
-  /**
-   * Checks if triggers and their corresponding modals
-   * are present in the DOM
-   * @param  {array} triggers   Array of DOM nodes which have data-triggers
-   * @param  {array} triggerMap Associative array of modals and their triggers
-   * @return {boolean}
-   */
-
-
-  var validateArgs = function validateArgs(triggers, triggerMap) {
-    validateTriggerPresence(triggers);
-    if (!triggerMap) return true;
-
-    for (var id in triggerMap) {
-      validateModalPresence(id);
-    }
-
-    return true;
-  };
-  /**
-   * Binds click handlers to all modal triggers
-   * @param  {object} config [description]
-   * @return void
-   */
-
-
-  var init = function init(config) {
-    // Create an config object with default openTrigger
-    var options = Object.assign({}, {
-      openTrigger: 'data-micromodal-trigger'
-    }, config); // Collects all the nodes with the trigger
-
-    var triggers = _toConsumableArray(document.querySelectorAll("[".concat(options.openTrigger, "]"))); // Makes a mappings of modals with their trigger nodes
-
-
-    var triggerMap = generateTriggerMap(triggers, options.openTrigger); // Checks if modals and triggers exist in dom
-
-    if (options.debugMode === true && validateArgs(triggers, triggerMap) === false) return; // For every target modal creates a new instance
-
-    for (var key in triggerMap) {
-      var value = triggerMap[key];
-      options.targetModal = key;
-      options.triggers = _toConsumableArray(value);
-      activeModal = new Modal(options); // eslint-disable-line no-new
-    }
-  };
-  /**
-   * Shows a particular modal
-   * @param  {string} targetModal [The id of the modal to display]
-   * @param  {object} config [The configuration object to pass]
-   * @return {void}
-   */
-
-
-  var show = function show(targetModal, config) {
-    var options = config || {};
-    options.targetModal = targetModal; // Checks if modals and triggers exist in dom
-
-    if (options.debugMode === true && validateModalPresence(targetModal) === false) return; // clear events in case previous modal wasn't close
-
-    if (activeModal) activeModal.removeEventListeners(); // stores reference to active modal
-
-    activeModal = new Modal(options); // eslint-disable-line no-new
-
-    activeModal.showModal();
-  };
-  /**
-   * Closes the active modal
-   * @param  {string} targetModal [The id of the modal to close]
-   * @return {void}
-   */
-
-
-  var close = function close(targetModal) {
-    targetModal ? activeModal.closeModalById(targetModal) : activeModal.closeModal();
-  };
-
-  return {
-    init: init,
-    show: show,
-    close: close
-  };
-}();
-window.MicroModal = MicroModal;
-
-/* harmony default export */ __webpack_exports__["default"] = (MicroModal);
+function e(e,t){for(var o=0;o<t.length;o++){var n=t[o];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function t(e){return function(e){if(Array.isArray(e))return o(e)}(e)||function(e){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(e))return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return o(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return o(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function o(e,t){(null==t||t>e.length)&&(t=e.length);for(var o=0,n=new Array(t);o<t;o++)n[o]=e[o];return n}var n,i,a,r,s,l=(n=["a[href]","area[href]",'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',"select:not([disabled]):not([aria-hidden])","textarea:not([disabled]):not([aria-hidden])","button:not([disabled]):not([aria-hidden])","iframe","object","embed","[contenteditable]",'[tabindex]:not([tabindex^="-"])'],i=function(){function o(e){var n=e.targetModal,i=e.triggers,a=void 0===i?[]:i,r=e.onShow,s=void 0===r?function(){}:r,l=e.onClose,c=void 0===l?function(){}:l,d=e.openTrigger,u=void 0===d?"data-micromodal-trigger":d,f=e.closeTrigger,h=void 0===f?"data-micromodal-close":f,v=e.openClass,g=void 0===v?"is-open":v,m=e.disableScroll,b=void 0!==m&&m,y=e.disableFocus,p=void 0!==y&&y,w=e.awaitCloseAnimation,E=void 0!==w&&w,k=e.awaitOpenAnimation,M=void 0!==k&&k,A=e.debugMode,C=void 0!==A&&A;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,o),this.modal=document.getElementById(n),this.config={debugMode:C,disableScroll:b,openTrigger:u,closeTrigger:h,openClass:g,onShow:s,onClose:c,awaitCloseAnimation:E,awaitOpenAnimation:M,disableFocus:p},a.length>0&&this.registerTriggers.apply(this,t(a)),this.onClick=this.onClick.bind(this),this.onKeydown=this.onKeydown.bind(this)}var i,a,r;return i=o,(a=[{key:"registerTriggers",value:function(){for(var e=this,t=arguments.length,o=new Array(t),n=0;n<t;n++)o[n]=arguments[n];o.filter(Boolean).forEach((function(t){t.addEventListener("click",(function(t){return e.showModal(t)}))}))}},{key:"showModal",value:function(){var e=this,t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null;if(this.activeElement=document.activeElement,this.modal.setAttribute("aria-hidden","false"),this.modal.classList.add(this.config.openClass),this.scrollBehaviour("disable"),this.addEventListeners(),this.config.awaitOpenAnimation){var o=function t(){e.modal.removeEventListener("animationend",t,!1),e.setFocusToFirstNode()};this.modal.addEventListener("animationend",o,!1)}else this.setFocusToFirstNode();this.config.onShow(this.modal,this.activeElement,t)}},{key:"closeModal",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null,t=this.modal;if(this.modal.setAttribute("aria-hidden","true"),this.removeEventListeners(),this.scrollBehaviour("enable"),this.activeElement&&this.activeElement.focus&&this.activeElement.focus(),this.config.onClose(this.modal,this.activeElement,e),this.config.awaitCloseAnimation){var o=this.config.openClass;this.modal.addEventListener("animationend",(function e(){t.classList.remove(o),t.removeEventListener("animationend",e,!1)}),!1)}else t.classList.remove(this.config.openClass)}},{key:"closeModalById",value:function(e){this.modal=document.getElementById(e),this.modal&&this.closeModal()}},{key:"scrollBehaviour",value:function(e){if(this.config.disableScroll){var t=document.querySelector("body");switch(e){case"enable":Object.assign(t.style,{overflow:""});break;case"disable":Object.assign(t.style,{overflow:"hidden"})}}}},{key:"addEventListeners",value:function(){this.modal.addEventListener("touchstart",this.onClick),this.modal.addEventListener("click",this.onClick),document.addEventListener("keydown",this.onKeydown)}},{key:"removeEventListeners",value:function(){this.modal.removeEventListener("touchstart",this.onClick),this.modal.removeEventListener("click",this.onClick),document.removeEventListener("keydown",this.onKeydown)}},{key:"onClick",value:function(e){(e.target.hasAttribute(this.config.closeTrigger)||e.target.parentNode.hasAttribute(this.config.closeTrigger))&&(e.preventDefault(),e.stopPropagation(),this.closeModal(e))}},{key:"onKeydown",value:function(e){27===e.keyCode&&this.closeModal(e),9===e.keyCode&&this.retainFocus(e)}},{key:"getFocusableNodes",value:function(){var e=this.modal.querySelectorAll(n);return Array.apply(void 0,t(e))}},{key:"setFocusToFirstNode",value:function(){var e=this;if(!this.config.disableFocus){var t=this.getFocusableNodes();if(0!==t.length){var o=t.filter((function(t){return!t.hasAttribute(e.config.closeTrigger)}));o.length>0&&o[0].focus(),0===o.length&&t[0].focus()}}}},{key:"retainFocus",value:function(e){var t=this.getFocusableNodes();if(0!==t.length)if(t=t.filter((function(e){return null!==e.offsetParent})),this.modal.contains(document.activeElement)){var o=t.indexOf(document.activeElement);e.shiftKey&&0===o&&(t[t.length-1].focus(),e.preventDefault()),!e.shiftKey&&t.length>0&&o===t.length-1&&(t[0].focus(),e.preventDefault())}else t[0].focus()}}])&&e(i.prototype,a),r&&e(i,r),o}(),a=null,r=function(e){if(!document.getElementById(e))return console.warn("MicroModal: ❗Seems like you have missed %c'".concat(e,"'"),"background-color: #f8f9fa;color: #50596c;font-weight: bold;","ID somewhere in your code. Refer example below to resolve it."),console.warn("%cExample:","background-color: #f8f9fa;color: #50596c;font-weight: bold;",'<div class="modal" id="'.concat(e,'"></div>')),!1},s=function(e,t){if(function(e){e.length<=0&&(console.warn("MicroModal: ❗Please specify at least one %c'micromodal-trigger'","background-color: #f8f9fa;color: #50596c;font-weight: bold;","data attribute."),console.warn("%cExample:","background-color: #f8f9fa;color: #50596c;font-weight: bold;",'<a href="#" data-micromodal-trigger="my-modal"></a>'))}(e),!t)return!0;for(var o in t)r(o);return!0},{init:function(e){var o=Object.assign({},{openTrigger:"data-micromodal-trigger"},e),n=t(document.querySelectorAll("[".concat(o.openTrigger,"]"))),r=function(e,t){var o=[];return e.forEach((function(e){var n=e.attributes[t].value;void 0===o[n]&&(o[n]=[]),o[n].push(e)})),o}(n,o.openTrigger);if(!0!==o.debugMode||!1!==s(n,r))for(var l in r){var c=r[l];o.targetModal=l,o.triggers=t(c),a=new i(o)}},show:function(e,t){var o=t||{};o.targetModal=e,!0===o.debugMode&&!1===r(e)||(a&&a.removeEventListeners(),(a=new i(o)).showModal())},close:function(e){e?a.closeModalById(e):a.closeModal()}});"undefined"!=typeof window&&(window.MicroModal=l);/* harmony default export */ __webpack_exports__["default"] = (l);
 
 
 /***/ }),
@@ -462,7 +22,7 @@ window.MicroModal = MicroModal;
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
- * Swiper 7.0.7
+ * Swiper 7.4.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -470,7 +30,7 @@ window.MicroModal = MicroModal;
  *
  * Released under the MIT License
  *
- * Released on: September 29, 2021
+ * Released on: December 24, 2021
  */
 
 (function (global, factory) {
@@ -479,7 +39,7 @@ window.MicroModal = MicroModal;
 }(this, (function () { 'use strict';
 
     /**
-     * SSR Window 4.0.0
+     * SSR Window 4.0.2
      * Better handling for window object in SSR environment
      * https://github.com/nolimits4web/ssr-window
      *
@@ -487,7 +47,7 @@ window.MicroModal = MicroModal;
      *
      * Licensed under MIT
      *
-     * Released on: August 25, 2021
+     * Released on: December 13, 2021
      */
 
     /* eslint-disable no-param-reassign */
@@ -658,7 +218,7 @@ window.MicroModal = MicroModal;
     }
 
     /**
-     * Dom7 4.0.0
+     * Dom7 4.0.2
      * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
      * https://framework7.io/docs/dom7.html
      *
@@ -666,7 +226,7 @@ window.MicroModal = MicroModal;
      *
      * Licensed under MIT
      *
-     * Released on: August 25, 2021
+     * Released on: December 13, 2021
      */
     /* eslint-disable no-proto */
 
@@ -2430,7 +1990,7 @@ window.MicroModal = MicroModal;
       } // Update Height
 
 
-      if (newHeight) swiper.$wrapperEl.css('height', `${newHeight}px`);
+      if (newHeight || newHeight === 0) swiper.$wrapperEl.css('height', `${newHeight}px`);
     }
 
     function updateSlidesOffset() {
@@ -2447,7 +2007,8 @@ window.MicroModal = MicroModal;
       const params = swiper.params;
       const {
         slides,
-        rtlTranslate: rtl
+        rtlTranslate: rtl,
+        snapGrid
       } = swiper;
       if (slides.length === 0) return;
       if (typeof slides[0].swiperSlideOffset === 'undefined') swiper.updateSlidesOffset();
@@ -2467,6 +2028,7 @@ window.MicroModal = MicroModal;
         }
 
         const slideProgress = (offsetCenter + (params.centeredSlides ? swiper.minTranslate() : 0) - slideOffset) / (slide.swiperSlideSize + params.spaceBetween);
+        const originalSlideProgress = (offsetCenter - snapGrid[0] + (params.centeredSlides ? swiper.minTranslate() : 0) - slideOffset) / (slide.swiperSlideSize + params.spaceBetween);
         const slideBefore = -(offsetCenter - slideOffset);
         const slideAfter = slideBefore + swiper.slidesSizesGrid[i];
         const isVisible = slideBefore >= 0 && slideBefore < swiper.size - 1 || slideAfter > 1 && slideAfter <= swiper.size || slideBefore <= 0 && slideAfter >= swiper.size;
@@ -2478,6 +2040,7 @@ window.MicroModal = MicroModal;
         }
 
         slide.progress = rtl ? -slideProgress : slideProgress;
+        slide.originalProgress = rtl ? -originalSlideProgress : originalSlideProgress;
       }
 
       swiper.visibleSlides = $(swiper.visibleSlides);
@@ -2673,7 +2236,7 @@ window.MicroModal = MicroModal;
     function updateClickedSlide(e) {
       const swiper = this;
       const params = swiper.params;
-      const slide = $(e.target).closest(`.${params.slideClass}`)[0];
+      const slide = $(e).closest(`.${params.slideClass}`)[0];
       let slideFound = false;
       let slideIndex;
 
@@ -3095,6 +2658,7 @@ window.MicroModal = MicroModal;
 
           if (isVirtual) {
             swiper.wrapperEl.style.scrollSnapType = 'none';
+            swiper._immediateVirtual = true;
           }
 
           wrapperEl[isH ? 'scrollLeft' : 'scrollTop'] = t;
@@ -3102,6 +2666,7 @@ window.MicroModal = MicroModal;
           if (isVirtual) {
             requestAnimationFrame(() => {
               swiper.wrapperEl.style.scrollSnapType = '';
+              swiper._swiperImmediateVirtual = false;
             });
           }
         } else {
@@ -3123,40 +2688,32 @@ window.MicroModal = MicroModal;
         return true;
       }
 
+      swiper.setTransition(speed);
+      swiper.setTranslate(translate);
+      swiper.updateActiveIndex(slideIndex);
+      swiper.updateSlidesClasses();
+      swiper.emit('beforeTransitionStart', speed, internal);
+      swiper.transitionStart(runCallbacks, direction);
+
       if (speed === 0) {
-        swiper.setTransition(0);
-        swiper.setTranslate(translate);
-        swiper.updateActiveIndex(slideIndex);
-        swiper.updateSlidesClasses();
-        swiper.emit('beforeTransitionStart', speed, internal);
-        swiper.transitionStart(runCallbacks, direction);
         swiper.transitionEnd(runCallbacks, direction);
-      } else {
-        swiper.setTransition(speed);
-        swiper.setTranslate(translate);
-        swiper.updateActiveIndex(slideIndex);
-        swiper.updateSlidesClasses();
-        swiper.emit('beforeTransitionStart', speed, internal);
-        swiper.transitionStart(runCallbacks, direction);
+      } else if (!swiper.animating) {
+        swiper.animating = true;
 
-        if (!swiper.animating) {
-          swiper.animating = true;
-
-          if (!swiper.onSlideToWrapperTransitionEnd) {
-            swiper.onSlideToWrapperTransitionEnd = function transitionEnd(e) {
-              if (!swiper || swiper.destroyed) return;
-              if (e.target !== this) return;
-              swiper.$wrapperEl[0].removeEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
-              swiper.$wrapperEl[0].removeEventListener('webkitTransitionEnd', swiper.onSlideToWrapperTransitionEnd);
-              swiper.onSlideToWrapperTransitionEnd = null;
-              delete swiper.onSlideToWrapperTransitionEnd;
-              swiper.transitionEnd(runCallbacks, direction);
-            };
-          }
-
-          swiper.$wrapperEl[0].addEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
-          swiper.$wrapperEl[0].addEventListener('webkitTransitionEnd', swiper.onSlideToWrapperTransitionEnd);
+        if (!swiper.onSlideToWrapperTransitionEnd) {
+          swiper.onSlideToWrapperTransitionEnd = function transitionEnd(e) {
+            if (!swiper || swiper.destroyed) return;
+            if (e.target !== this) return;
+            swiper.$wrapperEl[0].removeEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
+            swiper.$wrapperEl[0].removeEventListener('webkitTransitionEnd', swiper.onSlideToWrapperTransitionEnd);
+            swiper.onSlideToWrapperTransitionEnd = null;
+            delete swiper.onSlideToWrapperTransitionEnd;
+            swiper.transitionEnd(runCallbacks, direction);
+          };
         }
+
+        swiper.$wrapperEl[0].addEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
+        swiper.$wrapperEl[0].addEventListener('webkitTransitionEnd', swiper.onSlideToWrapperTransitionEnd);
       }
 
       return true;
@@ -3195,6 +2752,10 @@ window.MicroModal = MicroModal;
         swiper.loopFix(); // eslint-disable-next-line
 
         swiper._clientLeft = swiper.$wrapperEl[0].clientLeft;
+      }
+
+      if (params.rewind && swiper.isEnd) {
+        return swiper.slideTo(0, speed, runCallbacks, internal);
       }
 
       return swiper.slideTo(swiper.activeIndex + increment, speed, runCallbacks, internal);
@@ -3255,6 +2816,10 @@ window.MicroModal = MicroModal;
           prevIndex = prevIndex - swiper.slidesPerViewDynamic('previous', true) + 1;
           prevIndex = Math.max(prevIndex, 0);
         }
+      }
+
+      if (params.rewind && swiper.isBeginning) {
+        return swiper.slideTo(swiper.slides.length - 1, speed, runCallbacks, internal);
       }
 
       return swiper.slideTo(prevIndex, speed, runCallbacks, internal);
@@ -3355,8 +2920,9 @@ window.MicroModal = MicroModal;
         $wrapperEl
       } = swiper; // Remove duplicated slides
 
-      $wrapperEl.children(`.${params.slideClass}.${params.slideDuplicateClass}`).remove();
-      let slides = $wrapperEl.children(`.${params.slideClass}`);
+      const $selector = $wrapperEl.children().length > 0 ? $($wrapperEl.children()[0].parentNode) : $wrapperEl;
+      $selector.children(`.${params.slideClass}.${params.slideDuplicateClass}`).remove();
+      let slides = $selector.children(`.${params.slideClass}`);
 
       if (params.loopFillGroupWithBlank) {
         const blankSlidesNum = params.slidesPerGroup - slides.length % params.slidesPerGroup;
@@ -3364,10 +2930,10 @@ window.MicroModal = MicroModal;
         if (blankSlidesNum !== params.slidesPerGroup) {
           for (let i = 0; i < blankSlidesNum; i += 1) {
             const blankNode = $(document.createElement('div')).addClass(`${params.slideClass} ${params.slideBlankClass}`);
-            $wrapperEl.append(blankNode);
+            $selector.append(blankNode);
           }
 
-          slides = $wrapperEl.children(`.${params.slideClass}`);
+          slides = $selector.children(`.${params.slideClass}`);
         }
       }
 
@@ -3396,11 +2962,11 @@ window.MicroModal = MicroModal;
       });
 
       for (let i = 0; i < appendSlides.length; i += 1) {
-        $wrapperEl.append($(appendSlides[i].cloneNode(true)).addClass(params.slideDuplicateClass));
+        $selector.append($(appendSlides[i].cloneNode(true)).addClass(params.slideDuplicateClass));
       }
 
       for (let i = prependSlides.length - 1; i >= 0; i -= 1) {
-        $wrapperEl.prepend($(prependSlides[i].cloneNode(true)).addClass(params.slideDuplicateClass));
+        $selector.prepend($(prependSlides[i].cloneNode(true)).addClass(params.slideDuplicateClass));
       }
     }
 
@@ -3859,7 +3425,8 @@ window.MicroModal = MicroModal;
       const timeDiff = touchEndTime - data.touchStartTime; // Tap, doubleTap, Click
 
       if (swiper.allowClick) {
-        swiper.updateClickedSlide(e);
+        const pathTree = e.path || e.composedPath && e.composedPath();
+        swiper.updateClickedSlide(pathTree && pathTree[0] || e.target);
         swiper.emit('tap click', e);
 
         if (timeDiff < 300 && touchEndTime - data.lastClickTime < 300) {
@@ -4522,6 +4089,8 @@ window.MicroModal = MicroModal;
       loopedSlides: null,
       loopFillGroupWithBlank: false,
       loopPreventsSlide: true,
+      // rewind
+      rewind: false,
       // Swiping/no swiping
       allowSlidePrev: true,
       allowSlideNext: true,
@@ -5195,6 +4764,7 @@ window.MicroModal = MicroModal;
           addSlidesAfter: 0
         }
       });
+      let cssModeTimeout;
       swiper.virtual = {
         cache: {},
         from: undefined,
@@ -5234,7 +4804,11 @@ window.MicroModal = MicroModal;
           slidesGrid: previousSlidesGrid,
           offset: previousOffset
         } = swiper.virtual;
-        swiper.updateActiveIndex();
+
+        if (!swiper.params.cssMode) {
+          swiper.updateActiveIndex();
+        }
+
         const activeIndex = swiper.activeIndex || 0;
         let offsetProp;
         if (swiper.rtlTranslate) offsetProp = 'right';else offsetProp = swiper.isHorizontal() ? 'left' : 'top';
@@ -5371,7 +4945,7 @@ window.MicroModal = MicroModal;
             const cachedElIndex = $cachedEl.attr('data-swiper-slide-index');
 
             if (cachedElIndex) {
-              $cachedEl.attr('data-swiper-slide-index', parseInt(cachedElIndex, 10) + 1);
+              $cachedEl.attr('data-swiper-slide-index', parseInt(cachedElIndex, 10) + numberOfNewSlides);
             }
 
             newCache[parseInt(cachedIndex, 10) + numberOfNewSlides] = $cachedEl;
@@ -5437,7 +5011,15 @@ window.MicroModal = MicroModal;
       });
       on('setTranslate', () => {
         if (!swiper.params.virtual.enabled) return;
-        update();
+
+        if (swiper.params.cssMode && !swiper._immediateVirtual) {
+          clearTimeout(cssModeTimeout);
+          cssModeTimeout = setTimeout(() => {
+            update();
+          }, 100);
+        } else {
+          update();
+        }
       });
       on('init update resize', () => {
         if (!swiper.params.virtual.enabled) return;
@@ -6085,19 +5667,19 @@ window.MicroModal = MicroModal;
           $nextEl,
           $prevEl
         } = swiper.navigation;
-        toggleEl($prevEl, swiper.isBeginning);
-        toggleEl($nextEl, swiper.isEnd);
+        toggleEl($prevEl, swiper.isBeginning && !swiper.params.rewind);
+        toggleEl($nextEl, swiper.isEnd && !swiper.params.rewind);
       }
 
       function onPrevClick(e) {
         e.preventDefault();
-        if (swiper.isBeginning && !swiper.params.loop) return;
+        if (swiper.isBeginning && !swiper.params.loop && !swiper.params.rewind) return;
         swiper.slidePrev();
       }
 
       function onNextClick(e) {
         e.preventDefault();
-        if (swiper.isEnd && !swiper.params.loop) return;
+        if (swiper.isEnd && !swiper.params.loop && !swiper.params.rewind) return;
         swiper.slideNext();
       }
 
@@ -6312,7 +5894,7 @@ window.MicroModal = MicroModal;
             $el.css(swiper.isHorizontal() ? 'width' : 'height', `${bulletSize * (params.dynamicMainBullets + 4)}px`);
 
             if (params.dynamicMainBullets > 1 && swiper.previousIndex !== undefined) {
-              dynamicBulletIndex += current - swiper.previousIndex;
+              dynamicBulletIndex += current - (swiper.previousIndex - swiper.loopedSlides || 0);
 
               if (dynamicBulletIndex > params.dynamicMainBullets - 1) {
                 dynamicBulletIndex = params.dynamicMainBullets - 1;
@@ -6321,7 +5903,7 @@ window.MicroModal = MicroModal;
               }
             }
 
-            firstIndex = current - dynamicBulletIndex;
+            firstIndex = Math.max(current - dynamicBulletIndex, 0);
             lastIndex = firstIndex + (Math.min(bullets.length, params.dynamicMainBullets) - 1);
             midIndex = (lastIndex + firstIndex) / 2;
           }
@@ -6365,7 +5947,7 @@ window.MicroModal = MicroModal;
               }
 
               if (swiper.params.loop) {
-                if (bulletIndex >= bullets.length - params.dynamicMainBullets) {
+                if (bulletIndex >= bullets.length) {
                   for (let i = params.dynamicMainBullets; i >= 0; i -= 1) {
                     bullets.eq(bullets.length - i).addClass(`${params.bulletActiveClass}-main`);
                   }
@@ -7200,7 +6782,7 @@ window.MicroModal = MicroModal;
         if (!gesture.$slideEl || !gesture.$slideEl.length) {
           gesture.$slideEl = $(e.target).closest(`.${swiper.params.slideClass}`);
           if (gesture.$slideEl.length === 0) gesture.$slideEl = swiper.slides.eq(swiper.activeIndex);
-          gesture.$imageEl = gesture.$slideEl.find(`.${params.containerClass}`).eq(0).find('img, svg, canvas, picture, .swiper-zoom-target');
+          gesture.$imageEl = gesture.$slideEl.find(`.${params.containerClass}`).eq(0).find('picture, img, svg, canvas, .swiper-zoom-target').eq(0);
           gesture.$imageWrapEl = gesture.$imageEl.parent(`.${params.containerClass}`);
           gesture.maxRatio = gesture.$imageWrapEl.attr('data-swiper-zoom') || params.maxRatio;
 
@@ -7441,7 +7023,7 @@ window.MicroModal = MicroModal;
             }
           }
 
-          gesture.$imageEl = gesture.$slideEl.find(`.${params.containerClass}`).eq(0).find('img, svg, canvas, picture, .swiper-zoom-target');
+          gesture.$imageEl = gesture.$slideEl.find(`.${params.containerClass}`).eq(0).find('picture, img, svg, canvas, .swiper-zoom-target').eq(0);
           gesture.$imageWrapEl = gesture.$imageEl.parent(`.${params.containerClass}`);
         }
 
@@ -7536,7 +7118,7 @@ window.MicroModal = MicroModal;
             gesture.$slideEl = swiper.slides.eq(swiper.activeIndex);
           }
 
-          gesture.$imageEl = gesture.$slideEl.find(`.${params.containerClass}`).eq(0).find('img, svg, canvas, picture, .swiper-zoom-target');
+          gesture.$imageEl = gesture.$slideEl.find(`.${params.containerClass}`).eq(0).find('picture, img, svg, canvas, .swiper-zoom-target').eq(0);
           gesture.$imageWrapEl = gesture.$imageEl.parent(`.${params.containerClass}`);
         }
 
@@ -8291,7 +7873,7 @@ window.MicroModal = MicroModal;
       }
 
       function updateNavigation() {
-        if (swiper.params.loop || !swiper.navigation) return;
+        if (swiper.params.loop || swiper.params.rewind || !swiper.navigation) return;
         const {
           $nextEl,
           $prevEl
@@ -8319,23 +7901,34 @@ window.MicroModal = MicroModal;
       }
 
       function hasPagination() {
-        return swiper.pagination && swiper.params.pagination.clickable && swiper.pagination.bullets && swiper.pagination.bullets.length;
+        return swiper.pagination && swiper.pagination.bullets && swiper.pagination.bullets.length;
+      }
+
+      function hasClickablePagination() {
+        return hasPagination() && swiper.params.pagination.clickable;
       }
 
       function updatePagination() {
         const params = swiper.params.a11y;
+        if (!hasPagination()) return;
+        swiper.pagination.bullets.each(bulletEl => {
+          const $bulletEl = $(bulletEl);
 
-        if (hasPagination()) {
-          swiper.pagination.bullets.each(bulletEl => {
-            const $bulletEl = $(bulletEl);
+          if (swiper.params.pagination.clickable) {
             makeElFocusable($bulletEl);
 
             if (!swiper.params.pagination.renderBullet) {
               addElRole($bulletEl, 'button');
               addElLabel($bulletEl, params.paginationBulletMessage.replace(/\{\{index\}\}/, $bulletEl.index() + 1));
             }
-          });
-        }
+          }
+
+          if ($bulletEl.is(`.${swiper.params.pagination.bulletActiveClass}`)) {
+            $bulletEl.attr('aria-current', 'true');
+          } else {
+            $bulletEl.removeAttr('aria-current');
+          }
+        });
       }
 
       const initNavEl = ($el, wrapperId, message) => {
@@ -8404,7 +7997,7 @@ window.MicroModal = MicroModal;
         } // Pagination
 
 
-        if (hasPagination()) {
+        if (hasClickablePagination()) {
           swiper.pagination.$el.on('keydown', classesToSelector(swiper.params.pagination.bulletClass), onEnterOrSpaceKey);
         }
       }
@@ -8431,7 +8024,7 @@ window.MicroModal = MicroModal;
         } // Pagination
 
 
-        if (hasPagination()) {
+        if (hasClickablePagination()) {
           swiper.pagination.$el.off('keydown', classesToSelector(swiper.params.pagination.bulletClass), onEnterOrSpaceKey);
         }
       }
@@ -10262,17 +9855,31 @@ window.MicroModal = MicroModal;
 
       const setTranslate = () => {
         const {
-          slides
+          slides,
+          $wrapperEl,
+          slidesSizesGrid
         } = swiper;
         const params = swiper.params.creativeEffect;
         const {
           progressMultiplier: multiplier
         } = params;
+        const isCenteredSlides = swiper.params.centeredSlides;
+
+        if (isCenteredSlides) {
+          const margin = slidesSizesGrid[0] / 2 - swiper.params.slidesOffsetBefore || 0;
+          $wrapperEl.transform(`translateX(calc(50% - ${margin}px))`);
+        }
 
         for (let i = 0; i < slides.length; i += 1) {
           const $slideEl = slides.eq(i);
           const slideProgress = $slideEl[0].progress;
           const progress = Math.min(Math.max($slideEl[0].progress, -params.limitProgress), params.limitProgress);
+          let originalProgress = progress;
+
+          if (!isCenteredSlides) {
+            originalProgress = Math.min(Math.max($slideEl[0].originalProgress, -params.limitProgress), params.limitProgress);
+          }
+
           const offset = $slideEl[0].swiperSlideOffset;
           const t = [swiper.params.cssMode ? -offset - swiper.translate : -offset, 0, 0];
           const r = [0, 0, 0];
@@ -10309,8 +9916,8 @@ window.MicroModal = MicroModal;
           $slideEl[0].style.zIndex = -Math.abs(Math.round(slideProgress)) + slides.length;
           const translateString = t.join(', ');
           const rotateString = `rotateX(${r[0]}deg) rotateY(${r[1]}deg) rotateZ(${r[2]}deg)`;
-          const scaleString = progress < 0 ? `scale(${1 + (1 - data.scale) * progress * multiplier})` : `scale(${1 - (1 - data.scale) * progress * multiplier})`;
-          const opacityString = progress < 0 ? 1 + (1 - data.opacity) * progress * multiplier : 1 - (1 - data.opacity) * progress * multiplier;
+          const scaleString = originalProgress < 0 ? `scale(${1 + (1 - data.scale) * originalProgress * multiplier})` : `scale(${1 - (1 - data.scale) * originalProgress * multiplier})`;
+          const opacityString = originalProgress < 0 ? 1 + (1 - data.opacity) * originalProgress * multiplier : 1 - (1 - data.opacity) * originalProgress * multiplier;
           const transform = `translate3d(${translateString}) ${rotateString} ${scaleString}`; // Set shadows
 
           if (custom && data.shadow || !custom) {

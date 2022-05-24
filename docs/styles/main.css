@@ -388,7 +388,7 @@ template {
 }
 
 @font-face {
-  font-family: 'Neometric Alt';
+  font-family: "Neometric Alt";
   src: url("../fonts/Neometric/NeometricAlt-Bold.eot");
   src: local("Neometric Alt Bold"), local("NeometricAlt-Bold"), url("../fonts/Neometric/NeometricAlt-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Neometric/NeometricAlt-Bold.woff2") format("woff2"), url("../fonts/Neometric/NeometricAlt-Bold.woff") format("woff"), url("../fonts/Neometric/NeometricAlt-Bold.ttf") format("truetype");
   font-weight: 600;
@@ -397,7 +397,16 @@ template {
 }
 
 @font-face {
-  font-family: 'Proxima Nova Rg';
+  font-family: "Neometric Alt";
+  src: url("../fonts/Neometric/NeometricAlt-Regular.eot");
+  src: local("Neometric Alt Regular"), local("NeometricAlt-Regular"), url("../fonts/Neometric/NeometricAlt-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Neometric/NeometricAlt-Regular.woff2") format("woff2"), url("../fonts/Neometric/NeometricAlt-Regular.woff") format("woff"), url("../fonts/Neometric/NeometricAlt-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova Rg";
   src: url("../fonts/ProximaNova/ProximaNova-Regular.eot");
   src: local("Proxima Nova Regular"), local("ProximaNova-Regular"), url("../fonts/ProximaNova/ProximaNova-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNova/ProximaNova-Regular.woff") format("woff"), url("../fonts/ProximaNova/ProximaNova-Regular.ttf") format("truetype");
   font-weight: normal;
@@ -890,15 +899,22 @@ a:hover {
 }
 
 .section-tariffs__wrapper {
+  overflow: hidden;
   margin-top: 5rem;
+}
+
+.section-tariffs .swiper-slide {
+  height: auto;
+}
+
+.section-tariffs__slide {
+  width: 17.5rem;
 }
 
 .section-tariffs__item {
   position: relative;
-  width: 17.5rem;
+  height: 100%;
   font-family: "Neometric Alt", sans-serif;
-  font-weight: 600;
-  text-align: center;
 }
 
 .section-tariffs__item._hit .section-tariffs__item-headline {
@@ -907,72 +923,111 @@ a:hover {
 }
 
 .section-tariffs__item._hit::before {
-  content: "";
   position: absolute;
-  top: 0;
+  top: -6.25rem;
   left: 50%;
-  width: 149px;
-  height: 102px;
+  width: 9.3125rem;
+  height: 6.375rem;
   transform: translateX(-50%);
+  content: "";
   background-image: url("../img/global/hit.svg");
-}
-
-.section-tariffs__item-hit {
-  height: 102px;
+  background-size: contain;
 }
 
 .section-tariffs__item-wrap {
   overflow: hidden;
-  background: var(--white-color);
-  border-radius: 0.75rem;
 }
 
 .section-tariffs__item-headline {
   padding: 1.25rem 0;
   font-size: 1.25rem;
+  font-weight: 600;
   line-height: 24px;
+  text-align: center;
   text-transform: uppercase;
   color: var(--white-color);
   background: var(--lightblue-color);
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
 }
 
 .section-tariffs__item-body {
+  height: 100%;
   padding: 0 1.5rem 2rem;
+  background: var(--white-color);
+  border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
 }
 
 .section-tariffs__item-price {
-  padding: 3.125rem 0;
+  padding: 1.5625rem 0 0;
   font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
   color: var(--black-color);
+}
+
+.section-tariffs__item-priceinfo {
+  min-height: 1.1875rem;
+  margin-bottom: 1.1875rem;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--black-color);
+}
+
+.section-tariffs__item-abonement {
+  padding-bottom: 1.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.1875rem;
+  text-align: center;
+  color: #6b6363;
   border-bottom: 0.0625rem solid var(--lightblue-color);
 }
 
+.section-tariffs__item-data {
+  min-height: 18.75rem;
+}
+
 .section-tariffs__item-info {
-  padding: 2.8125rem 0;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2.25rem 0 0;
+  flex-direction: column;
 }
 
 .section-tariffs__item-info__line {
+  position: relative;
+  padding-left: 1.5625rem;
   font-size: 1rem;
-  color: var(--black-color);
+  line-height: 1.1875rem;
+  color: #6b6363;
 }
 
-.section-tariffs__item-info__line:first-child {
-  min-height: 3.4375rem;
+.section-tariffs__item-info__line::before {
+  position: absolute;
+  top: 0.3125rem;
+  left: 0;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 100%;
+  content: "";
+  background-color: var(--lightblue-color);
 }
 
 .section-tariffs__item-info__line:not(:last-child) {
-  margin-bottom: 0.6875rem;
+  margin-bottom: 1.1875rem;
 }
 
 .section-tariffs__item-button {
   cursor: pointer;
   width: 100%;
   height: 4.3125rem;
-  margin-bottom: 1.375rem;
   font-size: 18px;
   line-height: 4.3125rem;
   color: var(--white-color);
-  background: #f2cf0b;
+  background: #171663;
   border: 0;
   border-radius: 6.25rem;
   transition: all 0.5s ease-in-out;
@@ -980,21 +1035,6 @@ a:hover {
 
 .section-tariffs__item-button:hover {
   opacity: 0.8;
-}
-
-.section-tariffs__item-adds {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.875rem;
-  color: #171663;
-}
-
-.section-tariffs__item-adds span {
-  display: inline-block;
-  margin-right: 0.3125rem;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .section-platform {
@@ -2416,6 +2456,12 @@ a:hover {
   }
 }
 
+@media (min-width: 576px) {
+  .section-tariffs__item {
+    margin-top: 6.25rem;
+  }
+}
+
 @media (min-width: 991px) {
   .firstblock__middle.elem-fixed {
     position: fixed;
@@ -3453,10 +3499,6 @@ a:hover {
   }
 
   .section-tariffs__item._hit::before {
-    display: none;
-  }
-
-  .section-tariffs__item-hit {
     display: none;
   }
 

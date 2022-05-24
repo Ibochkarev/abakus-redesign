@@ -537,7 +537,7 @@ __webpack_require__.r(__webpack_exports__);
 var tarifs = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default.a(".section-tariffs__wrapper", {
   grabCursor: true,
   slidesPerView: "auto",
-  spaceBetween: 20,
+  spaceBetween: 15,
   resistance: true,
   resistanceRatio: 0
 });

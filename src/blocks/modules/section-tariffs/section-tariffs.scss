@@ -1,132 +1,164 @@
 .section-tariffs {
+  overflow: hidden;
+  padding: rem(75) 0 rem(100);
+  background: #c3e6f5;
+
+  &__wrapper {
     overflow: hidden;
-    padding: rem(75) 0 rem(100);
-    background: #c3e6f5;
+    margin-top: rem(80);
 
-    &__wrapper {
-        margin-top: rem(80);
-
-        @media (max-width: 991px) {
-            margin-top: rem(40);
-        }
-
-        @media (max-width: 574px) {
-            margin-top: rem(70);
-        }
+    @media (max-width: 991px) {
+      margin-top: rem(40);
     }
 
-    &__item {
+    @media (max-width: 574px) {
+      margin-top: rem(70);
+    }
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  &__slide {
+    width: rem(280);
+  }
+
+  &__item {
+    position: relative;
+    height: 100%;
+    font-family: "Neometric Alt", sans-serif;
+
+    @media (min-width: 576px) {
+      margin-top: rem(100);
+    }
+
+    &._hit {
+      @media (max-width: 574px) {
+        &::before {
+          display: none;
+        }
+      }
+
+      .section-tariffs__item-headline {
+        color: var(--black-color);
+        background: var(--lightyellow-color);
+      }
+
+      &::before {
+        position: absolute;
+        top: rem(-100);
+        left: 50%;
+        width: rem(149);
+        height: rem(102);
+        transform: translateX(-50%);
+        content: "";
+        background-image: url("../img/global/hit.svg");
+        background-size: contain;
+      }
+    }
+
+    &-wrap {
+      overflow: hidden;
+    }
+
+    &-headline {
+      padding: rem(20) 0;
+      font-size: rem(20);
+      font-weight: 600;
+      line-height: 24px;
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--white-color);
+      background: var(--lightblue-color);
+      border-top-left-radius: rem(20);
+      border-top-right-radius: rem(20);
+    }
+
+    &-body {
+      height: 100%;
+      padding: 0 rem(24) rem(32);
+      background: var(--white-color);
+      border-bottom-left-radius: rem(20);
+      border-bottom-right-radius: rem(20);
+    }
+
+    &-price {
+      padding: rem(25) 0 0;
+      font-size: rem(40);
+      font-weight: 600;
+      text-align: center;
+      color: var(--black-color);
+    }
+
+    &-priceinfo {
+      min-height: rem(19);
+      margin-bottom: rem(19);
+      font-size: rem(16);
+      text-align: center;
+      color: var(--black-color);
+    }
+
+    &-abonement {
+      padding-bottom: rem(28);
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: rem(19);
+      text-align: center;
+      color: #6b6363;
+      border-bottom: rem(1) solid var(--lightblue-color);
+    }
+
+    &-data {
+      min-height: rem(300);
+    }
+
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+      padding: rem(36) 0 0;
+      flex-direction: column;
+
+      &__line {
         position: relative;
-        width: rem(280);
-        font-family: "Neometric Alt", sans-serif;
-        font-weight: 600;
-        text-align: center;
+        padding-left: rem(25);
+        font-size: rem(16);
+        line-height: rem(19);
+        color: #6b6363;
 
-        &._hit {
-
-            @media (max-width: 574px) {
-                &::before {
-                    display: none;
-                }
-            }
-            .section-tariffs__item-headline {
-                color: var(--black-color);
-                background: var(--lightyellow-color);
-            }
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 50%;
-                width: 149px;
-                height: 102px;
-                transform: translateX(-50%);
-                background-image: url("../img/global/hit.svg");
-            }
+        &::before {
+          position: absolute;
+          top: rem(5);
+          left: 0;
+          width: rem(10);
+          height: rem(10);
+          border-radius: 100%;
+          content: "";
+          background-color: var(--lightblue-color);
         }
 
-        &-hit {
-            height: 102px;
-
-            @media (max-width: 574px) {
-                display: none;
-            }
+        &:not(:last-child) {
+          margin-bottom: rem(19);
         }
-
-        &-wrap {
-            overflow: hidden;
-            background: var(--white-color);
-            border-radius: rem(12);
-        }
-
-        &-headline {
-            padding: rem(20) 0;
-            font-size: rem(20);
-            line-height: 24px;
-            text-transform: uppercase;
-            color: var(--white-color);
-            background: var(--lightblue-color);
-        }
-
-        &-body {
-            padding: 0 rem(24) rem(32);
-        }
-
-        &-price {
-            padding: rem(50) 0;
-            font-size: rem(40);
-            color: var(--black-color);
-            border-bottom: rem(1) solid var(--lightblue-color);
-        }
-
-        &-info {
-            padding: rem(45) 0;
-
-            &__line {
-                font-size: rem(16);
-                color: var(--black-color);
-
-                &:first-child {
-                    min-height: rem(55);
-                }
-
-                &:not(:last-child) {
-                    margin-bottom: rem(11);
-                }
-            }
-        }
-
-        &-button {
-            cursor: pointer;
-            width: 100%;
-            height: rem(69);
-            margin-bottom: rem(22);
-            font-size: 18px;
-            line-height: rem(69);
-            color: var(--white-color);
-            background: #f2cf0b;
-            border: 0;
-            border-radius: rem(100);
-            transition: all 0.5s ease-in-out;
-
-            &:hover {
-                opacity: 0.8;
-            }
-        }
-
-        &-adds {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: rem(14);
-            color: #171663;
-
-            span {
-                display: inline-block;
-                margin-right: rem(5);
-                background-size: contain;
-                background-repeat: no-repeat;
-            }
-        }
+      }
     }
+
+    &-button {
+      cursor: pointer;
+      width: 100%;
+      height: rem(69);
+      font-size: 18px;
+      line-height: rem(69);
+      color: var(--white-color);
+      background: #171663;
+      border: 0;
+      border-radius: rem(100);
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
 }

@@ -3,7 +3,7 @@ import Swiper from "../../../../node_modules/swiper/swiper-bundle";
 const tarifs = new Swiper(".section-tariffs__wrapper", {
     grabCursor: true,
     slidesPerView: "auto",
-    spaceBetween: 20,
+    spaceBetween: 15,
     resistance: true,
     resistanceRatio: 0,
 });

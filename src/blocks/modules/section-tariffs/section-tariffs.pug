@@ -1,3 +1,92 @@
+-
+  const tariffsItems = [
+    {
+      title: 'Легкий старт',
+      price: '4 500',
+      price_info: '',
+      hit: false,
+      abonement: 'Месячный абонемент',
+      items: [
+        {
+          title: '4 занятия по 30 минут',
+        },
+        {
+          title: 'Интерактивные задания и тренажеры на платформе',
+        },
+        {
+          title: 'Квест по необычной математике и упражнения по нейрофитнесу',
+        },
+        {
+          title: 'Участие в олимпиадах',
+        },
+      ]
+    },
+    {
+      title: 'Стандартный',
+      price: '5 500',
+      price_info: '',
+      hit: false,
+      abonement: 'Месячный абонемент',
+      items: [
+        {
+          title: '4 занятия по 45 минут',
+        },
+        {
+          title: 'Интерактивные задания и тренажеры на платформе',
+        },
+        {
+          title: 'Квест по необычной математике и упражнения по нейрофитнесу',
+        },
+        {
+          title: 'Участие в олимпиадах',
+        },
+      ]
+    },
+    {
+      title: 'Популярный',
+      price: '6 500',
+      price_info: '',
+      hit: false,
+      abonement: 'Месячный абонемент',
+      items: [
+        {
+          title: '4 занятия по 60 мин. или 8 занятий по 30 мин.',
+        },
+        {
+          title: 'Интерактивные задания и тренажеры на платформе',
+        },
+        {
+          title: 'Квест по необычной математике и упражнения по нейрофитнесу',
+        },
+        {
+          title: 'Участие в олимпиадах',
+        },
+      ]
+    },
+    {
+      title: 'Легкий старт',
+      price: '4500',
+      price_info: '(вместо 16 500₽)',
+      hit: true,
+      abonement: 'Интенсив',
+      items: [
+        {
+          title: '18 занятий по 30 мин или 12 занятий по 45 мин.',
+        },
+        {
+          title: 'Интерактивные задания и тренажеры на платформе',
+        },
+        {
+          title: 'Квест по необычной математике и упражнения по нейрофитнесу',
+        },
+        {
+          title: 'Участие в олимпиадах',
+        },
+      ]
+    }
+  ]
+
+
 section.section-tariffs
   .container
     h2.section__title Выберите ваш план на месяц
@@ -8,56 +97,36 @@ section.section-tariffs
 
     .section-tariffs__wrapper
       .swiper-wrapper
-        .swiper-slide.section-tariffs__item
-          .section-tariffs__item-hit
-          .section-tariffs__item-wrap
-            .section-tariffs__item-headline БАЗОВЫЙ
-            .section-tariffs__item-body
-              .section-tariffs__item-price 4500 ₽
-              .section-tariffs__item-info
-                .section-tariffs__item-info__line 4 занятия по 45 минут
-                .section-tariffs__item-info__line 1 ученик
-              button.section-tariffs__item-button(type="button", data-micromodal-trigger="modal-form", data-package="Базовый") Выбрать
-              .section-tariffs__item-adds
-                span.ic-people
-                | Индивидуальный тариф
-        .swiper-slide.section-tariffs__item._hit
-          .section-tariffs__item-hit
-          .section-tariffs__item-wrap
-            .section-tariffs__item-headline Популярный
-            .section-tariffs__item-body
-              .section-tariffs__item-price 5850 ₽
-              .section-tariffs__item-info
-                .section-tariffs__item-info__line 4 занятия по 60 минут
-                .section-tariffs__item-info__line 1 ученик
-              button.section-tariffs__item-button(type="button", data-micromodal-trigger="modal-form", data-package="Популярный") Выбрать
-              .section-tariffs__item-adds
-                span.ic-people
-                | Индивидуальный тариф
-        .swiper-slide.section-tariffs__item
-          .section-tariffs__item-hit
-          .section-tariffs__item-wrap
-            .section-tariffs__item-headline ИНТЕНСИВ
-            .section-tariffs__item-body
-              .section-tariffs__item-price 8800 ₽
-              .section-tariffs__item-info
-                .section-tariffs__item-info__line 8занятия по 45 минут
-                .section-tariffs__item-info__line 1 ученик
-              button.section-tariffs__item-button(type="button", data-micromodal-trigger="modal-form", data-package="Интенсив") Выбрать
-              .section-tariffs__item-adds
-                span.ic-people
-                | Индивидуальный тариф
-        .swiper-slide.section-tariffs__item
-          .section-tariffs__item-hit
-          .section-tariffs__item-wrap
-            .section-tariffs__item-headline ПРИВЕДИ ДРУГА
-            .section-tariffs__item-body
-              .section-tariffs__item-price 3900 ₽
-              .section-tariffs__item-info
-                .section-tariffs__item-info__line 8 занятия по 30 минут
-                .section-tariffs__item-info__line Цена за каждого ученика
-              button.section-tariffs__item-button(type="button", data-micromodal-trigger="modal-form" data-package="Приведи друга") Выбрать
-              .section-tariffs__item-adds
-                span.ic-people
-                span.ic-people
-                | Занятия в паре
+        each item in tariffsItems
+          if item.hit == true
+            .swiper-slide.section-tariffs__slide
+              .section-tariffs__item._hit
+                .section-tariffs__item-wrap
+                  .section-tariffs__item-headline!= item.title
+                  .section-tariffs__item-body
+                    .section-tariffs__item-price!=item.price
+                      |
+                      span ₽
+                    .section-tariffs__item-priceinfo!=item.price_info
+                    .section-tariffs__item-abonement!=item.abonement
+                    .section-tariffs__item-info
+                      .section-tariffs__item-data
+                        each row in item.items
+                          .section-tariffs__item-info__line!= row.title
+                      button.section-tariffs__item-button(type="button", data-micromodal-trigger="modal-form", data-package!=item.title) Выбрать
+          else
+            .swiper-slide.section-tariffs__slide
+              .section-tariffs__item
+                .section-tariffs__item-wrap
+                  .section-tariffs__item-headline!= item.title
+                  .section-tariffs__item-body
+                    .section-tariffs__item-price!=item.price
+                      |
+                      span ₽
+                    .section-tariffs__item-priceinfo!=item.price_info
+                    .section-tariffs__item-abonement!=item.abonement
+                    .section-tariffs__item-info
+                      .section-tariffs__item-data
+                        each row in item.items
+                          .section-tariffs__item-info__line!= row.title
+                      button.section-tariffs__item-button(type="button", data-micromodal-trigger="modal-form", data-package!=item.title) Выбрать
