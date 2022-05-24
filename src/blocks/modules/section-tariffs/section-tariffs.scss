@@ -7,6 +7,15 @@
     overflow: hidden;
     margin-top: rem(80);
 
+    @media (min-width: 1440px) {
+      .swiper-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(16);
+      }
+    }
+
     @media (max-width: 991px) {
       margin-top: rem(40);
     }

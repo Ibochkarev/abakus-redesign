@@ -534,13 +534,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/swiper/swiper-bundle */ "./node_modules/swiper/swiper-bundle.js");
 /* harmony import */ var _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0__);
 
-var tarifs = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default.a(".section-tariffs__wrapper", {
-  grabCursor: true,
-  slidesPerView: "auto",
-  spaceBetween: 15,
-  resistance: true,
-  resistanceRatio: 0
-});
+var init = false,
+    tarifsSlider = undefined;
+
+if (document.querySelector(".section-tariffs__wrapper")) {
+  var swiperMode = function swiperMode() {
+    if (window.matchMedia("(max-width: 1439px)").matches) {
+      if (!init) {
+        init = true;
+        tarifsSlider = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default.a(".section-tariffs__wrapper", {
+          grabCursor: true,
+          slidesPerView: "auto",
+          spaceBetween: 15,
+          resistance: true,
+          resistanceRatio: 0
+        });
+      }
+    } else {
+      if (tarifsSlider) tarifsSlider.destroy();
+      init = false;
+    }
+  };
+
+  window.addEventListener("load", function () {
+    swiperMode();
+  });
+  window.addEventListener("resize", function () {
+    swiperMode();
+  });
+}
+
 var tarifButtons = document.querySelectorAll(".section-tariffs__item-button");
 
 if (tarifButtons.length > 0) {

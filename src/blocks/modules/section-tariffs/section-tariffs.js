@@ -1,12 +1,36 @@
 import Swiper from "../../../../node_modules/swiper/swiper-bundle";
 
-const tarifs = new Swiper(".section-tariffs__wrapper", {
-    grabCursor: true,
-    slidesPerView: "auto",
-    spaceBetween: 15,
-    resistance: true,
-    resistanceRatio: 0,
-});
+let init = false,
+    tarifsSlider = undefined;
+
+if( document.querySelector(".section-tariffs__wrapper") ) {
+    function swiperMode() {
+        if (window.matchMedia("(max-width: 1439px)").matches) {
+            if (!init) {
+                init = true;
+                tarifsSlider = new Swiper(".section-tariffs__wrapper", {
+                    grabCursor: true,
+                    slidesPerView: "auto",
+                    spaceBetween: 15,
+                    resistance: true,
+                    resistanceRatio: 0,
+                });
+            }
+        } else {
+            if (tarifsSlider) tarifsSlider.destroy();
+            init = false;
+        }
+    }
+
+    window.addEventListener("load", function () {
+        swiperMode();
+    });
+
+    window.addEventListener("resize", function () {
+        swiperMode();
+    });
+}
+
 
 const tarifButtons = document.querySelectorAll(".section-tariffs__item-button");
 
