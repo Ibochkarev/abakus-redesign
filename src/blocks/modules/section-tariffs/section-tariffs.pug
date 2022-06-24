@@ -64,10 +64,11 @@
       ]
     },
     {
-      title: 'Легкий старт',
+      title: 'Летний хит',
       price: '4500',
       price_info: '(вместо 16 500₽)',
       hit: true,
+      star: true,
       abonement: 'Интенсив',
       items: [
         {
@@ -100,9 +101,16 @@ section.section-tariffs
         each item in tariffsItems
           if item.hit == true
             .swiper-slide.section-tariffs__slide
-              .section-tariffs__item._hit
+              .section-tariffs__item._hit._star
                 .section-tariffs__item-wrap
                   .section-tariffs__item-headline!= item.title
+                    .star-text
+                      .star-text__info
+                        b 200
+                        |
+                        | олимпиадных задач по необычной математике
+                        |
+                        b в подарок
                   .section-tariffs__item-body
                     .section-tariffs__item-price!=item.price
                       |

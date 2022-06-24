@@ -5,7 +5,7 @@ let init = false,
 
 if( document.querySelector(".section-tariffs__wrapper") ) {
     function swiperMode() {
-        if (window.matchMedia("(max-width: 1439px)").matches) {
+        if (window.matchMedia("(max-width: 1199px)").matches) {
             if (!init) {
                 init = true;
                 tarifsSlider = new Swiper(".section-tariffs__wrapper", {

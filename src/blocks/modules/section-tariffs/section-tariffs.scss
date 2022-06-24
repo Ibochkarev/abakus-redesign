@@ -7,7 +7,7 @@
     overflow: hidden;
     margin-top: rem(80);
 
-    @media (min-width: 1440px) {
+    @media (min-width: 1200px) {
       .swiper-wrapper {
         display: flex;
         align-items: center;
@@ -36,6 +36,7 @@
   &__item {
     position: relative;
     height: 100%;
+    margin-top: rem(35);
     font-family: "Neometric Alt", sans-serif;
 
     @media (min-width: 576px) {
@@ -56,26 +57,63 @@
 
       &::before {
         position: absolute;
-        top: rem(-100);
-        left: 50%;
-        width: rem(149);
-        height: rem(102);
-        transform: translateX(-50%);
+        top: rem(-68);
+        left: 0;
+        width: rem(100);
+        height: rem(68);
+        // transform: translateX(-50%);
         content: "";
         background-image: url("../img/global/hit.svg");
         background-size: contain;
+        background-repeat: no-repeat;
       }
     }
 
-    &-wrap {
-      overflow: hidden;
+    &._star {
+      .section-tariffs__item-headline {
+        text-align: left;
+      }
     }
 
+    .star-text {
+      position: absolute;
+      top: 50%;
+      right: -2%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 142px;
+      height: 142px;
+      font-size: rem(10);
+      font-weight: 400;
+      line-height: 1.09;
+      text-align: center;
+      text-transform: none;
+      transform: translateY(-50%);
+      background-image: url("data:image/svg+xml,%3Csvg width='150' height='153' viewBox='0 0 150 153' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M137.969 39.6247L131.028 59.3339L130.904 59.6881L131.209 59.9066L148.495 72.2798L131.181 86.6149L130.822 86.9124L131.094 87.2915L144.335 105.746L122.299 110.009L121.805 110.105L121.904 110.599L126.472 133.295L104.628 127.517L104.143 127.388L104.016 127.874L98.3948 149.475L81.3405 133.617L80.959 133.263L80.6202 133.658L65.6005 151.199L56.4543 131.291L56.2674 130.884L55.8425 131.025L34.6093 138.072L34.6093 114.5L34.6093 114.031L34.1414 114.001L11.5266 112.544L19.9602 92.6955L20.1243 92.3093L19.7724 92.0807L0.999189 79.8843L19.8052 65.3961L20.21 65.0842L19.8893 64.6862L5.10702 46.345L27.1996 39.6513L27.6446 39.5165L27.5424 39.063L22.9787 18.8003L45.4188 22.4934L45.8687 22.5674L45.9838 22.1262L51.0603 2.66929L69.1702 18.5623L69.5639 18.9078L69.8908 18.4984L83.8598 1.00047L93.5452 22.2077L93.7437 22.6423L94.1868 22.4638L114.84 14.1459L114.84 37.5L114.84 37.9654L115.304 37.9987L137.969 39.6247Z' fill='%23FAEB99' stroke='white'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      &__info {
+        width: 80px;
+        height: 80px;
+      }
+
+      b {
+        color: var(--lightblue-color);
+      }
+    }
+
+    // &-wrap {
+    //   overflow: hidden;
+    // }
+
     &-headline {
-      padding: rem(20) 0;
+      position: relative;
+      padding: rem(20) rem(10);
       font-size: rem(20);
       font-weight: 600;
-      line-height: 24px;
+      line-height: rem(24);
       text-align: center;
       text-transform: uppercase;
       color: var(--white-color);

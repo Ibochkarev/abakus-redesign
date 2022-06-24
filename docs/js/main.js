@@ -539,7 +539,7 @@ var init = false,
 
 if (document.querySelector(".section-tariffs__wrapper")) {
   var swiperMode = function swiperMode() {
-    if (window.matchMedia("(max-width: 1439px)").matches) {
+    if (window.matchMedia("(max-width: 1199px)").matches) {
       if (!init) {
         init = true;
         tarifsSlider = new _node_modules_swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_0___default.a(".section-tariffs__wrapper", {
